@@ -1,4 +1,4 @@
-package com.queasy.queasy;
+package com.queasy;
 
 import java.io.*;
 
