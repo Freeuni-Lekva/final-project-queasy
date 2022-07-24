@@ -55,7 +55,10 @@ CREATE TABLE quizzes(
 CREATE TABLE questions(
                     id INT PRIMARY KEY AUTO_INCREMENT,
                     text VARCHAR(512),
-                    type VARCHAR(32) NOT NULL
+                    type VARCHAR(32) NOT NULL,
+                    creator_id INT,
+                    FOREIGN KEY (creator_id) REFERENCES users(id) ON DELETE CASCADE
+
 );
 
 CREATE TABLE answers(
