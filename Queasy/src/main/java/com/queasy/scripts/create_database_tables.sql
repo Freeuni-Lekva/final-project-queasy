@@ -31,7 +31,8 @@ CREATE TABLE mails(
                     from_user_id INT NOT NULL,
                     to_user_id INT NOT NULL,
                     date DATE DEFAULT(CURRENT_TIMESTAMP),
-                    text VARCHAR(1024) NOT NULL,
+                    subject VARCHAR(128),
+                    text VARCHAR(1024),
                     FOREIGN KEY (from_user_id) REFERENCES users(id) ON DELETE CASCADE,
                     FOREIGN KEY (to_user_id) REFERENCES users(id) ON DELETE CASCADE
 );

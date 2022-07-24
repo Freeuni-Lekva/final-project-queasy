@@ -10,24 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="505333db-48ce-437d-b26a-b117a4278730" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Queasy/src/main/java/scripts/create_database_tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Queasy_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Queasy_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__jakarta_servlet_jakarta_servlet_api_5_0_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_8_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_8_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_8_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_8_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/model/user/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/queasy/HelloServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/HelloServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/scripts/create_database_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/scripts/create_database_tables.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,16 +48,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/bachi/Desktop/OOP/OOP_HW5&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "/home/bachi/Desktop/OOP/final-project-machinarium-master (1)/final-project-machinarium-master/machinarium",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Tomcat 10.0.211" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.211" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
@@ -109,7 +110,8 @@
       <workItem from="1658599767073" duration="13000" />
       <workItem from="1658599922476" duration="236000" />
       <workItem from="1658600214179" duration="956000" />
-      <workItem from="1658602271111" duration="2451000" />
+      <workItem from="1658602271111" duration="5217000" />
+      <workItem from="1658662819041" duration="5707000" />
     </task>
     <servers />
   </component>
