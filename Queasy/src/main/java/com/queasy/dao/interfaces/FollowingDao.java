@@ -4,6 +4,8 @@ import com.queasy.model.user.User;
 
 import java.util.List;
 
+
+
 public interface FollowingDao {
 
     List<User> getFriendsOf(String userName);
@@ -13,4 +15,6 @@ public interface FollowingDao {
     List<User> getSentRequestsOf(String userName);
 
     //List<User> getSentRequestsOf(String mail);
+
+    boolean sendRequest(String userName);
 }

@@ -20,5 +20,6 @@ public interface MailDao {
 
     //List<Mail> getReceivedMails(String email);
 
+    boolean addMail(Mail mail);
 
 }
