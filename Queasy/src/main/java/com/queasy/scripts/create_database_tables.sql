@@ -1,8 +1,8 @@
 CREATE DATABASE IF NOT EXISTS queasy_database
-USE queasy_database
+USE queasy_database;
 
 
-<-- Drop Tables -->
+-- Drop Tables
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS mails;
 DROP TABLE IF EXISTS followers;
@@ -14,7 +14,7 @@ DROP TABLE IF EXISTS quiz_question;
 DROP TABLE IF EXISTS games;
 
 
-<-- Create Tables -->
+-- Create Tables
 
 
 CREATE TABLE users(
@@ -28,13 +28,13 @@ CREATE TABLE users(
 
 CREATE TABLE mails(
                     id INT PRIMARY KEY AUTO_INCREMENT,
-                    from_user_id INT NOT NULL,
-                    to_user_id INT NOT NULL,
+                    from_user_name VARCHAR(64) NOT NULL,
+                    to_user_name VARCHAR(64) NOT NULL,
                     date DATE DEFAULT(CURRENT_TIMESTAMP),
                     subject VARCHAR(128),
                     text VARCHAR(1024),
-                    FOREIGN KEY (from_user_id) REFERENCES users(id) ON DELETE CASCADE,
-                    FOREIGN KEY (to_user_id) REFERENCES users(id) ON DELETE CASCADE
+                    FOREIGN KEY (from_user_name) REFERENCES users(user_name) ON DELETE CASCADE,
+                    FOREIGN KEY (to_user_name) REFERENCES users(user_name) ON DELETE CASCADE
 );
 
 CREATE TABLE followers(
