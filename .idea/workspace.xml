@@ -11,11 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="505333db-48ce-437d-b26a-b117a4278730" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/MailDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/MailDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/model/user/Mail.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/model/user/Mail.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/model/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/scripts/create_database_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/scripts/create_database_tables.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/MyConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/MyConstants.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,7 +123,7 @@
       <workItem from="1659462857406" duration="2288000" />
       <workItem from="1659550226411" duration="1595000" />
       <workItem from="1659822885012" duration="597000" />
-      <workItem from="1659869004979" duration="13328000" />
+      <workItem from="1659869004979" duration="15613000" />
     </task>
     <servers />
   </component>

@@ -3,6 +3,8 @@ package com.queasy.model.user;
 import java.util.Date;
 
 public class Mail {
+
+    private int id;
     private String subject;
     private String text;
     private Date date;
@@ -11,7 +13,8 @@ public class Mail {
     private String to;
 
 
-    public Mail(String subject, String text, Date date, String from, String to) {
+    public Mail(int id, String subject, String text, Date date, String from, String to) {
+        this.id = id;
         this.subject = subject;
         this.text = text;
         this.date = date;
@@ -58,4 +61,8 @@ public class Mail {
     public void setTo(String to) {
         this.to = to;
     }
+    public int getId() {
+        return id;
+    }
+
 }

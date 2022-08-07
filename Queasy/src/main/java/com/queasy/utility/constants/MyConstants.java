@@ -15,6 +15,7 @@ public final class MyConstants {
     public static final String USER_MAIL = "mail";
 
     //mails
+    public static final String MAILS_DATABASE = "mails";
     public static final String MAILS_FROM_USER_NAME = "from_user_name";
     public static final String MAILS_TO_USER_NAME = "to_user_name";
     public static final String MAILS_DATE = "date";

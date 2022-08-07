@@ -30,7 +30,7 @@ CREATE TABLE mails(
                     id INT PRIMARY KEY AUTO_INCREMENT,
                     from_user_name VARCHAR(64) NOT NULL,
                     to_user_name VARCHAR(64) NOT NULL,
-                    date DATE DEFAULT(CURRENT_TIMESTAMP),
+                    date DATETIME DEFAULT(CURRENT_TIMESTAMP),
                     subject VARCHAR(128),
                     text VARCHAR(1024),
                     FOREIGN KEY (from_user_name) REFERENCES users(user_name) ON DELETE CASCADE,
