@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Queasy:war">
+    <output-path>$PROJECT_DIR$/Queasy/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>Queasy</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="Queasy-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="Queasy:war exploded" />
+    </root>
+  </artifact>
+</component>
