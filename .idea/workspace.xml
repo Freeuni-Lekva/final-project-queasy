@@ -10,10 +10,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="505333db-48ce-437d-b26a-b117a4278730" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_13_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/FollowingDaoImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/GameDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/final-project-queasy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/final-project-queasy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/DBConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/DBConnectionPool.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/MailDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/MailDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/model/user/Mail.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/model/user/Mail.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/FollowingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/FollowingDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/GameDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/GameDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/QuestionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/QuestionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/model/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/model/user/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/scripts/create_database_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/scripts/create_tables.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/MyConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/MyConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestUserDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,13 +66,20 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/bachi/Desktop/OOP/OOP_FINAL/final-project-queasy&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+    &quot;last_opened_file_path&quot;: &quot;/home/bachi/Desktop/OOP/OOP_HW5&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.38850576&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;DatabaseDriversLRU&quot;: [
@@ -64,7 +87,38 @@
     ]
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.TestUserDao.testAddUsers">
+    <configuration name="TestUserDao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Queasy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.queasy.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.queasy.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.queasy.dao.TestUserDao" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestUserDao.testAddUsers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Queasy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.queasy.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.queasy.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.queasy.dao.TestUserDao" />
+      <option name="METHOD_NAME" value="testAddUsers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 10.0.211" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.211" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="Queasy:war exploded">
@@ -103,6 +157,12 @@
         </option>
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TestUserDao.testAddUsers" />
+        <item itemvalue="JUnit.TestUserDao" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -123,7 +183,9 @@
       <workItem from="1659462857406" duration="2288000" />
       <workItem from="1659550226411" duration="1595000" />
       <workItem from="1659822885012" duration="597000" />
-      <workItem from="1659869004979" duration="15613000" />
+      <workItem from="1659869004979" duration="24181000" />
+      <workItem from="1659978166601" duration="1760000" />
+      <workItem from="1660474910931" duration="599000" />
     </task>
     <servers />
   </component>
@@ -140,5 +202,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/final_project_queasy$TestUserDao.ic" NAME="TestUserDao Coverage Results" MODIFIED="1659895509094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.queasy.dao.*</FILTER>
+    </SUITE>
   </component>
 </project>

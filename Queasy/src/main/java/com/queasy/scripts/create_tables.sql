@@ -87,10 +87,10 @@ CREATE TABLE quiz_question(
 CREATE TABLE games(
                       id INT PRIMARY KEY AUTO_INCREMENT,
                       score INT,
-                      starting_date DATE NOT NULL,
-                      end_date DATE DEFAULT(CURRENT_TIMESTAMP),
-                      user_id INT NOT NULL,
+                      starting_date DATETIME NOT NULL,
+                      end_date DATETIME DEFAULT(CURRENT_TIMESTAMP),
+                      user_name VARCHAR(64) NOT NULL,
                       quiz_id INT NOT NULL,
                       FOREIGN KEY (quiz_id) REFERENCES quizzes(id) ON DELETE CASCADE,
-                      FOREIGN KEY (user_id) REFERENCES questions(id) ON DELETE CASCADE
+                      FOREIGN KEY (user_name) REFERENCES users(user_name) ON DELETE CASCADE
 );

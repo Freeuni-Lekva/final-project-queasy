@@ -34,4 +34,18 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == this)
+            return true;
+        if (!(obj instanceof User)) {
+            return false;
+        }
+        User other = (User) obj;
+
+        if(other.userName.equals(this.userName) || other.mail.equals(this.mail)) {
+            return true;
+        }
+        return false;
+    }
 }

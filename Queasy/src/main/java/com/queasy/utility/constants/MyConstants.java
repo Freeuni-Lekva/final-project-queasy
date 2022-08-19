@@ -21,4 +21,9 @@ public final class MyConstants {
     public static final String MAILS_DATE = "date";
     public static final String MAILS_SUBJECT = "subject";
     public static final String MAILS_TEXT = "text";
+
+    //following
+    public static final String FOLLOWERS_DATABASE = "followers";
+    public static final String FOLLOWERS_FIRST_USER_USERNAME = "first_user_username";
+    public static final String FOLLOWERS_SECOND_USER_USERNAME = "second_user_username";
 }

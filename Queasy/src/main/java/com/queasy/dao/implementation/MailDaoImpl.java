@@ -38,7 +38,7 @@ public class MailDaoImpl implements MailDao {
             connectionPool.releaseConnection(con);
             return mails;
         } catch (SQLException e) {
-            return null;
+            return mails;
         }
     }
 

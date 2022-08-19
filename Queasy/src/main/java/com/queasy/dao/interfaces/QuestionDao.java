@@ -11,6 +11,4 @@ public interface QuestionDao {
     List<Question> getAllQuestionsOf(int quizId);
 
     boolean addQuestion(Question question);
-
-
 }

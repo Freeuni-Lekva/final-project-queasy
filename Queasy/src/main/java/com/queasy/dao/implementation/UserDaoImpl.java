@@ -106,7 +106,7 @@ public class UserDaoImpl implements UserDao {
             String apostrophePassword = StaticMethods.apostropheString(password);
             String apostropheEmail = StaticMethods.apostropheString(email);
 
-            String[] columns = {MyConstants.USER_NAME,MyConstants.USER_PASSWORD,MyConstants.USER_PASSWORD};
+            String[] columns = {MyConstants.USER_NAME,MyConstants.USER_PASSWORD,MyConstants.USER_MAIL};
             String[] values = {apostropheUserName,apostrophePassword,apostropheEmail};
 
             String query = StaticMethods.insertQuery(MyConstants.USERS_DATABASE,

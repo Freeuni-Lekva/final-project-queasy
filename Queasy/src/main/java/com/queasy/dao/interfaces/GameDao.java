@@ -6,8 +6,6 @@ import java.util.List;
 
 public interface GameDao {
 
-    List<Game> getAllGamesOf(int userId);
-
     List<Game> getAllGamesOf(String userName);
 
     List<Game> getAllGames(int quizId);
