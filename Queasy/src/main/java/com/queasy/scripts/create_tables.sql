@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS queasy_database
+CREATE DATABASE IF NOT EXISTS queasy_database;
 USE queasy_database;
 
 
@@ -39,10 +39,10 @@ CREATE TABLE mails(
 
 CREATE TABLE followers(
                     id INT PRIMARY KEY AUTO_INCREMENT,
-                    first_user_id INT NOT NULL,
-                    second_user_id INT NOT NULL,
-                    FOREIGN KEY (first_user_id) REFERENCES users(id) ON DELETE CASCADE,
-                    FOREIGN KEY (second_user_id) REFERENCES users(id) ON DELETE CASCADE
+                    first_user_username VARCHAR(64) NOT NULL,
+                    second_user_username VARCHAR(64) NOT NULL,
+                    FOREIGN KEY (first_user_username) REFERENCES users(user_name) ON DELETE CASCADE,
+                    FOREIGN KEY (second_user_username) REFERENCES users(user_name) ON DELETE CASCADE
 );
 
 CREATE TABLE quizzes(
@@ -79,7 +79,7 @@ CREATE TABLE question_pictures(
 CREATE TABLE quiz_question(
                     id INT PRIMARY KEY AUTO_INCREMENT,
                     quiz_id INT NOT NULL,
-                    question_id NOT NULL,
+                    question_id INT NOT NULL,
                     FOREIGN KEY (quiz_id) REFERENCES quizzes(id) ON DELETE CASCADE,
                     FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
 );
