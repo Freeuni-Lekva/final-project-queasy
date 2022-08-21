@@ -6,15 +6,10 @@ import com.queasy.dao.interfaces.ConnectionPool;
 import com.queasy.dao.interfaces.UserDao;
 import com.queasy.utility.constants.MyConstants;
 import com.queasy.utility.constants.StaticMethods;
-import junit.framework.TestCase;
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 
 public class TestUserDao  {
     private static ConnectionPool connectionPool;
@@ -40,7 +35,7 @@ public class TestUserDao  {
         Assert.assertFalse(userDao.addUser("bachi","123","@fd"));
         Assert.assertFalse(userDao.addUser("bareachi","123","@fead"));
 
-        StaticMethods.executeQuery(connectionPool,StaticMethods.deleteQuery(MyConstants.USERS_DATABASE,
+        StaticMethods.executeUpdateQuery(connectionPool,StaticMethods.deleteQuery(MyConstants.USERS_DATABASE,
                 MyConstants.USER_NAME + " = " + StaticMethods.apostropheString("bachi") + " OR " +
                 MyConstants.USER_NAME + " = " + StaticMethods.apostropheString("levan") + " OR " ));
 

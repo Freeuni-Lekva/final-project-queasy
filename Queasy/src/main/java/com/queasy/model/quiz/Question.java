@@ -2,19 +2,22 @@ package com.queasy.model.quiz;
 
 import com.queasy.utility.enums.QuestionType;
 
+import java.util.List;
+
 public class Question {
 
     private int id;
     private String text;
     private QuestionType questionType;
     private int creatorId;
+    private List<Pictures> pictures;
 
-
-    public Question(int id, String text, QuestionType questionType, int creatorId) {
+    public Question(int id, String text, QuestionType questionType, int creatorId, List<Pictures> pictures) {
         this.id = id;
         this.text = text;
         this.questionType = questionType;
         this.creatorId = creatorId;
+        this.pictures = pictures;
     }
 
     public int getId() {
@@ -43,5 +46,13 @@ public class Question {
 
     public void setCreatorId(int creatorId) {
         this.creatorId = creatorId;
+    }
+
+    public List<Pictures> getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(List<Pictures> pictures) {
+        this.pictures = pictures;
     }
 }

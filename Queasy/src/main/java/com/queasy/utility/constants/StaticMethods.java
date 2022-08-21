@@ -87,7 +87,7 @@ public final class StaticMethods {
         return query;
     }
 
-    public static boolean executeQuery(ConnectionPool connectionPool, String query) {
+    public static boolean executeUpdateQuery(ConnectionPool connectionPool, String query) {
         Connection con = connectionPool.acquireConnection();
         try {
             Statement statement = con.createStatement();

@@ -181,7 +181,7 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> getAllUsers() {
-        String[] columns = {MyConstants.USER_NAME};
+        String[] columns = {};
         String query = StaticMethods.selectQuery(MyConstants.USERS_DATABASE,columns,MyConstants.emptyString);
         List<User> users = new ArrayList();
         try {
