@@ -2,19 +2,18 @@ CREATE DATABASE IF NOT EXISTS queasy_database;
 USE queasy_database;
 
 
--- Drop Tables
-DROP TABLE IF EXISTS users;
+/* Drop Tables */
 DROP TABLE IF EXISTS mails;
 DROP TABLE IF EXISTS followers;
-DROP TABLE IF EXISTS quizzes;
-DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS answers;
 DROP TABLE IF EXISTS question_pictures;
 DROP TABLE IF EXISTS quiz_question;
+DROP TABLE IF EXISTS questions;
 DROP TABLE IF EXISTS games;
+DROP TABLE IF EXISTS quizzes;
+DROP TABLE IF EXISTS users;
 
-
--- Create Tables
+/* Create Tables */
 
 
 CREATE TABLE users(
