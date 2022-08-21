@@ -9,7 +9,9 @@ public class Mail {
     private String text;
     private Date date;
 
+    //username
     private String from;
+    //username
     private String to;
 
 
