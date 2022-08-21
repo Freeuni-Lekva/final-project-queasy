@@ -58,7 +58,7 @@ CREATE TABLE quizzes(
 CREATE TABLE questions(
                     id INT PRIMARY KEY AUTO_INCREMENT,
                     text VARCHAR(512),
-                    type VARCHAR(32) NOT NULL,
+                    question_type VARCHAR(32) NOT NULL,
                     creator_id INT,
                     FOREIGN KEY (creator_id) REFERENCES users(id) ON DELETE CASCADE
 
@@ -90,7 +90,7 @@ CREATE TABLE quiz_question(
 CREATE TABLE games(
                       id INT PRIMARY KEY AUTO_INCREMENT,
                       score INT,
-                      starting_date DATETIME NOT NULL,
+                      start_date DATETIME NOT NULL,
                       end_date DATETIME DEFAULT(CURRENT_TIMESTAMP),
                       user_name VARCHAR(64) NOT NULL,
                       quiz_id INT NOT NULL,
