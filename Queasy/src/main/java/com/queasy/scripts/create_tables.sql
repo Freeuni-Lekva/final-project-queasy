@@ -5,6 +5,7 @@ USE queasy_database;
 /* Drop Tables */
 DROP TABLE IF EXISTS mails;
 DROP TABLE IF EXISTS followers;
+DROP TABLE IF EXISTS answer_pictures;
 DROP TABLE IF EXISTS answers;
 DROP TABLE IF EXISTS question_pictures;
 DROP TABLE IF EXISTS quiz_question;
@@ -95,4 +96,10 @@ CREATE TABLE games(
                       quiz_id INT NOT NULL,
                       FOREIGN KEY (quiz_id) REFERENCES quizzes(id) ON DELETE CASCADE,
                       FOREIGN KEY (user_name) REFERENCES users(user_name) ON DELETE CASCADE
+);
+CREATE TABLE answer_pictures(
+                        id INT PRIMARY KEY AUTO_INCREMENT,
+                        picture VARCHAR(128) NOT NULL,
+                        answer_id INT NOT NULL,
+                        FOREIGN KEY (answer_id) REFERENCES answers(id) ON DELETE CASCADE
 );
