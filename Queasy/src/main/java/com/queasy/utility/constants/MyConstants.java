@@ -29,4 +29,50 @@ public final class MyConstants {
     public static final String FOLLOWERS_FIRST_USER_USERNAME = "first_user_username";
     public static final String FOLLOWERS_SECOND_USER_USERNAME = "second_user_username";
 
+    public static class AnswersDatabaseConstants {
+        public static String DATABASE = "answers";
+        public static String TEXT = "text";
+        public static String QUESTION_ID = "question_id";
+    }
+
+    public static class GameDatabaseConstants {
+        public static String DATABASE = "games";
+        public static String SCORE = "score";
+        public static String START_DATE = "start_date";
+        public static String END_DATE = "end_date";
+        public static String USER_NAME = "user_name";
+        public static String QUIZ_ID = "quiz_id";
+    }
+
+    public static class QuizDatabaseConstants {
+        public static String DATABASE = "quizzes";
+        public static String QUIZ_NAME = "quiz_name";
+        public static String CREATOR_ID = "creator_id";
+        public static String DESCRIPTION = "description";
+    }
+
+    public static class QuizQuestionsDatabaseConstants {
+        public static String DATABASE = "quiz_question";
+        public static String QUIZ_ID = "quiz_id";
+        public static String QUESTION_ID = "question_id";
+    }
+
+    public static class QuestionsDatabaseConstants {
+        public static String DATABASE = "questions";
+        public static String TEXT = "text";
+        public static String TYPE = "question_type";
+        public static String CREATOR_ID = "creator_id";
+    }
+
+    public static class QuestionsPicturesDatabaseConstants {
+        public static String DATABASE = "question_pictures";
+        public static String PICTURE = "picture";
+        public static String QUESTION_ID = "question_id";
+    }
+
+    public static class AnswersPicturesDatabaseConstants {
+        public static String DATABASE = "answer_pictures";
+        public static String PICTURE = "picture";
+        public static String ANSWER_ID = "answer_id";
+    }
 }
