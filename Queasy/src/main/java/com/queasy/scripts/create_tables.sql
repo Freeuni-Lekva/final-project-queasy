@@ -21,6 +21,7 @@ CREATE TABLE users(
                       user_name VARCHAR(64) NOT NULL,
                       user_password VARCHAR(64) NOT NULL,
                       mail VARCHAR(64),
+                      /*isAdmin can be added*/
                       CONSTRAINT user_name_unique_constraint UNIQUE(user_name),
                       CONSTRAINT mail_unique_constraint UNIQUE(mail)
 );
@@ -46,8 +47,10 @@ CREATE TABLE followers(
 
 CREATE TABLE quizzes(
                     id INT PRIMARY KEY AUTO_INCREMENT,
+                    quiz_name VARCHAR(64),
                     creator_id INT,
                     description VARCHAR(256),
+                    CONSTRAINT quiz_name_unique_constraing UNIQUE(quiz_name),
                     FOREIGN KEY (creator_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
