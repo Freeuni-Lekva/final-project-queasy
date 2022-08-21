@@ -7,7 +7,9 @@ public final class MyConstants {
 
     public static final String ID = "id";
 
+    public static final String USERNAME_MUST_NOT_CONTAIN = "@";
 
+    public static final String EMAIL_MUST_CONTAIN = "@";
     //users
     public static final String USERS_DATABASE = "users";
     public static final String USER_NAME = "user_name";
@@ -26,4 +28,5 @@ public final class MyConstants {
     public static final String FOLLOWERS_DATABASE = "followers";
     public static final String FOLLOWERS_FIRST_USER_USERNAME = "first_user_username";
     public static final String FOLLOWERS_SECOND_USER_USERNAME = "second_user_username";
+
 }

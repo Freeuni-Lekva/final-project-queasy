@@ -5,7 +5,6 @@ import com.queasy.dao.interfaces.FollowingDao;
 import com.queasy.model.user.User;
 import com.queasy.utility.constants.MyConstants;
 import com.queasy.utility.constants.StaticMethods;
-import sun.nio.cs.ext.MacUkraine;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

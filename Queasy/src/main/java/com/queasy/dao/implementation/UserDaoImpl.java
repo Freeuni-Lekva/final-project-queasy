@@ -101,7 +101,9 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean addUser(String userName, String password, String email) {
-        if(checkFreeUserName(userName) && checkFreeMail(email)){
+        if(checkFreeUserName(userName) && checkFreeMail(email)
+                && !userName.contains(MyConstants.USERNAME_MUST_NOT_CONTAIN) && //these to may be put in other place
+                email.contains(MyConstants.EMAIL_MUST_CONTAIN)){
             String apostropheUserName = StaticMethods.apostropheString(userName);
             String apostrophePassword = StaticMethods.apostropheString(password);
             String apostropheEmail = StaticMethods.apostropheString(email);

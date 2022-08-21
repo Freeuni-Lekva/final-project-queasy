@@ -1,5 +1,11 @@
 package com.queasy.utility.constants;
 
+import com.queasy.dao.interfaces.ConnectionPool;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+import java.sql.Statement;
+
 public final class StaticMethods {
 
     public static boolean isEmail(String value){
@@ -72,5 +78,29 @@ public final class StaticMethods {
         return query;
     }
 
+    public static String deleteQuery(String tableName, String condition) {
+        String query = "DELETE FROM " + tableName + " ";
+        if (!condition.equals(MyConstants.emptyString)) {
+            query += condition;
+        }
+        query += ";";
+        return query;
+    }
+
+    public static boolean executeQuery(ConnectionPool connectionPool, String query) {
+        Connection con = connectionPool.acquireConnection();
+        try {
+            Statement statement = con.createStatement();
+            if(statement.executeUpdate(query) > 0) {
+                connectionPool.releaseConnection(con);
+                return true;
+            }
+            connectionPool.releaseConnection(con);
+
+        } catch (SQLException e) {
+            return false;
+        }
+        return false;
+    }
 
 }
