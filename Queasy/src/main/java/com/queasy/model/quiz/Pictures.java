@@ -1,2 +1,4 @@
-package com.queasy.model.quiz;public class Pictures {
+package com.queasy.model.quiz;
+
+public class Pictures {
 }

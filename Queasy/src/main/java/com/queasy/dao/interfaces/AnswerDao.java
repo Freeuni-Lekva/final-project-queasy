@@ -6,5 +6,6 @@ import java.util.List;
 
 public interface AnswerDao {
 
-    List<Answer> getAllAnswers(int questionId);
+    List<Answer> getAllAnswersOf(int questionId);
+
 }

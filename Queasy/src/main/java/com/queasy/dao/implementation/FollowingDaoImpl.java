@@ -20,8 +20,7 @@ public class FollowingDaoImpl implements FollowingDao {
     public FollowingDaoImpl(ConnectionPool connectionPool) {
         this.connectionPool = connectionPool;
     }
-    private List<User> getFollowingHelper(String query)
-    {
+    private List<User> getFollowingHelper(String query) {
         List<User> users = new ArrayList();
         try {
             Connection con = connectionPool.acquireConnection();

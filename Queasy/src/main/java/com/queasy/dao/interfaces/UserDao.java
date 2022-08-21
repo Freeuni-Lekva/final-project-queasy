@@ -4,6 +4,8 @@ import com.queasy.model.user.User;
 
 import java.util.List;
 
+//TODO: უნდა დავამატო პირველი  n  ცალი რომ ამოიღოს ან რაღაც რეინჯში
+
 public interface UserDao {
 
     User getUser(int id);
@@ -19,6 +21,7 @@ public interface UserDao {
 
     boolean updateUserName(String oldUserName, String newUserName);
 
+    //TODO: უნდა დავამატო პირველი  n  ცალი რომ ამოიღოს ან რაღაც რეინჯში
     List<User> getAllUsers();
 
 }

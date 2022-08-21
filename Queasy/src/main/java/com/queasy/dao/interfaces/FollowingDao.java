@@ -5,6 +5,7 @@ import com.queasy.model.user.User;
 import java.util.List;
 
 
+//TODO: უნდა დავამატო პირველი  n  ცალი რომ ამოიღოს ან რაღაც რეინჯში
 
 public interface FollowingDao {
 

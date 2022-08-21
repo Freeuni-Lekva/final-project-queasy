@@ -3,6 +3,7 @@ package com.queasy.dao.interfaces;
 import com.queasy.model.user.Mail;
 
 import java.util.List;
+//TODO: უნდა დავამატო პირველი  n  ცალი რომ ამოიღოს ან რაღაც რეინჯში
 
 public interface MailDao {
 
@@ -15,6 +16,7 @@ public interface MailDao {
     List<Mail> getReceivedMails(String fromUserName,String toUserName);
 
     List<Mail> getEmailById(int id);
+
 
     // List<Mail> getSentMails(String email);
 
