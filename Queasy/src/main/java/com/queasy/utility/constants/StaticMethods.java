@@ -9,7 +9,7 @@ import java.sql.Statement;
 public final class StaticMethods {
 
     public static boolean isEmail(String value){
-        if (value.contains("@"))
+        if (value.contains(MyConstants.EMAIL_MUST_CONTAIN))
             return true;
         return false;
     }
@@ -81,7 +81,7 @@ public final class StaticMethods {
     public static String deleteQuery(String tableName, String condition) {
         String query = "DELETE FROM " + tableName + " ";
         if (!condition.equals(MyConstants.emptyString)) {
-            query += condition;
+            query += " WHERE " + condition;
         }
         query += ";";
         return query;
@@ -91,7 +91,9 @@ public final class StaticMethods {
         Connection con = connectionPool.acquireConnection();
         try {
             Statement statement = con.createStatement();
+            System.out.println(query);
             if(statement.executeUpdate(query) > 0) {
+                System.out.println("entered");
                 connectionPool.releaseConnection(con);
                 return true;
             }
@@ -101,6 +103,11 @@ public final class StaticMethods {
             return false;
         }
         return false;
+    }
+    public static java.sql.Date returnJavaSqlDate(java.util.Date date) {
+        Long millis = date.getTime();
+        java.sql.Date sqlDate = new java.sql.Date(millis);
+        return sqlDate;
     }
 
 }

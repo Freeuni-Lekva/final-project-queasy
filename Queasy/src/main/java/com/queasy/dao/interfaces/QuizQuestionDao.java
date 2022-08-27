@@ -9,5 +9,5 @@ public interface QuizQuestionDao {
 
     List<Question> getQuestionsOf(int quizId);
 
-    Quiz getQuizOfQuestion(int questionId);
+//    Quiz getQuizOfQuestion(int questionId);
 }

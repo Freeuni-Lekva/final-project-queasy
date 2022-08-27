@@ -2,6 +2,8 @@ package com.queasy.utility.constants;
 
 public final class MyConstants {
 
+    public static final String dateFormat = "yyyy-mm-dd";
+
     public static final String emptyString = "";
     public static final String emptyQuery = "";
 

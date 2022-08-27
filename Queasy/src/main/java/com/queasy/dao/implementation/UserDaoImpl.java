@@ -57,7 +57,6 @@ public class UserDaoImpl implements UserDao {
         Connection con = connectionPool.acquireConnection();
         String query = "SELECT * FROM " + MyConstants.USERS_DATABASE
                 + " WHERE " + searchFor + " = " + StaticMethods.apostropheString(userNameOrEmail) + ";";
-
         User user = getUserHelper(con,query);
         connectionPool.releaseConnection(con);
         return user;

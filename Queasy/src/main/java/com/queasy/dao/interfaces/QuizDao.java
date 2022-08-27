@@ -16,8 +16,10 @@ public interface QuizDao {
 
     User getCreator(int quizId);
 
+    Quiz getQuiz(int quizId);
+
     //to get specific type of questions (might delete later...)
-    List<Question> getQuestionByType(QuestionType qt);
+    //List<Question> getQuestionsByType(QuestionType qt);
 
 
     //TODO: უნდა დავამატო პირველი  n  ცალი რომ ამოიღოს ან რაღაც რეინჯში, WHERE უნდა დავუმატო კიდევ ყველას ამოღებისას ალბათ

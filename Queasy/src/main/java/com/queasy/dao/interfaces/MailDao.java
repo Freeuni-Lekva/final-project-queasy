@@ -15,12 +15,7 @@ public interface MailDao {
 
     List<Mail> getReceivedMails(String fromUserName,String toUserName);
 
-    List<Mail> getEmailById(int id);
-
-
-    // List<Mail> getSentMails(String email);
-
-    //List<Mail> getReceivedMails(String email);
+    Mail getEmailById(int id);
 
     boolean addMail(Mail mail);
 

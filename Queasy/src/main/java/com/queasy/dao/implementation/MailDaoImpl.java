@@ -6,10 +6,7 @@ import com.queasy.model.user.Mail;
 import com.queasy.utility.constants.MyConstants;
 import com.queasy.utility.constants.StaticMethods;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -82,35 +79,40 @@ public class MailDaoImpl implements MailDao {
         return getSentMails(toUserName,fromUserName);
     }
 
+
+    //TODO: List არ უნდა იყო Mail უნდა ბრუნდებოდეს
     @Override
-    public List<Mail> getEmailById(int id) {
+    public Mail getEmailById(int id) {
         String[] columns = {};
         String condition = MyConstants.ID + " = " + Integer.toString(id);
         String query = StaticMethods.selectQuery(MyConstants.MAILS_DATABASE,
                 columns,
                 condition);
-
-        return getMailsHelper(query);
+        List<Mail> mails = getMailsHelper(query);
+        return mails.size() != 0 ? mails.get(0) : null;
     }
 
+    //TODO: to add date
     @Override
     public boolean addMail(Mail mail) {
-        String[] columns = {MyConstants.MAILS_SUBJECT,
-                            MyConstants.MAILS_TEXT,
-                            MyConstants.MAILS_FROM_USER_NAME,
-                            MyConstants.MAILS_TO_USER_NAME};
-        String[] values = {StaticMethods.apostropheString(mail.getSubject()),
-                StaticMethods.apostropheString(mail.getText()),
-                StaticMethods.apostropheString(mail.getFrom()),
-                StaticMethods.apostropheString(mail.getTo())};
-        String query = StaticMethods.insertQuery(MyConstants.MAILS_DATABASE,
-                                                columns,
-                                                values);
+
+        String sql = "INSERT INTO " + MyConstants.MAILS_DATABASE + " ( "+
+                                 MyConstants.MAILS_FROM_USER_NAME + " , " +
+                                 MyConstants.MAILS_TO_USER_NAME + " , " +
+                                 MyConstants.MAILS_DATE + " , " +
+                                 MyConstants.MAILS_SUBJECT + " , " +
+                                 MyConstants.MAILS_TEXT + " ) "  + "  " +
+                     "VALUES ( ? , ? , ? , ? , ? );";
 
         Connection con = connectionPool.acquireConnection();
-        try {
-            Statement statement = con.createStatement();
-            if(statement.executeUpdate(query) > 0) {
+
+        try (PreparedStatement statement = con.prepareStatement(sql)){
+            statement.setString(1,mail.getFrom());
+            statement.setString(2,mail.getTo());
+            statement.setDate(3, StaticMethods.returnJavaSqlDate(mail.getDate()));
+            statement.setString(4,mail.getSubject());
+            statement.setString(5,mail.getText());
+            if(statement.executeUpdate() > 0) {
                 connectionPool.releaseConnection(con);
                 return true;
             }

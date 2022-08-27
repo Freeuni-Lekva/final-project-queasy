@@ -12,7 +12,7 @@ public class Question {
     private int creatorId;
     private List<Pictures> pictures;
 
-    public Question(int id, String text, QuestionType questionType, int creatorId, List<Pictures> pictures) {
+    public Question(int id, String text, QuestionType questionType, int creatorId, List<Pictures> pictures ) {
         this.id = id;
         this.text = text;
         this.questionType = questionType;

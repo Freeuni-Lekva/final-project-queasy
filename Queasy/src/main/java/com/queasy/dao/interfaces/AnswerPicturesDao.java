@@ -4,6 +4,6 @@ import com.queasy.model.quiz.Pictures;
 
 import java.util.List;
 
-public interface AnswerPictures {
+public interface AnswerPicturesDao {
     List<Pictures> getPicturesOfAnswer(int answerId);
 }

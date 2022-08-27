@@ -3,39 +3,110 @@ package com.queasy.dao.implementation;
 import com.queasy.dao.interfaces.ConnectionPool;
 import com.queasy.dao.interfaces.GameDao;
 import com.queasy.model.game.Game;
+import com.queasy.utility.constants.MyConstants;
+import com.queasy.utility.constants.StaticMethods;
 
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class GameDaoImpl implements GameDao {
 
     private ConnectionPool connectionPool;
-
     public GameDaoImpl(ConnectionPool connectionPool) {
         this.connectionPool = connectionPool;
     }
 
+    private List<Game> getListFunc(String query) {
+        List<Game> games = new ArrayList();
+        try {
+            Connection con = connectionPool.acquireConnection();
+            Statement statement = con.createStatement();
+            ResultSet res = statement.executeQuery(query);
+            while(res.next()) {
+                games.add(new Game(res.getInt(MyConstants.ID),
+                                   res.getInt(MyConstants.GameDatabaseConstants.SCORE),
+                                   res.getDate(MyConstants.GameDatabaseConstants.START_DATE),
+                                   res.getDate(MyConstants.GameDatabaseConstants.END_DATE),
+                                   res.getString(MyConstants.GameDatabaseConstants.USER_NAME),
+                                   res.getInt(MyConstants.GameDatabaseConstants.QUIZ_ID)
+
+                        ));
+            }
+            connectionPool.releaseConnection(con);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return games;
+    }
+
+
     @Override
     public List<Game> getAllGamesOf(String userName) {
-        return null;
+        String[] columns = {};
+        String condition = " WHERE " + MyConstants.GameDatabaseConstants.USER_NAME +
+                           " = " + StaticMethods.apostropheString(userName);
+        String query = StaticMethods.selectQuery(MyConstants.GameDatabaseConstants.DATABASE,columns,condition);
+        List<Game> answer = getListFunc(query);
+        return answer;
     }
 
     @Override
     public List<Game> getAllGames(int quizId) {
-        return null;
+        String[] columns = {};
+        String condition = " WHERE " + MyConstants.GameDatabaseConstants.QUIZ_ID + " = " + quizId;
+        String query = StaticMethods.selectQuery(MyConstants.GameDatabaseConstants.DATABASE,columns,condition);
+        List<Game> answer = getListFunc(query);
+        return answer;
     }
 
     @Override
     public Game getGame(int gameId) {
-        return null;
+        String[] columns = {};
+        String condition = " WHERE " + MyConstants.ID + " = " + gameId;
+        String query = StaticMethods.selectQuery(MyConstants.GameDatabaseConstants.DATABASE,columns,condition);
+        List<Game> answer = getListFunc(query);
+        return answer.size() > 0 ? answer.get(0) : null;
     }
 
     @Override
     public int getScore(int gameId) {
-        return 0;
+        Game game = getGame(gameId);
+        if (game == null) {
+            return -1;
+        }
+        return game.getScore();
     }
 
     @Override
     public boolean addGame(Game game) {
+        String sql = "INSERT INTO " + MyConstants.GameDatabaseConstants.DATABASE + " ( "+
+                MyConstants.GameDatabaseConstants.QUIZ_ID + " , " +
+                MyConstants.GameDatabaseConstants.SCORE + " , " +
+                MyConstants.GameDatabaseConstants.USER_NAME + " , " +
+                MyConstants.GameDatabaseConstants.START_DATE + " , " +
+                MyConstants.GameDatabaseConstants.END_DATE + " ) "  + "  " +
+                "VALUES ( ? , ? , ? , ? , ? );";
+
+        Connection con = connectionPool.acquireConnection();
+
+        try (PreparedStatement statement = con.prepareStatement(sql)){
+            statement.setInt(1,game.getQuizId());
+            statement.setInt(2,game.getScore());
+            statement.setString(3,game.getUserName());
+            statement.setDate(4, StaticMethods.returnJavaSqlDate(game.getStartDate()));
+            statement.setDate(5, StaticMethods.returnJavaSqlDate(game.getEndDate()));
+
+            if(statement.executeUpdate() > 0) {
+                connectionPool.releaseConnection(con);
+                return true;
+            }
+            connectionPool.releaseConnection(con);
+
+        } catch (SQLException e) {
+            return false;
+        }
         return false;
     }
 }

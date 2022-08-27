@@ -7,6 +7,8 @@ import com.queasy.dao.interfaces.ConnectionPool;
 import org.junit.Before;
 import org.junit.Test;
 
+
+
 public class TestAnswerDao {
     private static ConnectionPool connectionPool;
     private static AnswerDao answerDao;

@@ -51,7 +51,7 @@ CREATE TABLE quizzes(
                     quiz_name VARCHAR(64),
                     creator_id INT,
                     description VARCHAR(256),
-                    CONSTRAINT quiz_name_unique_constraing UNIQUE(quiz_name),
+                    CONSTRAINT quiz_name_unique_constraint UNIQUE(quiz_name),
                     FOREIGN KEY (creator_id) REFERENCES users(id) ON DELETE CASCADE
 );
 
@@ -73,7 +73,7 @@ CREATE TABLE answers(
 
 CREATE TABLE question_pictures(
                     id INT PRIMARY KEY AUTO_INCREMENT,
-                    picture VARCHAR(128) NOT NULL,
+                    picture VARCHAR(1024) NOT NULL,
                     question_id INT NOT NULL,
                     FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
 
@@ -99,7 +99,7 @@ CREATE TABLE games(
 );
 CREATE TABLE answer_pictures(
                         id INT PRIMARY KEY AUTO_INCREMENT,
-                        picture VARCHAR(128) NOT NULL,
+                        picture VARCHAR(1024) NOT NULL,
                         answer_id INT NOT NULL,
                         FOREIGN KEY (answer_id) REFERENCES answers(id) ON DELETE CASCADE
 );
