@@ -1,14 +1,22 @@
 package com.queasy.model.quiz;
 
+import java.util.List;
+
 public class Answer {
     private int id;
     private String text;
     private int questionId;
 
-    public Answer(int id, String text, int questionId) {
+    private List<Pictures> pictures;
+
+    private String isRightAnswer;
+
+    public Answer(int id, String text, String isRightAnswer, int questionId, List<Pictures> pictures) {
         this.id = id;
         this.text = text;
         this.questionId = questionId;
+        this.pictures = pictures;
+        this.isRightAnswer = isRightAnswer;
     }
 
     public int getId() {
@@ -29,5 +37,21 @@ public class Answer {
 
     public void setQuestionId(int questionId) {
         this.questionId = questionId;
+    }
+
+    public List<Pictures> getPictures() {
+        return pictures;
+    }
+
+    public void setPictures(List<Pictures> pictures) {
+        this.pictures = pictures;
+    }
+
+    public String getIsRightAnswer() {
+        return isRightAnswer;
+    }
+
+    public void setIsRightAnswer(String isRightAnswer) {
+        this.isRightAnswer = isRightAnswer;
     }
 }
