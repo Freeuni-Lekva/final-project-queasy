@@ -27,5 +27,6 @@ public class TestAnswerPicturesDao {
                 answerPicturesDao.getPicturesOfAnswer(1).get(0).getPicture().equals("https://qph.cf2.quoracdn.net/main-qimg-7503bd66ded5565e873c4c2f2ccbc8ad-lq"));
         Assert.assertTrue(answerPicturesDao.getPicturesOfAnswer(1).get(1).getPicture().equals("https://www.thesprucepets.com/thmb/jwooso-kgF7r5gYS3H3p8fsbTHk=/941x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-135630198-5ba7d225c9e77c0050cff91b.jpg") ||
                 answerPicturesDao.getPicturesOfAnswer(1).get(1).getPicture().equals("https://qph.cf2.quoracdn.net/main-qimg-7503bd66ded5565e873c4c2f2ccbc8ad-lq"));
+        Assert.assertFalse(answerPicturesDao.getPicturesOfAnswer(6).size() == 1);
     }
 }
