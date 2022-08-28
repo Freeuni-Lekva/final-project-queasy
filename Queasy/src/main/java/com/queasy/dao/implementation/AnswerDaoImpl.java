@@ -1,6 +1,7 @@
 package com.queasy.dao.implementation;
 
 import com.queasy.dao.interfaces.AnswerDao;
+import com.queasy.dao.interfaces.AnswerPicturesDao;
 import com.queasy.dao.interfaces.ConnectionPool;
 import com.queasy.model.quiz.Answer;
 import com.queasy.model.user.User;
@@ -29,20 +30,30 @@ public class AnswerDaoImpl implements AnswerDao {
                                                  columns,
                                                  MyConstants.emptyString);
         List<Answer> answers = new ArrayList();
+        Connection con = connectionPool.acquireConnection();
         try {
-            Connection con = connectionPool.acquireConnection();
+            AnswerPicturesDao pictures = new AnswerPicturesDaoImpl(connectionPool);
             Statement statement = con.createStatement();
             ResultSet res = statement.executeQuery(query);
             while(res.next()) {
-                answers.add(new Answer(res.getInt(MyConstants.ID),
+                int id = res.getInt(MyConstants.ID);
+                answers.add(new Answer(id,
                         res.getString(MyConstants.AnswersDatabaseConstants.TEXT),
-                        res.getInt(MyConstants.AnswersDatabaseConstants.QUESTION_ID)));
+                        res.getString(MyConstants.AnswersDatabaseConstants.IS_RIGHT_ANSWER),
+                        res.getInt(MyConstants.AnswersDatabaseConstants.QUESTION_ID),
+                        pictures.getPicturesOfAnswer(id)));
+
             }
-            connectionPool.releaseConnection(con);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        connectionPool.releaseConnection(con);
         return answers;
+    }
+
+    @Override
+    public List<Answer> getAllRightAnswersOf(int questionId) {
+        return null;
     }
 }

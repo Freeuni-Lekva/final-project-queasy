@@ -31,9 +31,9 @@ INSERT INTO quiz_question(quiz_id,question_id)
 
 /* answers table */
 INSERT INTO answers(text,question_id)
-       VALUES ('Some Text',1);
+       VALUES ('some Text',1,'Y');
 INSERT INTO answers(text,question_id)
-       VALUES ('second Some Text',1);
+       VALUES ('second Some Text',1,'N');
 
 /* question_pictures */
 INSERT INTO question_pictures(picture,question_id)

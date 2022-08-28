@@ -68,6 +68,7 @@ CREATE TABLE answers(
                     id INT PRIMARY KEY AUTO_INCREMENT,
                     text varchar(512),
                     question_id INT NOT NULL,
+                    is_right_answer VARCHAR(1)  NOT NULL,
                     FOREIGN KEY (question_id) REFERENCES questions(id) ON DELETE CASCADE
 );
 

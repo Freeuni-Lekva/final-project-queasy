@@ -35,6 +35,7 @@ public final class MyConstants {
         public static String DATABASE = "answers";
         public static String TEXT = "text";
         public static String QUESTION_ID = "question_id";
+        public static String IS_RIGHT_ANSWER = "is_right_answer";
     }
 
     public static class GameDatabaseConstants {

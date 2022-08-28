@@ -8,4 +8,6 @@ public interface AnswerDao {
 
     List<Answer> getAllAnswersOf(int questionId);
 
+    List<Answer> getAllRightAnswersOf(int questionId);
+
 }
