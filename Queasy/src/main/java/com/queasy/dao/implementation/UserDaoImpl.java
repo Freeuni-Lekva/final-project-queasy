@@ -90,11 +90,12 @@ public class UserDaoImpl implements UserDao {
                 connectionPool.releaseConnection(con);
                 return true;
             }
-            connectionPool.releaseConnection(con);
+
 
         } catch (SQLException e) {
-            return false;
+            e.printStackTrace();
         }
+        connectionPool.releaseConnection(con);
         return false;
     }
 
@@ -183,8 +184,9 @@ public class UserDaoImpl implements UserDao {
         String[] columns = {};
         String query = StaticMethods.selectQuery(MyConstants.USERS_DATABASE,columns,MyConstants.emptyString);
         List<User> users = new ArrayList();
+        Connection con = connectionPool.acquireConnection();
         try {
-            Connection con = connectionPool.acquireConnection();
+
             Statement statement = con.createStatement();
             ResultSet res = statement.executeQuery(query);
             while(res.next()) {
@@ -192,11 +194,11 @@ public class UserDaoImpl implements UserDao {
                         res.getString(MyConstants.USER_MAIL),
                         res.getString(MyConstants.USER_PASSWORD)));
             }
-            connectionPool.releaseConnection(con);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        connectionPool.releaseConnection(con);
         return users;
     }
 }
