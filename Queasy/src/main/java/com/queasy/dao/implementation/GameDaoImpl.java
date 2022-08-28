@@ -19,8 +19,8 @@ public class GameDaoImpl implements GameDao {
 
     private List<Game> getListFunc(String query) {
         List<Game> games = new ArrayList();
+        Connection con = connectionPool.acquireConnection();
         try {
-            Connection con = connectionPool.acquireConnection();
             Statement statement = con.createStatement();
             ResultSet res = statement.executeQuery(query);
             while(res.next()) {
@@ -33,11 +33,11 @@ public class GameDaoImpl implements GameDao {
 
                         ));
             }
-            connectionPool.releaseConnection(con);
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
+        connectionPool.releaseConnection(con);
         return games;
     }
 
@@ -102,11 +102,11 @@ public class GameDaoImpl implements GameDao {
                 connectionPool.releaseConnection(con);
                 return true;
             }
-            connectionPool.releaseConnection(con);
-
         } catch (SQLException e) {
+            connectionPool.releaseConnection(con);
             return false;
         }
+        connectionPool.releaseConnection(con);
         return false;
     }
 }

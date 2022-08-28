@@ -20,8 +20,8 @@ public class MailDaoImpl implements MailDao {
     private List<Mail> getMailsHelper(String query)
     {
         List<Mail> mails = new ArrayList();
+        Connection con = connectionPool.acquireConnection();
         try {
-            Connection con = connectionPool.acquireConnection();
             Statement statement = con.createStatement();
             ResultSet res = statement.executeQuery(query);
             while(res.next()) {
@@ -35,6 +35,7 @@ public class MailDaoImpl implements MailDao {
             connectionPool.releaseConnection(con);
             return mails;
         } catch (SQLException e) {
+            connectionPool.releaseConnection(con);
             return mails;
         }
     }
@@ -116,11 +117,12 @@ public class MailDaoImpl implements MailDao {
                 connectionPool.releaseConnection(con);
                 return true;
             }
-            connectionPool.releaseConnection(con);
 
         } catch (SQLException e) {
+            connectionPool.releaseConnection(con);
             return false;
         }
+        connectionPool.releaseConnection(con);
         return false;
 
     }

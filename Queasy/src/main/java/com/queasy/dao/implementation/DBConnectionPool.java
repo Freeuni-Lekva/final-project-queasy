@@ -14,16 +14,18 @@ public class DBConnectionPool implements ConnectionPool{
     private static final String DB_PASSWORD = "root";
     private static final String DB_URL = "jdbc:mysql://localhost:3306/queasy_database";
     private static final String DB_DRIVER_CLASS = "com.mysql.jdbc.Driver";
-    private static final int MAX_CONNECTIONS = 50;
+    private static final int MAX_CONNECTIONS = 8;
     private static final int MIN_CONNECTIONS = 1;
     private static BasicDataSource dataSource;
     private static DBConnectionPool connectionPool;
 
     private ArrayBlockingQueue<Connection> connections;
     private int numberOfConnections;
+
     private DBConnectionPool(int numberOfConnections) {
 
         this.numberOfConnections = (numberOfConnections > MAX_CONNECTIONS ) ? MAX_CONNECTIONS : numberOfConnections;
+        this.numberOfConnections = (numberOfConnections < MIN_CONNECTIONS ) ? MIN_CONNECTIONS : this.numberOfConnections;
 
         connections = new ArrayBlockingQueue<>(this.numberOfConnections);
         try{

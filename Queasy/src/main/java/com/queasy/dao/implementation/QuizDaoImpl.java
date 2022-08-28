@@ -98,7 +98,8 @@ public class QuizDaoImpl implements QuizDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-       return null;
+        connectionPool.releaseConnection(con);
+        return null;
     }
 
     @Override
@@ -127,7 +128,7 @@ public class QuizDaoImpl implements QuizDao {
                 StaticMethods.selectQuery(MyConstants.QuizDatabaseConstants.DATABASE,
                                           columns,
                                  ""));
-
+        connectionPool.releaseConnection(con);
         return quizzes;
     }
 }

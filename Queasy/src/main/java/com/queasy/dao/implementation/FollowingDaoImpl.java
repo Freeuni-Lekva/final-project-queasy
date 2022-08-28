@@ -22,8 +22,9 @@ public class FollowingDaoImpl implements FollowingDao {
     }
     private List<User> getFollowingHelper(String query) {
         List<User> users = new ArrayList();
+        Connection con = connectionPool.acquireConnection();
         try {
-            Connection con = connectionPool.acquireConnection();
+
             Statement statement = con.createStatement();
             ResultSet res = statement.executeQuery(query);
             while(res.next()) {
@@ -34,6 +35,7 @@ public class FollowingDaoImpl implements FollowingDao {
             connectionPool.releaseConnection(con);
             return users;
         } catch (SQLException e) {
+            connectionPool.releaseConnection(con);
             return users;
         }
     }
@@ -77,11 +79,12 @@ public class FollowingDaoImpl implements FollowingDao {
                 connectionPool.releaseConnection(con);
                 return true;
             }
-            connectionPool.releaseConnection(con);
 
         } catch (SQLException e) {
+            connectionPool.releaseConnection(con);
             return false;
         }
+        connectionPool.releaseConnection(con);
         return false;
     }
 

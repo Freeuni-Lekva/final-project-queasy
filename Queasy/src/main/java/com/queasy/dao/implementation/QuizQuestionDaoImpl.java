@@ -50,6 +50,8 @@ public class QuizQuestionDaoImpl implements QuizQuestionDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        connectionPool.releaseConnection(con);
+
         return questions;
     }
 

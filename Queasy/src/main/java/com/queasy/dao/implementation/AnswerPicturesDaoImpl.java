@@ -31,11 +31,12 @@ public class AnswerPicturesDaoImpl implements AnswerPicturesDao {
             ResultSet res = statement.executeQuery(query);
             while(res.next()) {
                 pictures.add(new Pictures(res.getInt(MyConstants.ID),
-                        res.getString(MyConstants.QuestionsPicturesDatabaseConstants.PICTURE)));
+                        res.getString(MyConstants.AnswersPicturesDatabaseConstants.PICTURE)));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        connectionPool.releaseConnection(con);
         return pictures;
     }
 }

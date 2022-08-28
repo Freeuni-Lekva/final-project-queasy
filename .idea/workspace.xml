@@ -10,29 +10,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="505333db-48ce-437d-b26a-b117a4278730" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/AnswerPicturesDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuestionPicturesDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizQuestionDaoImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestAnswerPicturesDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestQuestionsPicturesDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/AnswerDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/AnswerDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/AnswerPicturesDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/AnswerPicturesDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/DBConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/DBConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/FollowingDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/FollowingDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/GameDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/GameDaoImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/MailDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/MailDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/UserDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/AnswerPictures.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/AnswerPicturesDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/MailDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/MailDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/QuestionPictures.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/QuestionPicturesDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/QuizDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/QuizDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/QuizQuestionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/QuizQuestionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/model/quiz/Question.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/model/quiz/Question.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/model/quiz/Quiz.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/model/quiz/Quiz.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuestionPicturesDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuestionPicturesDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizQuestionDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizQuestionDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/AnswerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/AnswerDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/model/quiz/Answer.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/model/quiz/Answer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/scripts/create_tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/scripts/create_tables.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/scripts/insert_starting_rows_for_testing.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/scripts/insert_starting_rows_for_testing.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/MyConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/MyConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/StaticMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/StaticMethods.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/enums/QuestionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/enums/QuestionType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestAnswerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestAnswerDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestUserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestUserDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +81,38 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="JUnit.TestQuestionsPicturesDao">
+  <component name="RunManager" selected="JUnit.TestAnswerDao.testGetAllAnswers">
+    <configuration name="TestAnswerDao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Queasy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.queasy.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.queasy.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.queasy.dao.TestAnswerDao" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestAnswerDao.testGetAllAnswers" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Queasy" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.queasy.dao.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.queasy.dao" />
+      <option name="MAIN_CLASS_NAME" value="com.queasy.dao.TestAnswerDao" />
+      <option name="METHOD_NAME" value="testGetAllAnswers" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestAnswerPicturesDao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Queasy" />
       <extension name="coverage">
@@ -106,7 +128,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestMailDao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAnswerPicturesDao.testGetPicturesOfAnswer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Queasy" />
       <extension name="coverage">
         <pattern>
@@ -115,39 +137,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.queasy.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.queasy.dao.TestMailDao" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestMailDao.testAddMail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Queasy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.queasy.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.queasy.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.queasy.dao.TestMailDao" />
-      <option name="METHOD_NAME" value="testAddMail" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TestMailDao.testGetMailById" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Queasy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.queasy.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.queasy.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.queasy.dao.TestMailDao" />
-      <option name="METHOD_NAME" value="testGetMailById" />
+      <option name="MAIN_CLASS_NAME" value="com.queasy.dao.TestAnswerPicturesDao" />
+      <option name="METHOD_NAME" value="testGetPicturesOfAnswer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -208,11 +199,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestQuestionsPicturesDao" />
+        <item itemvalue="JUnit.TestAnswerDao.testGetAllAnswers" />
+        <item itemvalue="JUnit.TestAnswerDao" />
+        <item itemvalue="JUnit.TestAnswerPicturesDao.testGetPicturesOfAnswer" />
         <item itemvalue="JUnit.TestAnswerPicturesDao" />
-        <item itemvalue="JUnit.TestMailDao" />
-        <item itemvalue="JUnit.TestMailDao.testAddMail" />
-        <item itemvalue="JUnit.TestMailDao.testGetMailById" />
+        <item itemvalue="JUnit.TestQuestionsPicturesDao" />
       </list>
     </recent_temporary>
   </component>
@@ -244,7 +235,8 @@
       <workItem from="1661104791071" duration="7910000" />
       <workItem from="1661273798625" duration="7247000" />
       <workItem from="1661364511626" duration="10766000" />
-      <workItem from="1661601559964" duration="10229000" />
+      <workItem from="1661601559964" duration="11207000" />
+      <workItem from="1661613608758" duration="4119000" />
     </task>
     <servers />
   </component>
@@ -267,8 +259,68 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/MailDaoImpl.java</url>
-          <line>115</line>
+          <line>116</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/AnswerPicturesDaoImpl.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestAnswerPicturesDao.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/AnswerPicturesDaoImpl.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/AnswerPicturesDaoImpl.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/AnswerPicturesDaoImpl.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/AnswerPicturesDaoImpl.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/AnswerPicturesDaoImpl.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestAnswerDao.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestAnswerDao.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/DBConnectionPool.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/DBConnectionPool.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/DBConnectionPool.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="27" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

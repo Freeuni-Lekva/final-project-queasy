@@ -39,6 +39,8 @@ public class QuestionPicturesDaoImpl implements QuestionPicturesDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        connectionPool.releaseConnection(con);
+
         return pictures;
     }
 }
