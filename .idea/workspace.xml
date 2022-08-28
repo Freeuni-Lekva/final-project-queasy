@@ -10,8 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="505333db-48ce-437d-b26a-b117a4278730" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestGameDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestFollowingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestFollowingDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestGameDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestGameDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestQuestionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestQuestionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestQuizDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestQuizDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestQuizQuestionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestQuizQuestionDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +72,11 @@
     ]
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.queasy.dao" />
+    </key>
+  </component>
   <component name="RunManager" selected="JUnit.TestAnswerDao.testGetAllAnswers">
     <configuration name="TestAnswerDao" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Queasy" />
@@ -225,7 +233,7 @@
       <workItem from="1661364511626" duration="10766000" />
       <workItem from="1661601559964" duration="11207000" />
       <workItem from="1661613608758" duration="9448000" />
-      <workItem from="1661683876175" duration="596000" />
+      <workItem from="1661683876175" duration="1133000" />
     </task>
     <servers />
   </component>
