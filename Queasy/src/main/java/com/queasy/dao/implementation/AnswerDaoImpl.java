@@ -14,6 +14,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class AnswerDaoImpl implements AnswerDao {
 
@@ -54,6 +55,6 @@ public class AnswerDaoImpl implements AnswerDao {
 
     @Override
     public List<Answer> getAllRightAnswersOf(int questionId) {
-        return null;
+        return getAllAnswersOf(questionId).stream().filter(curr -> curr.getIsRightAnswer().toLowerCase().equals("y")).collect(Collectors.toList());
     }
 }

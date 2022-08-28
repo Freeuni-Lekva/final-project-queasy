@@ -30,9 +30,9 @@ INSERT INTO quiz_question(quiz_id,question_id)
        VALUES (1,2);
 
 /* answers table */
-INSERT INTO answers(text,question_id)
+INSERT INTO answers(text,question_id,is_right_answer)
        VALUES ('some Text',1,'Y');
-INSERT INTO answers(text,question_id)
+INSERT INTO answers(text,question_id,is_right_answer)
        VALUES ('second Some Text',1,'N');
 
 /* question_pictures */

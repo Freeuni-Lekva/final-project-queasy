@@ -24,7 +24,8 @@ public class TestAnswerDao {
 
     @Test
     public void testGetAllAnswers() {
-        Assert.assertTrue(answerDao.getAllAnswersOf(1).size() == 3);
+        Assert.assertTrue(answerDao.getAllAnswersOf(1).size() == 2);
         Assert.assertTrue(answerDao.getAllAnswersOf(1).get(0).getText().toLowerCase().contains("some text") );
+        Assert.assertTrue(answerDao.getAllRightAnswersOf(1).size() == 1);
        }
 }
