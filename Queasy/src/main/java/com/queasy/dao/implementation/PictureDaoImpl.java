@@ -1,6 +1,5 @@
 package com.queasy.dao.implementation;
 
-import com.queasy.dao.interfaces.AnswerPicturesDao;
 import com.queasy.dao.interfaces.ConnectionPool;
 import com.queasy.dao.interfaces.PictureDao;
 import com.queasy.model.quiz.Picture;
@@ -13,32 +12,28 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AnswerPicturesDaoImpl implements AnswerPicturesDao {
+public class PictureDaoImpl implements PictureDao {
     private final ConnectionPool connectionPool;
-    public AnswerPicturesDaoImpl(ConnectionPool connectionPool){
+    public PictureDaoImpl(ConnectionPool connectionPool){
         this.connectionPool = connectionPool;
     }
-
     @Override
-    public List<Picture> getPicturesOfAnswer(int answerId) {
-        String query = "SELECT * " +
-                " FROM " + MyConstants.AnswersPicturesDatabaseConstants.DATABASE +
-                " WHERE " + MyConstants.AnswersPicturesDatabaseConstants.ANSWER_ID +
-                " = " + Integer.toString(answerId) + ";";
+    public Picture getPictureOf(int pictureId) {
+        String query = "SELECT * FROM " + MyConstants.PicturesDatabaseConstants.DATABASE +
+                       " WHERE " + MyConstants.ID + " = " + Integer.toString(pictureId) + ";";
         Connection con = connectionPool.acquireConnection();
-        List<Picture> pictures = new ArrayList();
-        PictureDao pictureDao = new PictureDaoImpl(connectionPool);
+        Picture picture = null;
         try {
             Statement statement = con.createStatement();
             ResultSet res = statement.executeQuery(query);
-            while(res.next()) {
-                pictures.add(pictureDao.getPictureOf(res.getInt(MyConstants.AnswersPicturesDatabaseConstants.PICTURE_ID)));
+            if(res.next()) {
+                picture = new Picture(res.getInt(MyConstants.ID),res.getString(MyConstants.PicturesDatabaseConstants.PICTURE));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         connectionPool.releaseConnection(con);
 
-        return pictures;
+        return picture;
     }
 }

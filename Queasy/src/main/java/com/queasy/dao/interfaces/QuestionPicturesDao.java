@@ -1,10 +1,10 @@
 package com.queasy.dao.interfaces;
 
-import com.queasy.model.quiz.Pictures;
+import com.queasy.model.quiz.Picture;
 
 import java.util.List;
 
 public interface QuestionPicturesDao {
-    List<Pictures> getPicturesOfQuestion(int questionId);
+    List<Picture> getPicturesOfQuestion(int questionId);
 
 }

@@ -1,11 +1,10 @@
 package com.queasy.dao.implementation;
 
 import com.queasy.dao.interfaces.ConnectionPool;
+import com.queasy.dao.interfaces.PictureDao;
 import com.queasy.dao.interfaces.QuestionPicturesDao;
-import com.queasy.model.quiz.Pictures;
-import com.queasy.model.quiz.Question;
+import com.queasy.model.quiz.Picture;
 import com.queasy.utility.constants.MyConstants;
-import com.queasy.utility.enums.QuestionType;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -22,19 +21,19 @@ public class QuestionPicturesDaoImpl implements QuestionPicturesDao {
     }
 
     @Override
-    public List<Pictures> getPicturesOfQuestion(int questionId) {
+    public List<Picture> getPicturesOfQuestion(int questionId) {
         String query = "SELECT * " +
                        " FROM " + MyConstants.QuestionsPicturesDatabaseConstants.DATABASE +
                        " WHERE " + MyConstants.QuestionsPicturesDatabaseConstants.QUESTION_ID +
                        " = " + Integer.toString(questionId) + ";";
         Connection con = connectionPool.acquireConnection();
-        List<Pictures> pictures = new ArrayList();
+        List<Picture> pictures = new ArrayList();
+        PictureDao pictureDao = new PictureDaoImpl(connectionPool);
         try {
             Statement statement = con.createStatement();
             ResultSet res = statement.executeQuery(query);
             while(res.next()) {
-               pictures.add(new Pictures(res.getInt(MyConstants.ID),
-                                        res.getString(MyConstants.QuestionsPicturesDatabaseConstants.PICTURE)));
+               pictures.add(pictureDao.getPictureOf(res.getInt(MyConstants.QuestionsPicturesDatabaseConstants.PICTURE_ID)));
             }
         } catch (SQLException e) {
             e.printStackTrace();

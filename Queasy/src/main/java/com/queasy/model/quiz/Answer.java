@@ -7,11 +7,11 @@ public class Answer {
     private String text;
     private int questionId;
 
-    private List<Pictures> pictures;
+    private List<Picture> pictures;
 
     private String isRightAnswer;
 
-    public Answer(int id, String text, String isRightAnswer, int questionId, List<Pictures> pictures) {
+    public Answer(int id, String text, String isRightAnswer, int questionId, List<Picture> pictures) {
         this.id = id;
         this.text = text;
         this.questionId = questionId;
@@ -39,11 +39,11 @@ public class Answer {
         this.questionId = questionId;
     }
 
-    public List<Pictures> getPictures() {
+    public List<Picture> getPictures() {
         return pictures;
     }
 
-    public void setPictures(List<Pictures> pictures) {
+    public void setPictures(List<Picture> pictures) {
         this.pictures = pictures;
     }
 

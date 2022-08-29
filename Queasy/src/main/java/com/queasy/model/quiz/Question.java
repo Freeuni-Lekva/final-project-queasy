@@ -10,9 +10,9 @@ public class Question {
     private String text;
     private QuestionType questionType;
     private int creatorId;
-    private List<Pictures> pictures;
+    private List<Picture> pictures;
 
-    public Question(int id, String text, QuestionType questionType, int creatorId, List<Pictures> pictures ) {
+    public Question(int id, String text, QuestionType questionType, int creatorId, List<Picture> pictures ) {
         this.id = id;
         this.text = text;
         this.questionType = questionType;
@@ -48,11 +48,11 @@ public class Question {
         this.creatorId = creatorId;
     }
 
-    public List<Pictures> getPictures() {
+    public List<Picture> getPictures() {
         return pictures;
     }
 
-    public void setPictures(List<Pictures> pictures) {
+    public void setPictures(List<Picture> pictures) {
         this.pictures = pictures;
     }
 }

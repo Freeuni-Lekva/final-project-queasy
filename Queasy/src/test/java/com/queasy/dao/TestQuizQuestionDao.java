@@ -13,7 +13,7 @@ public class TestQuizQuestionDao {
     private static QuizQuestionDao quizQuestionDao;
     @Before
     public void setUp() {
-        connectionPool = DBConnectionPool.getInstance(30)
+        connectionPool = DBConnectionPool.getInstance(30);
         quizQuestionDao = new QuizQuestionDaoImpl(connectionPool);
     }
 }

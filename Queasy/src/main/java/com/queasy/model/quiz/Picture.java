@@ -1,10 +1,10 @@
 package com.queasy.model.quiz;
 
-public class Pictures {
+public class Picture {
     private int id;
     private String picture;
 
-    public Pictures(int id, String picture) {
+    public Picture(int id, String picture) {
         this.id = id;
         this.picture = picture;
     }

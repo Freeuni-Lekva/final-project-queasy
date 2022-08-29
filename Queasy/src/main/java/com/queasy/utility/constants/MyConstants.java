@@ -69,13 +69,18 @@ public final class MyConstants {
 
     public static class QuestionsPicturesDatabaseConstants {
         public static String DATABASE = "question_pictures";
-        public static String PICTURE = "picture";
+        public static String PICTURE_ID = "picture_id";
         public static String QUESTION_ID = "question_id";
     }
 
     public static class AnswersPicturesDatabaseConstants {
         public static String DATABASE = "answer_pictures";
-        public static String PICTURE = "picture";
+        public static String PICTURE_ID = "picture_id";
         public static String ANSWER_ID = "answer_id";
+    }
+
+    public static class PicturesDatabaseConstants {
+        public static String DATABASE = "pictures";
+        public static String PICTURE = "picture";
     }
 }
