@@ -18,6 +18,10 @@ public interface QuizDao {
 
     Quiz getQuiz(int quizId);
 
+    boolean addQuiz(Quiz quiz);
+
+    boolean removeQuiz(int quizId);
+
     //to get specific type of questions (might delete later...)
     //List<Question> getQuestionsByType(QuestionType qt);
 

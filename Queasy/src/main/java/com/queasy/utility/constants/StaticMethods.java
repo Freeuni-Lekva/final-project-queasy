@@ -3,6 +3,7 @@ package com.queasy.utility.constants;
 import com.queasy.dao.interfaces.ConnectionPool;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -93,15 +94,16 @@ public final class StaticMethods {
             Statement statement = con.createStatement();
             System.out.println(query);
             if(statement.executeUpdate(query) > 0) {
-                System.out.println("entered");
                 connectionPool.releaseConnection(con);
                 return true;
             }
-            connectionPool.releaseConnection(con);
+
 
         } catch (SQLException e) {
-            return false;
+            e.printStackTrace();
+
         }
+        connectionPool.releaseConnection(con);
         return false;
     }
     public static java.sql.Date returnJavaSqlDate(java.util.Date date) {
@@ -109,5 +111,6 @@ public final class StaticMethods {
         java.sql.Date sqlDate = new java.sql.Date(millis);
         return sqlDate;
     }
+
 
 }

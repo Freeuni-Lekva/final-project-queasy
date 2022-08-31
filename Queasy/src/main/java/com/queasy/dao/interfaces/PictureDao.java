@@ -4,4 +4,6 @@ import com.queasy.model.quiz.Picture;
 
 public interface PictureDao {
     Picture getPictureOf(int pictureId);
+
+    Picture getPictureOf(String pictureUrl);
 }

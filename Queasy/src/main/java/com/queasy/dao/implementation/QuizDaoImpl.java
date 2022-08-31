@@ -1,9 +1,6 @@
 package com.queasy.dao.implementation;
 
-import com.queasy.dao.interfaces.ConnectionPool;
-import com.queasy.dao.interfaces.QuestionPicturesDao;
-import com.queasy.dao.interfaces.QuizDao;
-import com.queasy.dao.interfaces.QuizQuestionDao;
+import com.queasy.dao.interfaces.*;
 import com.queasy.model.quiz.Question;
 import com.queasy.model.quiz.Quiz;
 import com.queasy.model.user.User;
@@ -86,7 +83,7 @@ public class QuizDaoImpl implements QuizDao {
             return null;
         Connection con = connectionPool.acquireConnection();
         String[] columns = {};
-        String condition = " WHERE " + MyConstants.ID + " = " + Integer.toString(quiz.getCreatorId());
+        String condition = MyConstants.ID + " = " + Integer.toString(quiz.getCreatorId());
         try {
             Statement statement = con.createStatement();
             ResultSet res = statement.executeQuery(StaticMethods.selectQuery(MyConstants.USERS_DATABASE,columns,condition));
@@ -106,18 +103,39 @@ public class QuizDaoImpl implements QuizDao {
     public Quiz getQuiz(int quizId) {
         Connection con = connectionPool.acquireConnection();
         String[] columns = {};
-        String condition = " WHERE " + MyConstants.ID + " = " + Integer.toString(quizId);
+        String condition = MyConstants.ID + " = " + Integer.toString(quizId);
 
         Quiz quiz = getQuizHelper(con, StaticMethods.selectQuery(MyConstants.QuizDatabaseConstants.DATABASE,columns,condition));
         connectionPool.releaseConnection(con);
         return quiz;
     }
 
-    //TODO: QuizQuestionsDao - დან გადმოვიტანოთ
-//    @Override
-//    public List<Question> getQuestionsByType(QuestionType qt) {
-//        return null;
-//    }
+    //TODO:
+    @Override
+    public boolean addQuiz(Quiz quiz) {
+        String query = "INSERT INTO " + MyConstants.QuizDatabaseConstants.DATABASE + " ( " +
+                        MyConstants.QuizDatabaseConstants.QUIZ_NAME + " , " +
+                        MyConstants.QuizDatabaseConstants.CREATOR_ID +  " , " +
+                        MyConstants.QuizDatabaseConstants.DESCRIPTION + " ) " +
+                        " VALUES ( " + StaticMethods.apostropheString(quiz.getQuizName()) + " , " +
+                        Integer.toString(quiz.getCreatorId()) + " , " +
+                        StaticMethods.apostropheString(quiz.getDescription())  + " ) ;";
+        boolean answer = true;
+        List<Question> questions = quiz.getQuestions();
+        QuestionDao questionDao = new QuestionDaoImpl(connectionPool);
+        for (int i = 0; i < questions.size(); i++ )  {
+            answer = answer && questions.add(questions.get(i));
+        }
+        return answer && StaticMethods.executeUpdateQuery(connectionPool,query);
+    }
+
+    @Override
+    public boolean removeQuiz(int quizId) {
+        String query = "DELETE FROM " + MyConstants.QuizDatabaseConstants.DATABASE + " WHERE " +
+                        MyConstants.ID + " = " + quizId + " ;";
+        return StaticMethods.executeUpdateQuery(connectionPool,query);
+
+    }
 
     @Override
     public List<Quiz> getAllQuizzes() {

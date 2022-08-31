@@ -2,6 +2,7 @@ package com.queasy.dao.implementation;
 
 import com.queasy.dao.interfaces.ConnectionPool;
 import com.queasy.dao.interfaces.FollowingDao;
+import com.queasy.dao.interfaces.UserDao;
 import com.queasy.model.user.User;
 import com.queasy.utility.constants.MyConstants;
 import com.queasy.utility.constants.StaticMethods;
@@ -27,10 +28,12 @@ public class FollowingDaoImpl implements FollowingDao {
 
             Statement statement = con.createStatement();
             ResultSet res = statement.executeQuery(query);
+            UserDao userDao = new UserDaoImpl(connectionPool);
             while(res.next()) {
-                users.add(new User(res.getString(MyConstants.USER_NAME),
-                        res.getString(MyConstants.USER_PASSWORD),
-                        res.getString(MyConstants.USER_MAIL)));
+                String name = res.getString(MyConstants.FOLLOWERS_FIRST_USER_USERNAME);
+                System.out.println("name = ");
+                System.out.println(name);
+                users.add(userDao.getUser(name));
             }
             connectionPool.releaseConnection(con);
             return users;
@@ -46,15 +49,21 @@ public class FollowingDaoImpl implements FollowingDao {
 
         String[] columns = {};
 
-        String condition1 = MyConstants.FOLLOWERS_FIRST_USER_USERNAME + " = " + userName;
-        String condition2 = MyConstants.FOLLOWERS_SECOND_USER_USERNAME + " = " + userName;
+        String condition1 = MyConstants.FOLLOWERS_FIRST_USER_USERNAME + " = " + StaticMethods.apostropheString(userName);
+        String condition2 = MyConstants.FOLLOWERS_SECOND_USER_USERNAME + " = " + StaticMethods.apostropheString(userName);
 
         String query1 = StaticMethods.selectQuery(MyConstants.FOLLOWERS_DATABASE,columns,condition1);
         String query2 = StaticMethods.selectQuery(MyConstants.FOLLOWERS_DATABASE,columns,condition2);
 
+        System.out.println("query 1 = " + query1);
+        System.out.println("query 2 = " + query2);
+
         users1 = getFollowingHelper(query1);
+        System.out.println(users1.size());
         users2 = getFollowingHelper(query2);
-        users1.retainAll(users1);
+        System.out.println(users2.size());
+        users1.retainAll(users2);
+        System.out.println(users1.size());
 
         return users1;
     }

@@ -60,6 +60,8 @@ INSERT INTO games(score,start_date,end_date,user_name,quiz_id)
        VALUES (10,'1990-07-07 23:40:00','1990-07-07 23:50:00','user3',1);
 INSERT INTO games(score,start_date,end_date,user_name,quiz_id)
         VALUES (15,'1990-08-07 13:42:00','1990-08-07 13:50:00','user2',1);
+INSERT INTO games(score,start_date,end_date,user_name,quiz_id)
+        VALUES (11,'1991-07-07 23:40:00','1991-07-07 23:50:00','user3',1);
 
 /* followers table */
 INSERT INTO  followers(first_user_username,second_user_username)

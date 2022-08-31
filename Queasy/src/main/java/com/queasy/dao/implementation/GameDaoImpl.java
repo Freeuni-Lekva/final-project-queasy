@@ -45,7 +45,7 @@ public class GameDaoImpl implements GameDao {
     @Override
     public List<Game> getAllGamesOf(String userName) {
         String[] columns = {};
-        String condition = " WHERE " + MyConstants.GameDatabaseConstants.USER_NAME +
+        String condition = MyConstants.GameDatabaseConstants.USER_NAME +
                            " = " + StaticMethods.apostropheString(userName);
         String query = StaticMethods.selectQuery(MyConstants.GameDatabaseConstants.DATABASE,columns,condition);
         List<Game> answer = getListFunc(query);
@@ -55,7 +55,7 @@ public class GameDaoImpl implements GameDao {
     @Override
     public List<Game> getAllGames(int quizId) {
         String[] columns = {};
-        String condition = " WHERE " + MyConstants.GameDatabaseConstants.QUIZ_ID + " = " + quizId;
+        String condition = MyConstants.GameDatabaseConstants.QUIZ_ID + " = " + quizId;
         String query = StaticMethods.selectQuery(MyConstants.GameDatabaseConstants.DATABASE,columns,condition);
         List<Game> answer = getListFunc(query);
         return answer;
@@ -64,7 +64,7 @@ public class GameDaoImpl implements GameDao {
     @Override
     public Game getGame(int gameId) {
         String[] columns = {};
-        String condition = " WHERE " + MyConstants.ID + " = " + gameId;
+        String condition = MyConstants.ID + " = " + gameId;
         String query = StaticMethods.selectQuery(MyConstants.GameDatabaseConstants.DATABASE,columns,condition);
         List<Game> answer = getListFunc(query);
         return answer.size() > 0 ? answer.get(0) : null;
