@@ -17,5 +17,7 @@ public interface FollowingDao {
 
     //List<User> getSentRequestsOf(String mail);
 
+    List<User> getReceivedRequestsOf(String userName);
+
     boolean sendRequest(String fromUserName, String toUserName);
 }

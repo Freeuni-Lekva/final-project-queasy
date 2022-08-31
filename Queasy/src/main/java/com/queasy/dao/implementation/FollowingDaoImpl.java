@@ -13,6 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class FollowingDaoImpl implements FollowingDao {
     private ConnectionPool connectionPool;
@@ -30,9 +31,27 @@ public class FollowingDaoImpl implements FollowingDao {
             ResultSet res = statement.executeQuery(query);
             UserDao userDao = new UserDaoImpl(connectionPool);
             while(res.next()) {
+                String name = res.getString(MyConstants.FOLLOWERS_SECOND_USER_USERNAME);
+                users.add(userDao.getUser(name));
+            }
+            connectionPool.releaseConnection(con);
+            return users;
+        } catch (SQLException e) {
+            connectionPool.releaseConnection(con);
+            return users;
+        }
+    }
+
+    private List<User> getFollowingHelperReverse(String query) {
+        List<User> users = new ArrayList();
+        Connection con = connectionPool.acquireConnection();
+        try {
+
+            Statement statement = con.createStatement();
+            ResultSet res = statement.executeQuery(query);
+            UserDao userDao = new UserDaoImpl(connectionPool);
+            while(res.next()) {
                 String name = res.getString(MyConstants.FOLLOWERS_FIRST_USER_USERNAME);
-                System.out.println("name = ");
-                System.out.println(name);
                 users.add(userDao.getUser(name));
             }
             connectionPool.releaseConnection(con);
@@ -55,15 +74,9 @@ public class FollowingDaoImpl implements FollowingDao {
         String query1 = StaticMethods.selectQuery(MyConstants.FOLLOWERS_DATABASE,columns,condition1);
         String query2 = StaticMethods.selectQuery(MyConstants.FOLLOWERS_DATABASE,columns,condition2);
 
-        System.out.println("query 1 = " + query1);
-        System.out.println("query 2 = " + query2);
-
         users1 = getFollowingHelper(query1);
-        System.out.println(users1.size());
-        users2 = getFollowingHelper(query2);
-        System.out.println(users2.size());
+        users2 = getFollowingHelperReverse(query2);
         users1.retainAll(users2);
-        System.out.println(users1.size());
 
         return users1;
     }
@@ -72,11 +85,25 @@ public class FollowingDaoImpl implements FollowingDao {
     public List<User> getSentRequestsOf(String userName) {
         List<User> users = new ArrayList<>();
         String[] columns = {};
-        String condition = MyConstants.FOLLOWERS_FIRST_USER_USERNAME + " = " + userName;
+        String condition = MyConstants.FOLLOWERS_FIRST_USER_USERNAME + " = " + StaticMethods.apostropheString(userName);
         String query = StaticMethods.selectQuery(MyConstants.FOLLOWERS_DATABASE,columns,condition);
 
         users = getFollowingHelper(query);
-        users.retainAll(getFriendsOf(userName));
+        users.removeAll(getFriendsOf(userName));
+
+        return users;
+    }
+
+    @Override
+    public List<User> getReceivedRequestsOf(String userName) {
+        List<User> users = new ArrayList<>();
+        String[] columns = {};
+        String condition = MyConstants.FOLLOWERS_SECOND_USER_USERNAME + " = " + StaticMethods.apostropheString(userName);
+        String query = StaticMethods.selectQuery(MyConstants.FOLLOWERS_DATABASE,columns,condition);
+
+
+        users = getFollowingHelperReverse(query);
+        users.removeAll(getFriendsOf(userName));
         return users;
     }
 

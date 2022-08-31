@@ -54,9 +54,4 @@ public class QuizQuestionDaoImpl implements QuizQuestionDao {
 
         return questions;
     }
-
-//    @Override
-//    public Quiz getQuizOfQuestion(int questionId) {
-//        return null;
-//    }
 }
