@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
+      <artifact name="Queasy:war" />
       <artifact name="Queasy:war exploded" />
     </artifacts-to-build>
   </component>
@@ -10,12 +11,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="505333db-48ce-437d-b26a-b117a4278730" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_11_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_27.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Queasy_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Queasy_war_exploded.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d8e57c65-4c75-4c8e-a0f9-048db1d74f99.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d8e57c65-4c75-4c8e-a0f9-048db1d74f99.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/final-project-queasy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/final-project-queasy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/FollowingDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/FollowingDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizQuestionDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizQuestionDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/FollowingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/FollowingDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestFollowingDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestFollowingDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestQuizQuestionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestQuizQuestionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/HelloServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/DBConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/DBConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/GameDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/GameDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/UserDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/UserDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/GameDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/GameDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/StaticMethods.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/StaticMethods.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/index.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,35 +62,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;11&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/bachi/Desktop/OOP/OOP_HW5&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.38850576&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "11",
+    "last_opened_file_path": "/home/bachi/Downloads/jar_files/protobuf-java-3.19.4.jar",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.38850576"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets" />
+      <recent name="$PROJECT_DIR$/Queasy/src/main/webapp/login" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.queasy.dao" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.queasy.servlets" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestFollowingDao.getReceivedOf">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 10.0.211">
     <configuration name="TestFollowingDao.getFriendsOf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Queasy" />
       <extension name="coverage">
@@ -127,22 +146,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestQuestionDao.testAddQuestion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Queasy" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.queasy.dao.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.queasy.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.queasy.dao.TestQuestionDao" />
-      <option name="METHOD_NAME" value="testAddQuestion" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestQuizQuestionDao.get" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Queasy" />
       <extension name="coverage">
@@ -159,11 +162,39 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="index.jsp" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:8080/index.jsp">
+      <method v="2" />
+    </configuration>
+    <configuration name="Queasy [tomcat7:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="tomcat7:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/Queasy" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <configuration name="Tomcat 10.0.211" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.211" ALTERNATIVE_JRE_ENABLED="false">
       <deployment>
         <artifact name="Queasy:war exploded">
           <settings>
-            <option name="CONTEXT_PATH" value="/Queasy_war_exploded" />
+            <option name="CONTEXT_PATH" value="/" />
           </settings>
         </artifact>
       </deployment>
@@ -175,6 +206,54 @@
       <predefined_log_file id="Tomcat Manager" />
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="34721" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -194,16 +273,26 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="Queasy:war exploded" />
+          <artifact name="Queasy:war" />
         </option>
       </method>
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.index.jsp" />
+      <item itemvalue="JUnit.TestFollowingDao.getFriendsOf" />
+      <item itemvalue="JUnit.TestFollowingDao.getReceivedOf" />
+      <item itemvalue="JUnit.TestFollowingDao.getRequestsOf" />
+      <item itemvalue="JUnit.TestQuizQuestionDao.get" />
+      <item itemvalue="Maven.Queasy [tomcat7:run]" />
+      <item itemvalue="Tomcat Server.Tomcat 10.0.211" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JavaScript Debug.index.jsp" />
         <item itemvalue="JUnit.TestFollowingDao.getReceivedOf" />
         <item itemvalue="JUnit.TestFollowingDao.getRequestsOf" />
         <item itemvalue="JUnit.TestFollowingDao.getFriendsOf" />
         <item itemvalue="JUnit.TestQuizQuestionDao.get" />
-        <item itemvalue="JUnit.TestQuestionDao.testAddQuestion" />
       </list>
     </recent_temporary>
   </component>
@@ -240,7 +329,11 @@
       <workItem from="1661683876175" duration="2759000" />
       <workItem from="1661795323481" duration="6800000" />
       <workItem from="1661878881344" duration="3007000" />
-      <workItem from="1661968846793" duration="10375000" />
+      <workItem from="1661968846793" duration="11098000" />
+      <workItem from="1662141903325" duration="5012000" />
+      <workItem from="1662147039364" duration="1480000" />
+      <workItem from="1662148536390" duration="9629000" />
+      <workItem from="1662184677311" duration="2696000" />
     </task>
     <servers />
   </component>
@@ -268,13 +361,43 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/StaticMethods.java</url>
-          <line>91</line>
+          <line>93</line>
           <option name="timeStamp" value="34" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java</url>
           <line>74</line>
           <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/DBConnectionPool.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/DBConnectionPool.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/DBConnectionPool.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="49" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/AddAccountServlet.java</url>
+          <line>23</line>
+          <option name="timeStamp" value="51" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/AddAccountServlet.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/AddAccountServlet.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestFollowingDao.java</url>

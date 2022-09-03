@@ -28,10 +28,17 @@ public class DBConnectionPool implements ConnectionPool{
         this.numberOfConnections = (numberOfConnections < MIN_CONNECTIONS ) ? MIN_CONNECTIONS : this.numberOfConnections;
 
         connections = new ArrayBlockingQueue<>(this.numberOfConnections);
+        System.out.println("size = ");
         try{
-            for (int i = 0; i < this.numberOfConnections; i++)
-                this.connections.add(dataSource.getConnection());
+            for (int i = 0; i < this.numberOfConnections; i++) {
+                System.out.println(i);
+                Connection con = dataSource.getConnection();
+                this.connections.add(con);
+
+            }
+
         }catch (SQLException e) {
+            System.out.println("error message");
             e.printStackTrace();
         }
     }
@@ -54,7 +61,7 @@ public class DBConnectionPool implements ConnectionPool{
             dataSource.setUrl(DB_URL);
             dataSource.setUsername(DB_USERNAME);
             dataSource.setPassword(DB_PASSWORD);
-            //dataSource.setDriverClassName(DB_DRIVER_CLASS);
+            dataSource.setDriverClassName(DB_DRIVER_CLASS);
 
         }catch (Exception e) {
             e.printStackTrace();
@@ -64,6 +71,7 @@ public class DBConnectionPool implements ConnectionPool{
     @Override
     public Connection acquireConnection() {
         try {
+
             return this.connections.take();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);

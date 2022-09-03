@@ -2,6 +2,8 @@ package com.queasy.utility.constants;
 
 import com.queasy.dao.interfaces.ConnectionPool;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -112,5 +114,31 @@ public final class StaticMethods {
         return sqlDate;
     }
 
+    public static String hexToString(byte[] bytes) {
+        StringBuffer buff = new StringBuffer();
+        for (int i=0; i<bytes.length; i++) {
+            int val = bytes[i];
+            val = val & 0xff;  // remove higher bits, sign
+            if (val<16) buff.append('0'); // leading 0
+            buff.append(Integer.toString(val, 16));
+        }
+        return buff.toString();
+    }
+
+    public static String returnEncryptedPassword(String password) {
+        String encryptedPassword = null;
+
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-1");//MessageDigest.getInstance("SHA-256");
+            byte[] messageDigest = md.digest(password.getBytes());
+            return hexToString(messageDigest);
+
+        } catch (NoSuchAlgorithmException e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 
 }
