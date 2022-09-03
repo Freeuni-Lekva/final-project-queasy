@@ -41,6 +41,19 @@ public class GameDaoImpl implements GameDao {
         return games;
     }
 
+    @Override
+    public List<Game> getAllGamesOrderedForScoring(int quizId) {
+        String[] columns = {};
+        String condition = MyConstants.GameDatabaseConstants.QUIZ_ID + " = " + quizId +
+                " ORDER BY " + MyConstants.GameDatabaseConstants.SCORE + " ASC , " +
+                "DATEDIFF(second, " + MyConstants.GameDatabaseConstants.START_DATE + " , " +
+                MyConstants.GameDatabaseConstants.END_DATE + " )";
+
+        String query = StaticMethods.selectQuery(MyConstants.GameDatabaseConstants.DATABASE,columns,condition);
+        List<Game> answer = getListFunc(query);
+
+        return answer;
+    }
 
     @Override
     public List<Game> getAllGamesOf(String userName) {

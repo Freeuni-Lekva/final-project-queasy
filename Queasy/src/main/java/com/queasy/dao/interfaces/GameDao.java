@@ -9,7 +9,8 @@ public interface GameDao {
     List<Game> getAllGamesOf(String userName);
 
     List<Game> getAllGames(int quizId);
-
+    //TODO: need to test
+    List<Game> getAllGamesOrderedForScoring(int quizId);
     Game getGame(int gameId);
 
     int getScore(int gameId);

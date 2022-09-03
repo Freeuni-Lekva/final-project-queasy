@@ -85,9 +85,13 @@ public class UserDaoImpl implements UserDao {
     private boolean executeUpdating(String query) {
         Connection con = connectionPool.acquireConnection();
         try {
+            System.out.println("almost...");
+
             Statement statement = con.createStatement();
             if(statement.executeUpdate(query) > 0) {
                 connectionPool.releaseConnection(con);
+                System.out.println("done");
+
                 return true;
             }
 
@@ -101,9 +105,16 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public boolean addUser(String userName, String password, String email) {
-        if(checkFreeUserName(userName) && checkFreeMail(email)
-                && !userName.contains(MyConstants.USERNAME_MUST_NOT_CONTAIN) && //these to may be put in other place
-                email.contains(MyConstants.EMAIL_MUST_CONTAIN)){
+
+        System.out.println("adduser");
+        if(//checkFreeUserName(userName) && checkFreeMail(email) &&
+
+                 !userName.contains(MyConstants.USERNAME_MUST_NOT_CONTAIN) && //these to may be put in other place
+                email.contains(MyConstants.EMAIL_MUST_CONTAIN ) &&
+                userName.length() > 3){
+
+            System.out.println("free");
+
             String apostropheUserName = StaticMethods.apostropheString(userName);
             String apostrophePassword = StaticMethods.apostropheString(password);
             String apostropheEmail = StaticMethods.apostropheString(email);
@@ -114,6 +125,8 @@ public class UserDaoImpl implements UserDao {
             String query = StaticMethods.insertQuery(MyConstants.USERS_DATABASE,
                                               columns,
                                               values);
+            System.out.println("will execute");
+
             return executeUpdating(query);
         }
         return false;
