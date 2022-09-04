@@ -12,6 +12,7 @@ import com.queasy.model.quiz.Question;
 import com.queasy.model.quiz.Quiz;
 import com.queasy.utility.constants.MyConstants;
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -27,14 +28,14 @@ import java.util.stream.Collectors;
 public class ScorePageServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ServletContext context = req.getServletContext();
         HttpSession session = req.getSession();
         Quiz quiz = (Quiz) (session.getAttribute(MyConstants.Servlets.CURR_QUIZ));
         List<Question> questions = quiz.getQuestions();
         Question currQuestion = null;
         String currAnswer = "";
-        ConnectionPool con = DBConnectionPool.getInstance(5);
 
-        AnswerDao answerDao = new AnswerDaoImpl(con);
+        AnswerDao answerDao = (AnswerDao) context.getAttribute(MyConstants.ContextAttributes.ANSWER_DAO);
         List<Answer> answers =  null;
         List<Answer> correctAnswers = null;
         int score = 0;
@@ -62,7 +63,7 @@ public class ScorePageServlet extends HttpServlet {
         session.setAttribute(MyConstants.Servlets.SCORE,score);
         session.setAttribute(MyConstants.Servlets.QUIZ_END_TIME,endDate);
 
-        GameDao gameDao =new GameDaoImpl(con);
+        GameDao gameDao = (GameDao) context.getAttribute(MyConstants.ContextAttributes.GAME_DAO);
         String username = (String)session.getAttribute(MyConstants.Servlets.USERNAME);
         gameDao.addGame(new Game(0,score,startDate,endDate,username,quiz.getId()));
 

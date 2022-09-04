@@ -4,8 +4,10 @@ import com.queasy.dao.implementation.DBConnectionPool;
 import com.queasy.dao.implementation.UserDaoImpl;
 import com.queasy.dao.interfaces.ConnectionPool;
 import com.queasy.dao.interfaces.UserDao;
+import com.queasy.utility.constants.MyConstants;
 import com.queasy.utility.constants.StaticMethods;
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -21,6 +23,7 @@ import java.io.PrintWriter;
 public class AddAccountServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ServletContext context = req.getServletContext();
         PrintWriter out = resp.getWriter();
         String username = req.getParameter("username");
         String mail = req.getParameter("email");
@@ -29,7 +32,7 @@ public class AddAccountServlet extends HttpServlet {
         RequestDispatcher rd;
 
         ConnectionPool connectionPool = DBConnectionPool.getInstance(3);
-        UserDao userDao = new UserDaoImpl(connectionPool);
+        UserDao userDao =  (UserDao) context.getAttribute(MyConstants.ContextAttributes.USER_DAO);
         boolean isCorrect = userDao.addUser(username, StaticMethods.returnEncryptedPassword(password),mail);
 
         if (!isCorrect){

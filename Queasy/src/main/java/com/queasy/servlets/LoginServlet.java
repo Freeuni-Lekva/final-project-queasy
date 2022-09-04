@@ -12,6 +12,7 @@ import com.queasy.utility.constants.MyConstants;
 import com.queasy.utility.constants.StaticMethods;
 import com.queasy.utility.enums.QuestionType;
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -28,23 +29,18 @@ import java.util.List;
 public class LoginServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ServletContext context = req.getServletContext();
+
         PrintWriter out = resp.getWriter();
         //TODO: email itac unda sheidzlebodes albat registracia
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
         RequestDispatcher rd;
-        ConnectionPool con = DBConnectionPool.getInstance(10);
-        UserDao userDao = new UserDaoImpl(con);
+        UserDao userDao = (UserDao) context.getAttribute(MyConstants.ContextAttributes.USER_DAO);
         User user = userDao.getUser(username);
-        //temporary
-        ConnectionPool connectionPool = DBConnectionPool.getInstance(8);
-        QuizDao quizDaoTmp = new QuizDaoImpl(connectionPool);
-        Quiz quiz = quizDaoTmp.getQuiz(1);
-        req.getSession().setAttribute(MyConstants.Servlets.CURR_QUIZ,quiz);
-       //----
+
         boolean isCorrectUser = (user != null) && user.getPassword().equals(StaticMethods.returnEncryptedPassword(password));
-        //TODO : change
         if (!isCorrectUser ){
 
             rd = req.getRequestDispatcher("incorrectInfo.jsp");
@@ -54,7 +50,7 @@ public class LoginServlet extends HttpServlet{
             session.setAttribute("username",username);
 
             req.setAttribute("name",username);
-            QuizDao quizDao = new QuizDaoImpl(con);
+            QuizDao quizDao = (QuizDao) context.getAttribute(MyConstants.ContextAttributes.QUIZ_DAO);
             List<Quiz> quizzes = quizDao.getAllQuizzes();
 
             session.setAttribute(MyConstants.Servlets.QUIZZES,quizzes);

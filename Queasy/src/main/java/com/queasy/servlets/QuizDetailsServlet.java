@@ -9,6 +9,7 @@ import com.queasy.model.quiz.Quiz;
 import com.queasy.utility.constants.MyConstants;
 import com.queasy.utility.enums.QuestionType;
 import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -24,15 +25,16 @@ import java.util.stream.Collectors;
 public class QuizDetailsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        ServletContext context = req.getServletContext();
         HttpSession session = req.getSession();
         int id = Integer.parseInt(req.getParameter(MyConstants.Servlets.QUIZ_ID));
         System.out.println("id");
+
         //TODO: ამ ფაილში რასაც ვსეტავ ყველაფერი ცალკე უნდა გავიტანო QuizStartServlet-ში
         System.out.println(id);
-        ConnectionPool connectionPool = DBConnectionPool.getInstance(8);
-        QuizDao quizDao = new QuizDaoImpl(connectionPool);
+        QuizDao quizDao = (QuizDao) context.getAttribute(MyConstants.ContextAttributes.QUIZ_DAO);
         Quiz quiz = quizDao.getQuiz(id);
-        GameDao gameDao = new GameDaoImpl(connectionPool);
+        GameDao gameDao = (GameDao) context.getAttribute(MyConstants.ContextAttributes.GAME_DAO);
         List<Game> gamesOrderedForScoring = gameDao.getAllGamesOrderedForScoring(quiz.getId());
         List<Game> games = gameDao.getAllGames(quiz.getId());
 //        List<Quiz> quizzes = (List<Quiz>) req.getSession().getAttribute(MyConstants.Servlets.QUIZZES);
@@ -51,7 +53,7 @@ public class QuizDetailsServlet extends HttpServlet {
         session.setAttribute(MyConstants.Servlets.CREATOR_USER,quizDao.getCreator(quiz.getId()));
         session.setAttribute(MyConstants.Servlets.GAMES_SORTED_BY_DATE,games.stream().sorted((e1,e2) -> (e2.getEndDate().compareTo(e1.getEndDate()))).collect(Collectors.toList()));
 
-        AnswerDao answerDao = new AnswerDaoImpl(connectionPool);
+        AnswerDao answerDao = (AnswerDao) context.getAttribute(MyConstants.ContextAttributes.ANSWER_DAO);
         List<Answer> multipleChoiceAnswers = new ArrayList<>();
         List<Question> questions = quiz.getQuestions().stream().filter(c -> c.getQuestionType() == QuestionType.MULTIPLE_CHOICE).collect(Collectors.toList());
         for(int i = 0; i < questions.size();i++) {

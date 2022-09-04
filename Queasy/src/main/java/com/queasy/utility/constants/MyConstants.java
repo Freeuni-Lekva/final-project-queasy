@@ -86,6 +86,19 @@ public final class MyConstants {
         public static String PICTURE = "picture";
     }
 
+    public static class ContextAttributes {
+        public static String USER_DAO = "CONTEXT_ATTRIBUTE_USER_DAO";
+        public static String QUIZ_QUESTION_DAO = "CONTEXT_ATTRIBUTE_QUIZ_QUESTION_DAO";
+        public static String QUIZ_DAO = "CONTEXT_ATTRIBUTE_QUIZ_DAO";
+        public static String QUESTION_PICTURES_DAO = "CONTEXT_ATTRIBUTE_QUESTION_PICTURES_DAO";
+        public static String QUESTION_DAO = "CONTEXT_ATTRIBUTE_QUESTION_DAO";
+        public static String PICTURE_DAO = "CONTEXT_ATTRIBUTE_PICTURE_DAO";
+        public static String MAIL_DAO = "CONTEXT_ATTRIBUTE_MAIL_DAO";
+        public static String GAME_DAO = "CONTEXT_ATTRIBUTE_GAME_DAO";
+        public static String FOLLOWING_DAO = "CONTEXT_ATTRIBUTE_FOLLOWING_DAO";
+        public static String ANSWER_PICTURES_DAO = "CONTEXT_ATTRIBUTE_ANSWER_PICTURES_DAO";
+        public static String ANSWER_DAO = "CONTEXT_ATTRIBUTE_ANSWER_DAO";
+    }
 
     public static class Servlets {
         public static String USERNAME = "username";
