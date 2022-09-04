@@ -10,4 +10,6 @@ public interface AnswerDao {
 
     List<Answer> getAllRightAnswersOf(int questionId);
 
+    int addAnswer(Answer answer);
+
 }

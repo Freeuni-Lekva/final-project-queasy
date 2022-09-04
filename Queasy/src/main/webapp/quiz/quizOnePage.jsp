@@ -3,6 +3,7 @@
 
 <html>
 <head>
+    <c:set var="currQuiz" value="${applicationScope['CONTEXT_ATTRIBUTE_QUIZ_DAO'].getQuiz(quizId)}"></c:set>
     <title>Quiz</title>
     <link href="../css/main.css" rel="stylesheet" type="text/css">
 
@@ -10,6 +11,7 @@
 <body>
 <h1 class="question-header"> ${currQuiz.getQuizName()}</h1>
     <form action = "ScorePage" method = "post">
+        <input type="hidden" name = "quizId" value = "${currQuiz.getId()}">
         <c:forEach var = "curr" items = "${currQuiz.getQuestions()}" varStatus="counter">
             <div class = "question">
                 <p>Question ${counter.index} :</p>

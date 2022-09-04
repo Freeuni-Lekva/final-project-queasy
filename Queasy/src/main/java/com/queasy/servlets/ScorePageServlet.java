@@ -6,6 +6,7 @@ import com.queasy.dao.implementation.GameDaoImpl;
 import com.queasy.dao.interfaces.AnswerDao;
 import com.queasy.dao.interfaces.ConnectionPool;
 import com.queasy.dao.interfaces.GameDao;
+import com.queasy.dao.interfaces.QuizDao;
 import com.queasy.model.game.Game;
 import com.queasy.model.quiz.Answer;
 import com.queasy.model.quiz.Question;
@@ -30,7 +31,10 @@ public class ScorePageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext context = req.getServletContext();
         HttpSession session = req.getSession();
-        Quiz quiz = (Quiz) (session.getAttribute(MyConstants.Servlets.CURR_QUIZ));
+        QuizDao quizDao = (QuizDao) context.getAttribute(MyConstants.ContextAttributes.QUIZ_DAO);
+
+        int id = Integer.parseInt(req.getParameter(MyConstants.Servlets.QUIZ_ID));
+        Quiz quiz = quizDao.getQuiz(id);
         List<Question> questions = quiz.getQuestions();
         Question currQuestion = null;
         String currAnswer = "";

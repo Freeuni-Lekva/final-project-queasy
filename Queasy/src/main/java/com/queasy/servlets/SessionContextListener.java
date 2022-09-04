@@ -32,6 +32,8 @@ public class SessionContextListener implements ServletContextListener, HttpSessi
         sce.getServletContext().setAttribute(MyConstants.ContextAttributes.QUIZ_DAO,new QuizDaoImpl(connectionPool));
         sce.getServletContext().setAttribute(MyConstants.ContextAttributes.QUIZ_QUESTION_DAO,new QuizQuestionDaoImpl(connectionPool));
         sce.getServletContext().setAttribute(MyConstants.ContextAttributes.USER_DAO,new UserDaoImpl(connectionPool));
+        sce.getServletContext().setAttribute("MILLISECONDS_IN_DAY",MyConstants.Servlets.MILLISECONDS_IN_DAY);
+
     }
 
     @Override

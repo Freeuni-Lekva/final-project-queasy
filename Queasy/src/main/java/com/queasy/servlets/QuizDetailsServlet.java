@@ -28,30 +28,30 @@ public class QuizDetailsServlet extends HttpServlet {
         ServletContext context = req.getServletContext();
         HttpSession session = req.getSession();
         int id = Integer.parseInt(req.getParameter(MyConstants.Servlets.QUIZ_ID));
-        System.out.println("id");
+
 
         //TODO: ამ ფაილში რასაც ვსეტავ ყველაფერი ცალკე უნდა გავიტანო QuizStartServlet-ში
         System.out.println(id);
         QuizDao quizDao = (QuizDao) context.getAttribute(MyConstants.ContextAttributes.QUIZ_DAO);
         Quiz quiz = quizDao.getQuiz(id);
-        GameDao gameDao = (GameDao) context.getAttribute(MyConstants.ContextAttributes.GAME_DAO);
-        List<Game> gamesOrderedForScoring = gameDao.getAllGamesOrderedForScoring(quiz.getId());
-        List<Game> games = gameDao.getAllGames(quiz.getId());
+//        GameDao gameDao = (GameDao) context.getAttribute(MyConstants.ContextAttributes.GAME_DAO);
+       // List<Game> gamesOrderedForScoring = gameDao.getAllGamesOrderedForScoring(quiz.getId());
+//        List<Game> games = gameDao.getAllGames(quiz.getId());
 //        List<Quiz> quizzes = (List<Quiz>) req.getSession().getAttribute(MyConstants.Servlets.QUIZZES);
 //        System.out.println(quizzes.size());
 
-        session.setAttribute(MyConstants.Servlets.CURR_QUIZ,quiz);
+//        session.setAttribute(MyConstants.Servlets.CURR_QUIZ,quiz);
         //gamesOrderedForScoring = gamesOrderedForScoring.stream().sorted(Comparator.comparingInt(c -> c.getScore())).collect(Collectors.toList());
         //Collections.reverse(gamesOrderedForScoring);
-        List<Game> lastDayGames = gamesOrderedForScoring.stream().filter(c -> (System.currentTimeMillis() - c.getStartDate().getTime()) < MyConstants.Servlets.MILLISECONDS_IN_DAY).collect(Collectors.toList());
+//        List<Game> lastDayGames = gamesOrderedForScoring.stream().filter(c -> (System.currentTimeMillis() - c.getStartDate().getTime()) < MyConstants.Servlets.MILLISECONDS_IN_DAY).collect(Collectors.toList());
 
 
 
         //TODO: სესიის ატრიბუტის დასეტვის მაგივრად შეიძლება რექვესტის ატრიბუიტი დავსეტო
-        session.setAttribute(MyConstants.Servlets.GAMES_SORTED_BY_SCORE,gamesOrderedForScoring);
-        session.setAttribute(MyConstants.Servlets.LAST_DAY_GAMES,lastDayGames);
-        session.setAttribute(MyConstants.Servlets.CREATOR_USER,quizDao.getCreator(quiz.getId()));
-        session.setAttribute(MyConstants.Servlets.GAMES_SORTED_BY_DATE,games.stream().sorted((e1,e2) -> (e2.getEndDate().compareTo(e1.getEndDate()))).collect(Collectors.toList()));
+       // session.setAttribute(MyConstants.Servlets.GAMES_SORTED_BY_SCORE,gamesOrderedForScoring);
+//        session.setAttribute(MyConstants.Servlets.LAST_DAY_GAMES,lastDayGames);
+//        session.setAttribute(MyConstants.Servlets.CREATOR_USER,quizDao.getCreator(quiz.getId()));
+//        session.setAttribute(MyConstants.Servlets.GAMES_SORTED_BY_DATE,games.stream().sorted((e1,e2) -> (e2.getEndDate().compareTo(e1.getEndDate()))).collect(Collectors.toList()));
 
         AnswerDao answerDao = (AnswerDao) context.getAttribute(MyConstants.ContextAttributes.ANSWER_DAO);
         List<Answer> multipleChoiceAnswers = new ArrayList<>();
@@ -65,7 +65,9 @@ public class QuizDetailsServlet extends HttpServlet {
         session.setAttribute(MyConstants.Servlets.QUIZ_START_TIME,new java.util.Date());
 
         RequestDispatcher rd;
+        req.setAttribute("id",quiz.getId());
         rd = req.getRequestDispatcher("/quiz/quizDetails.jsp");
+
         rd.forward(req,resp);
     }
 }

@@ -58,4 +58,10 @@ public class AnswerDaoImpl implements AnswerDao {
     public List<Answer> getAllRightAnswersOf(int questionId) {
         return getAllAnswersOf(questionId).stream().filter(curr -> curr.getIsRightAnswer().toLowerCase().equals("y")).collect(Collectors.toList());
     }
+
+    @Override
+    public int addAnswer(Answer answer) {
+
+        return 0;
+    }
 }
