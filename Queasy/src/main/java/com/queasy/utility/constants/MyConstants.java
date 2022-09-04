@@ -1,5 +1,7 @@
 package com.queasy.utility.constants;
 
+import com.queasy.utility.enums.QuestionType;
+
 public final class MyConstants {
 
     public static final String dateFormat = "yyyy-mm-dd";
@@ -82,5 +84,34 @@ public final class MyConstants {
     public static class PicturesDatabaseConstants {
         public static String DATABASE = "pictures";
         public static String PICTURE = "picture";
+    }
+
+
+    public static class Servlets {
+        public static String USERNAME = "username";
+        public static String PASSWORD = "password";
+        public static String QUIZZES = "quizzes";
+        public static String CURR_QUIZ = "currQuiz";
+        public static String QUIZ_ID = "quizId";
+        public static String CREATOR_USER = "creatorUser";
+        public static String GAMES = "games";
+        public static String LAST_DAY_GAMES = "lastDayGames";
+        public static String GAMES_SORTED_BY_SCORE = "gamesByScore";
+        public static String GAMES_SORTED_BY_DATE = "gamesByDate";
+        public static String QUESTION_RESPONSE = QuestionType.QUESTION_RESPONSE.name();
+        public static String PICTURE_RESPONSE = QuestionType.PICTURE_RESPONSE.name();
+        public static String FILL_IN_THE_BLANK = QuestionType.FILL_IN_THE_BLANK.name();
+        public static String FILL_BLANK_STRING = "$___$";
+        public static String MULTIPLE_CHOICE = QuestionType.MULTIPLE_CHOICE.name();
+
+        public static String MULTIPLE_CHOICE_ANSWER = "multipleChoiceAnswers";
+
+        public static long MILLISECONDS_IN_DAY = 3600000 * 24;
+
+        public static String QUIZ_ANSWER = "answer-";
+        public static String SCORE = "score";
+        public static String QUIZ_START_TIME = "startTime";
+        public static String QUIZ_END_TIME = "endTime";
+
     }
 }

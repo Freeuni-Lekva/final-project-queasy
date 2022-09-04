@@ -110,7 +110,7 @@ public class MailDaoImpl implements MailDao {
         try (PreparedStatement statement = con.prepareStatement(sql)){
             statement.setString(1,mail.getFrom());
             statement.setString(2,mail.getTo());
-            statement.setDate(3, StaticMethods.returnJavaSqlDate(mail.getDate()));
+            statement.setTimestamp(3, StaticMethods.returnJavaSqlDate(mail.getDate()));
             statement.setString(4,mail.getSubject());
             statement.setString(5,mail.getText());
             if(statement.executeUpdate() > 0) {

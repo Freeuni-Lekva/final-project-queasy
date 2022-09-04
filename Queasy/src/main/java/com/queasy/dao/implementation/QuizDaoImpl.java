@@ -46,11 +46,12 @@ public class QuizDaoImpl implements QuizDao {
             Statement statement = con.createStatement();
             ResultSet res = statement.executeQuery(query);
             while(res.next()) {
+                List<Question> questions = getAllQuestions(res.getInt(MyConstants.ID));
                 quizzes.add(new Quiz(res.getInt(MyConstants.ID),
                         res.getString(MyConstants.QuizDatabaseConstants.QUIZ_NAME),
                         res.getInt(MyConstants.QuizDatabaseConstants.CREATOR_ID),
                         res.getString(MyConstants.QuizDatabaseConstants.DESCRIPTION),
-                        getAllQuestions(res.getInt(MyConstants.ID))));
+                        questions));
             }
         } catch (SQLException e) {
             e.printStackTrace();

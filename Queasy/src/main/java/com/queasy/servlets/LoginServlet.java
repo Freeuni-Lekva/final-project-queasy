@@ -1,5 +1,16 @@
 package com.queasy.servlets;
 
+import com.queasy.dao.implementation.DBConnectionPool;
+import com.queasy.dao.implementation.QuizDaoImpl;
+import com.queasy.dao.implementation.UserDaoImpl;
+import com.queasy.dao.interfaces.ConnectionPool;
+import com.queasy.dao.interfaces.QuizDao;
+import com.queasy.dao.interfaces.UserDao;
+import com.queasy.model.quiz.Quiz;
+import com.queasy.model.user.User;
+import com.queasy.utility.constants.MyConstants;
+import com.queasy.utility.constants.StaticMethods;
+import com.queasy.utility.enums.QuestionType;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -10,20 +21,54 @@ import jakarta.servlet.http.HttpSession;
 import com.mysql.cj.result.Row;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 //i have no idea how to test servlets...
-@WebServlet("/Login/LoginServlet")
+@WebServlet("/login/LoginServlet")
 public class LoginServlet extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter out = resp.getWriter();
+        //TODO: email itac unda sheidzlebodes albat registracia
         String username = req.getParameter("username");
         String password = req.getParameter("password");
 
         RequestDispatcher rd;
+        ConnectionPool con = DBConnectionPool.getInstance(10);
+        UserDao userDao = new UserDaoImpl(con);
+        User user = userDao.getUser(username);
+        //temporary
+        ConnectionPool connectionPool = DBConnectionPool.getInstance(8);
+        QuizDao quizDaoTmp = new QuizDaoImpl(connectionPool);
+        Quiz quiz = quizDaoTmp.getQuiz(1);
+        req.getSession().setAttribute(MyConstants.Servlets.CURR_QUIZ,quiz);
+       //----
+        boolean isCorrectUser = (user != null) && user.getPassword().equals(StaticMethods.returnEncryptedPassword(password));
+        //TODO : change
+        if (!isCorrectUser ){
 
-        System.out.println("Done");
+            rd = req.getRequestDispatcher("incorrectInfo.jsp");
+            rd.forward(req,resp);
+        }else{
+            HttpSession session = req.getSession();
+            session.setAttribute("username",username);
 
+            req.setAttribute("name",username);
+            QuizDao quizDao = new QuizDaoImpl(con);
+            List<Quiz> quizzes = quizDao.getAllQuizzes();
+
+            session.setAttribute(MyConstants.Servlets.QUIZZES,quizzes);
+
+            /*  amas sxvagan gavitan mere */
+            session.setAttribute(MyConstants.Servlets.QUESTION_RESPONSE, QuestionType.QUESTION_RESPONSE.name());
+            session.setAttribute(MyConstants.Servlets.MULTIPLE_CHOICE, QuestionType.MULTIPLE_CHOICE.name());
+            session.setAttribute(MyConstants.Servlets.FILL_IN_THE_BLANK, QuestionType.FILL_IN_THE_BLANK.name());
+            session.setAttribute(MyConstants.Servlets.PICTURE_RESPONSE, QuestionType.PICTURE_RESPONSE.name());
+
+
+            rd = req.getRequestDispatcher("/main/welcome.jsp");
+            rd.forward(req,resp);
+        }
     }
 
 }

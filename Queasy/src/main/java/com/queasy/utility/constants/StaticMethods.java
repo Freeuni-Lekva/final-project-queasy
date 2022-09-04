@@ -108,9 +108,9 @@ public final class StaticMethods {
         connectionPool.releaseConnection(con);
         return false;
     }
-    public static java.sql.Date returnJavaSqlDate(java.util.Date date) {
+    public static java.sql.Timestamp returnJavaSqlDate(java.util.Date date) {
         Long millis = date.getTime();
-        java.sql.Date sqlDate = new java.sql.Date(millis);
+        java.sql.Timestamp sqlDate = new java.sql.Timestamp(millis);
         return sqlDate;
     }
 

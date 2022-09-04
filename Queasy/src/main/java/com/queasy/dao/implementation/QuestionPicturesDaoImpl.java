@@ -33,7 +33,8 @@ public class QuestionPicturesDaoImpl implements QuestionPicturesDao {
             Statement statement = con.createStatement();
             ResultSet res = statement.executeQuery(query);
             while(res.next()) {
-               pictures.add(pictureDao.getPictureOf(res.getInt(MyConstants.QuestionsPicturesDatabaseConstants.PICTURE_ID)));
+                int id = res.getInt(MyConstants.QuestionsPicturesDatabaseConstants.PICTURE_ID);
+               pictures.add(pictureDao.getPictureOf(id));
             }
         } catch (SQLException e) {
             e.printStackTrace();

@@ -1,0 +1,40 @@
+table, th, td {
+    border:1px solid black;
+}
+.stretch {
+    width: 100%;
+    display: inline-block;
+    font-size: 0;
+    line-height: 0
+}
+#picture_response_div {
+    width: 540px;
+    margin-top:90px;
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: justify;
+    -ms-text-justify: distribute-all-lines;
+    text-justify: distribute-all-lines;
+}
+#picture_response_div a {
+    horiz-align: left;
+    /*vertical-align: top;*/
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+}
+
+.question-header {
+    margin-bottom: 16px;
+    margin-top: 16px;
+    margin-right: 16px;
+    margin-left: 0px;
+    background-color: bisque;
+    font-family: Chandas;
+}
+.question {
+    margin: 16px;
+    padding: 16px;
+    background-color: bisque;
+}

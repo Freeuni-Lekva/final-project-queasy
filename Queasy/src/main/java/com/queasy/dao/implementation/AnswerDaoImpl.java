@@ -27,9 +27,10 @@ public class AnswerDaoImpl implements AnswerDao {
     @Override
     public List<Answer> getAllAnswersOf(int questionId) {
         String[] columns = {};
+        String condition = MyConstants.AnswersDatabaseConstants.QUESTION_ID + " = " + Integer.toString(questionId);
         String query = StaticMethods.selectQuery(MyConstants.AnswersDatabaseConstants.DATABASE,
                                                  columns,
-                                                 MyConstants.emptyString);
+                condition);
         List<Answer> answers = new ArrayList();
         Connection con = connectionPool.acquireConnection();
         try {

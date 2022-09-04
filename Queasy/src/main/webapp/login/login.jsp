@@ -1,10 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+
     <title>Welcome</title>
 </head>
 <body>
-        <h1>Welcome to Homework 5</h1>
+        <h1>Welcome</h1>
         <p>Please log in.</p>
 
         <form action = "LoginServlet" method = "post">

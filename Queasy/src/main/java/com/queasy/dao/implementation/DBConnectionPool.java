@@ -15,7 +15,7 @@ public class DBConnectionPool implements ConnectionPool{
     private static final String DB_URL = "jdbc:mysql://localhost:3306/queasy_database";
     private static final String DB_DRIVER_CLASS = "com.mysql.jdbc.Driver";
     private static final int MAX_CONNECTIONS = 8;
-    private static final int MIN_CONNECTIONS = 1;
+    private static final int MIN_CONNECTIONS = 5;
     private static BasicDataSource dataSource;
     private static DBConnectionPool connectionPool;
 

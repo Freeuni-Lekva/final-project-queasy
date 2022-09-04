@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebContextManager">
+    <option name="state">
+      <map>
+        <entry key="file://$PROJECT_DIR$/Queasy/src/main/webapp/login/welcome.jsp" value="file://$PROJECT_DIR$/Queasy/src/main/webapp/login" />
+        <entry key="file://$PROJECT_DIR$/Queasy/src/main/webapp/main/welcome.jsp" value="file://$PROJECT_DIR$/Queasy/src/main/webapp/main" />
+        <entry key="file://$PROJECT_DIR$/Queasy/src/main/webapp/quiz/quizOnePage.jsp" value="file://$PROJECT_DIR$/Queasy/src/main/webapp/quiz" />
+      </map>
+    </option>
+  </component>
+</project>

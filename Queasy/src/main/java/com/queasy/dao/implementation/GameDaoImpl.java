@@ -45,11 +45,11 @@ public class GameDaoImpl implements GameDao {
     public List<Game> getAllGamesOrderedForScoring(int quizId) {
         String[] columns = {};
         String condition = MyConstants.GameDatabaseConstants.QUIZ_ID + " = " + quizId +
-                " ORDER BY " + MyConstants.GameDatabaseConstants.SCORE + " ASC , " +
-                "DATEDIFF(second, " + MyConstants.GameDatabaseConstants.START_DATE + " , " +
-                MyConstants.GameDatabaseConstants.END_DATE + " )";
-
+                " ORDER BY " + MyConstants.GameDatabaseConstants.SCORE + " DESC , " +
+                "TIME_TO_SEC(TIMEDIFF(" + MyConstants.GameDatabaseConstants.END_DATE + " , " +
+                MyConstants.GameDatabaseConstants.START_DATE + " ))";
         String query = StaticMethods.selectQuery(MyConstants.GameDatabaseConstants.DATABASE,columns,condition);
+//        System.out.println(query);
         List<Game> answer = getListFunc(query);
 
         return answer;
@@ -108,8 +108,8 @@ public class GameDaoImpl implements GameDao {
             statement.setInt(1,game.getQuizId());
             statement.setInt(2,game.getScore());
             statement.setString(3,game.getUserName());
-            statement.setDate(4, StaticMethods.returnJavaSqlDate(game.getStartDate()));
-            statement.setDate(5, StaticMethods.returnJavaSqlDate(game.getEndDate()));
+            statement.setTimestamp(4, StaticMethods.returnJavaSqlDate(game.getStartDate()));
+            statement.setTimestamp(5, StaticMethods.returnJavaSqlDate(game.getEndDate()));
 
             if(statement.executeUpdate() > 0) {
                 connectionPool.releaseConnection(con);
