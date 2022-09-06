@@ -12,14 +12,123 @@
     <session-config>
         <session-timeout>1</session-timeout>
     </session-config>
-    <!--    <servlet>-->
-<!--        <servlet-name>Login</servlet-name>-->
-<!--        <servlet-class>com.queasy.servlets.LoginServlet</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>Login</servlet-name>-->
-<!--        <url-pattern>/login/Login</url-pattern>-->
-<!--        &lt;!&ndash; This is the URL of the servlet. &ndash;&gt;-->
-<!--    </servlet-mapping>-->
+    
+    <welcome-file-list>
+        <welcome-file>/login/login.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!--  /////////////////  -->
+
+    <servlet>
+        <servlet-name>LoginPage</servlet-name>
+        <jsp-file>/login/login.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginPage</servlet-name>
+<!--        <url-pattern>/login</url-pattern>-->
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <!--  /////////////////  -->
+    <servlet>
+        <servlet-name>CreateAccountPage</servlet-name>
+        <jsp-file>/login/createAccount.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CreateAccountPage</servlet-name>
+        <url-pattern>/register</url-pattern>
+    </servlet-mapping>
+
+    <!--  /////////////////  -->
+    <servlet>
+        <servlet-name>IncorrectInfoPage</servlet-name>
+        <jsp-file>/login/incorrectInfo.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>IncorrectInfoPage</servlet-name>
+        <url-pattern>/incorrect</url-pattern>
+    </servlet-mapping>
+
+    <!--  /////////////////  -->
+    <servlet>
+        <servlet-name>CreationFailedPage</servlet-name>
+        <jsp-file>/login/creationFailed.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CreationFailedPage</servlet-name>
+        <url-pattern>/creationFailed</url-pattern>
+    </servlet-mapping>
+
+    <!--  /////////////////  -->
+    <servlet>
+        <servlet-name>HomePage</servlet-name>
+        <jsp-file>/main/welcome.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HomePage</servlet-name>
+        <url-pattern>/welcome</url-pattern>
+    </servlet-mapping>
+
+    <!--  /////////////////  -->
+    <servlet>
+        <servlet-name>ScorePage</servlet-name>
+        <jsp-file>/quiz/score.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ScorePage</servlet-name>
+        <url-pattern>/score</url-pattern>
+    </servlet-mapping>
+
+    <!--  /////////////////  -->
+    <servlet>
+        <servlet-name>CreateQuizPage</servlet-name>
+        <jsp-file>/quiz/createQuiz.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CreateQuizPage</servlet-name>
+        <url-pattern>/create</url-pattern>
+    </servlet-mapping>
+
+    <!--  /////////////////  -->
+    <servlet>
+        <servlet-name>OnePageQuizPage</servlet-name>
+        <jsp-file>/quiz/quizOnePage.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>OnePageQuizPage</servlet-name>
+        <url-pattern>/quizOnePage</url-pattern>
+    </servlet-mapping>
+
+    <!--  /////////////////  -->
+    <servlet>
+        <servlet-name>QuizDetailsPage</servlet-name>
+        <jsp-file>/quiz/quizDetails.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>QuizDetailsPage</servlet-name>
+        <url-pattern>/quizDetails</url-pattern>
+    </servlet-mapping>
+
+    <!--  /////////////////  -->
+    <servlet>
+        <servlet-name>UserPage</servlet-name>
+        <jsp-file>/user/userDetails.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserPage</servlet-name>
+        <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
 

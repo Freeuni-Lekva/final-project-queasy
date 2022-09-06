@@ -21,8 +21,14 @@ import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
 
-@WebServlet("/quiz/quizDetails")
+@WebServlet("/QuizDetailsServlet")
 public class QuizDetailsServlet extends HttpServlet {
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req,resp);
+    }
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext context = req.getServletContext();
@@ -60,9 +66,7 @@ public class QuizDetailsServlet extends HttpServlet {
             multipleChoiceAnswers.addAll(answerDao.getAllAnswersOf(questions.get(i).getId()));
         }
 
-        session.setAttribute(MyConstants.Servlets.MULTIPLE_CHOICE_ANSWER,multipleChoiceAnswers);
-        session.setAttribute("FILL_BLANK_STRING",MyConstants.Servlets.FILL_BLANK_STRING);
-        session.setAttribute(MyConstants.Servlets.QUIZ_START_TIME,new java.util.Date());
+
 
         RequestDispatcher rd;
         req.setAttribute("id",quiz.getId());

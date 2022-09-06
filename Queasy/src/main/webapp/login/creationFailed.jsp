@@ -4,11 +4,8 @@
   <title>Create New Account</title>
 </head>
 <body>
-  <%
-    String name = request.getAttribute("failedName").toString();
-    out.println("<h1> The Name  " + name + " is Already in Use</h1>");
-  %>
-<p>Please enter another name and password.</p>
+
+<p>Please enter another name and password. <p style = "color : indianred "> Remember No '@' Allowed in username!</p></p>
 
   <form action = "addAccount" method = "post">
     <label> Username : </label>
@@ -19,6 +16,6 @@
     <input type = "password" name = "password" placeholder="Password"><br>
     <input type = "submit" value="Create">1
 </form>
-<a href = "login.jsp"> Login Page</a>
+<a href = "/login/login.jsp"> Login Page</a>
 </body>
 </html>

@@ -19,8 +19,12 @@ import java.io.PrintWriter;
 
 //i have no idea how to test servlets...
 
-@WebServlet("/login/addAccount")
+@WebServlet("/AddAccountServlet")
 public class AddAccountServlet extends HttpServlet {
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPost(req, resp);
+    }
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext context = req.getServletContext();

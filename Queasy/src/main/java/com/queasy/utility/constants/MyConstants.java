@@ -2,6 +2,10 @@ package com.queasy.utility.constants;
 
 import com.queasy.utility.enums.QuestionType;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public final class MyConstants {
 
     public static final String dateFormat = "yyyy-mm-dd";
@@ -101,6 +105,24 @@ public final class MyConstants {
     }
 
     public static class Servlets {
+
+        public static List<String> NOT_LOGGED_URLS = new ArrayList<>(Arrays.asList(
+                "/login/createAccount.jsp",
+                "/login/creationFailed.jsp",
+                "/login/incorrectInfo.jsp",
+                "/login/login.jsp",
+                "/",
+                "register",
+                "incorrect",
+                "creationFailed",
+                "/LoginServlet",
+                "/AddAccountServlet"
+        ));
+
+        public static int MAX_INACTIVE_TIME = 600;
+
+        public static String LOGIN_SERVLET = "/login/LoginServlet";
+        public static String LOGINED_USER = "loginedUser";
         public static String USERNAME = "username";
         public static String PASSWORD = "password";
         public static String QUIZZES = "quizzes";

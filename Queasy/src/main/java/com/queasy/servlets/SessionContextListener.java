@@ -4,6 +4,7 @@ import com.queasy.dao.implementation.*;
 import com.queasy.dao.interfaces.ConnectionPool;
 import com.queasy.model.user.User;
 import com.queasy.utility.constants.MyConstants;
+import com.queasy.utility.enums.QuestionType;
 import jakarta.servlet.ServletContextEvent;
 import jakarta.servlet.ServletContextListener;
 import jakarta.servlet.annotation.WebListener;
@@ -32,7 +33,14 @@ public class SessionContextListener implements ServletContextListener, HttpSessi
         sce.getServletContext().setAttribute(MyConstants.ContextAttributes.QUIZ_DAO,new QuizDaoImpl(connectionPool));
         sce.getServletContext().setAttribute(MyConstants.ContextAttributes.QUIZ_QUESTION_DAO,new QuizQuestionDaoImpl(connectionPool));
         sce.getServletContext().setAttribute(MyConstants.ContextAttributes.USER_DAO,new UserDaoImpl(connectionPool));
+
         sce.getServletContext().setAttribute("MILLISECONDS_IN_DAY",MyConstants.Servlets.MILLISECONDS_IN_DAY);
+        sce.getServletContext().setAttribute(MyConstants.Servlets.QUESTION_RESPONSE, QuestionType.QUESTION_RESPONSE.name());
+        sce.getServletContext().setAttribute(MyConstants.Servlets.MULTIPLE_CHOICE, QuestionType.MULTIPLE_CHOICE.name());
+        sce.getServletContext().setAttribute(MyConstants.Servlets.FILL_IN_THE_BLANK, QuestionType.FILL_IN_THE_BLANK.name());
+        sce.getServletContext().setAttribute(MyConstants.Servlets.PICTURE_RESPONSE, QuestionType.PICTURE_RESPONSE.name());
+        sce.getServletContext().setAttribute("FILL_BLANK_STRING",MyConstants.Servlets.FILL_BLANK_STRING);
+
 
     }
 

@@ -5,7 +5,7 @@
 </head>
 <body>
   <h1>Add Quiz</h1>
-  <form action = "createQuiz" method="get">
+  <form action = "/CreateQuizServlet" method="get">
     <label>Name: </label>
     <input type="text" name = "name" placeholder="Enter Name">
     <br>

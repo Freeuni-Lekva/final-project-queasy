@@ -10,7 +10,7 @@
 </head>
 <body>
 <h1 class="question-header"> ${currQuiz.getQuizName()}</h1>
-    <form action = "ScorePage" method = "post">
+    <form action = "/ScorePageServlet" method = "post">
         <input type="hidden" name = "quizId" value = "${currQuiz.getId()}">
         <c:forEach var = "curr" items = "${currQuiz.getQuestions()}" varStatus="counter">
             <div class = "question">

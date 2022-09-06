@@ -8,7 +8,7 @@
     <h1>Create New Account</h1>
     <p>Please enter proposed name and password.</p>
 
-    <form action = "addAccount" method = "post">
+    <form action = "/AddAccountServlet" method = "post">
 
         <label> Username : </label>
         <input type = "text" name = "username" placeholder="Username"> <br>
@@ -18,6 +18,6 @@
         <input type = "password" name = "password" placeholder="Password"><br>
         <input type = "submit" value="Create">
     </form>
-    <a href = "login.jsp"> Login Page</a>
+    <a href = "/login/login.jsp"> Login Page</a>
 </body>
 </html>

@@ -16,7 +16,7 @@
 
     <h1>Name : "${quiz.getQuizName()}"</h1>
     <p>Description : ${quiz.getDescription()}</p>
-    <a href = "/quiz/quizOnePage?quizId=${quiz.getId()}"> TAKE QUIZ!</a><br>
+    <a href = "/QuizServlet?quizId=${quiz.getId()}"> TAKE QUIZ!</a><br>
     <c:set var="performancePercentage"><fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${ ((gamesByScore.stream().map(c -> c.getScore()).reduce(0,(a, b) -> a + b))/gamesByScore.size())/quiz.getQuestions().size() * 100}" /></c:set>
 
     <p>Performance Percentage : ${performancePercentage}%</p>

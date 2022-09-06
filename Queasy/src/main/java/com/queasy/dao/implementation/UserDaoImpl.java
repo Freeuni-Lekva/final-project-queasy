@@ -49,6 +49,7 @@ public class UserDaoImpl implements UserDao {
     @Override
     public User getUser(String userNameOrEmail) {
         String searchFor = "";
+        userNameOrEmail = userNameOrEmail != null ? userNameOrEmail : "";
         if(StaticMethods.isEmail(userNameOrEmail))
             searchFor = MyConstants.USER_MAIL;
         else

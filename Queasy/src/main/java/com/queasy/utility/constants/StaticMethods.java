@@ -11,6 +11,7 @@ import java.sql.Statement;
 
 public final class StaticMethods {
 
+
     public static boolean isEmail(String value){
         if (value.contains(MyConstants.EMAIL_MUST_CONTAIN))
             return true;

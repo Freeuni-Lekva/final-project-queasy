@@ -2,25 +2,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <%
-        if (session.getAttribute("username") == null){
-            response.sendRedirect("/login/login.jsp");
-        }
-    %>
+    <c:set var="quizzes" value="${applicationScope['CONTEXT_ATTRIBUTE_QUIZ_DAO'].getAllQuizzes()}"></c:set>
+    <link href="../css/main.css" rel="stylesheet" type="text/css">
+
 
 </head>
 <body>
- <jsp:include page="header.jsp"/>
-    <%
-        if (session.getAttribute("username") != null){
-            String name = request.getSession().getAttribute("username").toString();
-            out.println("<h1> Welcome " + name + "</h1>");
-        }
+ <nav class = "header"><jsp:include page="/main/header.jsp"/></nav>
+<%--    <%--%>
+<%--        if (session.getAttribute("username") != null){--%>
+<%--            String name = request.getSession().getAttribute("username").toString();--%>
+<%--            out.println("<h1> Welcome " + name + "</h1>");--%>
+<%--        }--%>
 
-    %>
+<%--    %>--%>
     <c:forEach var = "quiz" items = "${quizzes}">
 
-        <a href = "/quiz/quizDetails?quizId=${quiz.getId()}">"${quiz.getQuizName()}"</a><br>
+        <a href = "${pageContext.request.contextPath}/QuizDetailsServlet?quizId=${quiz.getId()}">"${quiz.getQuizName()}"</a><br>
     </c:forEach>
 
 

@@ -38,3 +38,29 @@ table, th, td {
     padding: 16px;
     background-color: bisque;
 }
+
+.header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+.header ul li {
+    float: left;
+
+}
+.header ul li a {
+    display: block;
+    padding: 8px;
+}
+
+a {
+    text-decoration: none;
+}
+a:link, a:visited {
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+}
