@@ -64,3 +64,6 @@ a:link, a:visited {
 a:hover {
     color: red;
 }
+.logout {
+    float: right
+}

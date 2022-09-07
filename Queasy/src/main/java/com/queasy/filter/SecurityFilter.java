@@ -30,20 +30,27 @@ public class SecurityFilter implements Filter {
     @Override
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException {
 
-            if (req instanceof HttpServletRequest) {
-                String url = ((HttpServletRequest)req).getRequestURL().toString();
-
-                if(!MyConstants.Servlets.NOT_LOGGED_URLS.stream().
-                        filter(c -> url.endsWith(c)).collect(Collectors.toList()).isEmpty()) {
-                    System.out.println("url = "  + url);
-                    chain.doFilter(req, resp);
-                } else {
-                    if(!SessionManager.isLogined(req)) {
-                        req.getRequestDispatcher("/login/login.jsp").forward(req, resp);
-                    }
-                }
-               return;
+        String url = ((HttpServletRequest)req).getRequestURL().toString();
+        if (SessionManager.isLogined(req) ) {
+            if(!MyConstants.Servlets.NOT_LOGGED_URLS.stream().
+                    filter(c -> url.endsWith(c)).collect(Collectors.toList()).isEmpty() ||
+                    MyConstants.Servlets.ALL_URLS.stream().filter(c -> url.endsWith(c)).collect(Collectors.toList()).isEmpty()) {
+                req.getRequestDispatcher("/welcome").forward(req, resp);
+                return;
             }
+        }
+        else if (MyConstants.Servlets.NOT_LOGGED_URLS.stream().
+                filter(c -> url.endsWith(c)).collect(Collectors.toList()).isEmpty() && !SessionManager.isLogined(req)) {
+                req.getRequestDispatcher("/login/login.jsp").forward(req, resp);
+                return;
+        }
+
+//        if(!SessionManager.isLogined(req)) {
+//            req.getRequestDispatcher("/").forward(req, resp);
+//            return;
+//        }
+
+        chain.doFilter(req, resp);
     }
 
     @Override

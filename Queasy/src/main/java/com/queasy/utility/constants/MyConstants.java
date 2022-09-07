@@ -112,13 +112,45 @@ public final class MyConstants {
                 "/login/incorrectInfo.jsp",
                 "/login/login.jsp",
                 "/",
-                "register",
-                "incorrect",
-                "creationFailed",
+                "/register",
+                "/incorrect",
+                "/creationFailed",
                 "/LoginServlet",
                 "/AddAccountServlet"
         ));
 
+        public static List<String> ALL_URLS = new ArrayList<>(Arrays.asList(
+                "/welcome",
+                "/score",
+                "/create",
+                "/quizOnePage",
+                "/quizDetails",
+                "/profile",
+         "/ScorePageServlet",
+                "/CreateQuizServlet",
+                "/HomePageServlet",
+                "/QuizDetailsServlet",
+                "/QuizServlet",
+                "/ScorePageServlet",
+        "/main/header.jsp",
+                "/main/welcome.jsp",
+                "/quiz/createQuiz.jsp",
+                "/quiz/quizDetails.jsp",
+                "/quiz/quizOnePage.jsp",
+                "/quiz/score.jsp",
+                "/user/userDetails.jsp",
+                "/login/createAccount.jsp",
+                "/login/creationFailed.jsp",
+                "/login/incorrectInfo.jsp",
+                "/login/login.jsp",
+                "/",
+                "/register",
+                "/incorrect",
+                "/creationFailed",
+                "/LoginServlet",
+                "/AddAccountServlet",
+                "/LogoutServlet"
+        ));
         public static int MAX_INACTIVE_TIME = 600;
 
         public static String LOGIN_SERVLET = "/login/LoginServlet";

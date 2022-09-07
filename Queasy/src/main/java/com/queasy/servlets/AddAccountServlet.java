@@ -46,7 +46,7 @@ public class AddAccountServlet extends HttpServlet {
             rd = req.getRequestDispatcher("creationFailed.jsp");
             rd.forward(req,resp);
         }else{
-            rd = req.getRequestDispatcher("login.jsp");
+            rd = req.getRequestDispatcher("/login/login.jsp");
             rd.forward(req,resp);
         }
     }
