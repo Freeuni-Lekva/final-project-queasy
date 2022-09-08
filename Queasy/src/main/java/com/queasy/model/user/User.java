@@ -1,11 +1,19 @@
 package com.queasy.model.user;
 
 public class User {
+    private int id;
     private String userName;
     private String mail;
     private String password;
 
-    public User(String userName, String mail, String password) {
+//    public User(String userName, String mail, String password) {
+//        this.userName = userName;
+//        this.mail = mail;
+//        this.password = password;
+//    }
+
+    public User(int id, String userName, String mail, String password) {
+        this.id = id;
         this.userName = userName;
         this.mail = mail;
         this.password = password;
@@ -47,5 +55,9 @@ public class User {
             return true;
         }
         return false;
+    }
+
+    public int getId() {
+        return id;
     }
 }

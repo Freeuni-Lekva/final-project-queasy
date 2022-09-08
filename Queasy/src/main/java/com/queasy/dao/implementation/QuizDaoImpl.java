@@ -89,7 +89,8 @@ public class QuizDaoImpl implements QuizDao {
             Statement statement = con.createStatement();
             ResultSet res = statement.executeQuery(StaticMethods.selectQuery(MyConstants.USERS_DATABASE,columns,condition));
             if(res.next()) {
-                return new User(res.getString(MyConstants.USER_NAME),
+                return new User(res.getInt(MyConstants.ID),
+                        res.getString(MyConstants.USER_NAME),
                         res.getString(MyConstants.USER_MAIL),
                         res.getString(MyConstants.USER_PASSWORD));
             }

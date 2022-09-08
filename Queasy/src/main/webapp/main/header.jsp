@@ -35,7 +35,7 @@
     <a  href="/welcome">Home</a>
     <a href="/quizzes">Quizzes</a>
     <div class="topnav-right">
-        <a href="/profile">Profile</a>
+        <a href="/user/userDetails.jsp">Profile</a>
         <a href="/LogoutServlet"><img src = "https://cdn-icons-png.flaticon.com/512/1243/1243950.png" alt = "Logout"></a>
     </div>
 </div>

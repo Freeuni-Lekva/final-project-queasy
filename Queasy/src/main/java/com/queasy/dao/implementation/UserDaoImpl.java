@@ -26,7 +26,8 @@ public class UserDaoImpl implements UserDao {
             Statement statement = con.createStatement();
             ResultSet res = statement.executeQuery(query);
             if(res.next()) {
-                return new User(res.getString(MyConstants.USER_NAME),
+                return new User(res.getInt(MyConstants.ID),
+                        res.getString(MyConstants.USER_NAME),
                         res.getString(MyConstants.USER_MAIL),
                         res.getString(MyConstants.USER_PASSWORD));
             }
@@ -204,7 +205,8 @@ public class UserDaoImpl implements UserDao {
             Statement statement = con.createStatement();
             ResultSet res = statement.executeQuery(query);
             while(res.next()) {
-                users.add(new User(res.getString(MyConstants.USER_NAME),
+                users.add(new User(res.getInt(MyConstants.ID),
+                        res.getString(MyConstants.USER_NAME),
                         res.getString(MyConstants.USER_MAIL),
                         res.getString(MyConstants.USER_PASSWORD)));
             }

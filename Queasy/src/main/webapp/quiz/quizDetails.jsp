@@ -6,6 +6,7 @@
 <html>
 <head>
     <link href="../css/main.css" rel="stylesheet" type="text/css">
+    <c:set var="userDao" value="${applicationScope['CONTEXT_ATTRIBUTE_USER_DAO']}"></c:set>
     <c:set var="quiz" value="${applicationScope['CONTEXT_ATTRIBUTE_QUIZ_DAO'].getQuiz(id)}"></c:set>
     <c:set var="gamesByScore" value="${applicationScope['CONTEXT_ATTRIBUTE_GAME_DAO'].getAllGamesOrderedForScoring(id)}"></c:set>
     <jsp:useBean id="now" class="java.util.Date" />
@@ -13,14 +14,15 @@
     <title>Quiz ${quiz.getQuizName()}</title>
 </head>
 <body>
+    <jsp:include page="/main/header.jsp"/>
 
-    <h1>Name : "${quiz.getQuizName()}"</h1>
+    <h1>Name : ${quiz.getQuizName()}</h1>
     <p>Description : ${quiz.getDescription()}</p>
     <a href = "/QuizServlet?quizId=${quiz.getId()}"> TAKE QUIZ!</a><br>
     <c:set var="performancePercentage"><fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${ ((gamesByScore.stream().map(c -> c.getScore()).reduce(0,(a, b) -> a + b))/gamesByScore.size())/quiz.getQuestions().size() * 100}" /></c:set>
 
     <p>Performance Percentage : ${performancePercentage}%</p>
-    <p>CREATOR : <a href = "#">${applicationScope['CONTEXT_ATTRIBUTE_QUIZ_DAO'].getCreator(id).getUserName()}</a></p>
+    <p>CREATOR : <a href = "/profile?id=${id}">${applicationScope['CONTEXT_ATTRIBUTE_QUIZ_DAO'].getCreator(id).getUserName()}</a></p>
 
     <div>
         <h2>High Performers of all time</h2>
@@ -45,10 +47,10 @@
             </tr>
 
             <c:forEach var = "game"
-                       items = "${gamesByScore.stream().filter(c -> (now.getTime() - c.getStartDate().getTime()) < applicationScope['MILLISECONDS_IN_DAY']).toList()}">
+                       items = "${gamesByScore.stream().filter(c -> (now.getTime() - c.getStartDate().getTime()) < applicationScope['MILLISECONDS_IN_DAY']).limit(10).toList()}">
                 <tr>
-                    <td> <a href = "">"${game.getUserName()}"</a></td>
-                    <td>"${game.getScore()}"</td>
+                    <td> <a href = "/profile?id=${userDao.getUser(game.getUserName()).getId()}">${game.getUserName()}</a></td>
+                    <td>${game.getScore()}</td>
                 </tr>
             </c:forEach>
         </table>
@@ -60,9 +62,9 @@
                 <th>Score</th>
                 <th>End date</th>
             </tr>
-            <c:forEach var = "game" items = "${gamesByScore.stream().sorted((e1,e2) -> (e2.getEndDate().compareTo(e1.getEndDate()))).toList()}">
+            <c:forEach var = "game" items = "${gamesByScore.stream().sorted((e1,e2) -> (e2.getEndDate().compareTo(e1.getEndDate()))).limit(10).toList()}">
                 <tr>
-                    <td> <a href = "">"${game.getUserName()}"</a></td>
+                    <td> <a href = "/profile?id=2">"${game.getUserName()}"</a></td>
                     <td>"${game.getScore()}"</td>
                     <td>${game.getEndDate().toString()}</td>
                 </tr>

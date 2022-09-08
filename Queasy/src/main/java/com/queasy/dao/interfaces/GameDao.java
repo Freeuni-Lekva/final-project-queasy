@@ -5,6 +5,7 @@ import com.queasy.model.game.Game;
 import java.util.List;
 
 public interface GameDao {
+    List<Game>getAllGames();
 
     List<Game> getAllGamesOf(String userName);
 

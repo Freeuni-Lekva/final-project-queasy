@@ -52,15 +52,14 @@ public class LoginServlet extends HttpServlet{
         }
         boolean isCorrectUser = (user != null) && user.getPassword().equals(StaticMethods.returnEncryptedPassword(password));
         if (!isCorrectUser ){
-
             rd = req.getRequestDispatcher("/login/incorrectInfo.jsp");
             rd.forward(req,resp);
         }else{
             SessionManager.createSessionLogin(req,user);
             QuizDao quizDao = (QuizDao) context.getAttribute(MyConstants.ContextAttributes.QUIZ_DAO);
-
-            rd = req.getRequestDispatcher("/main/welcome.jsp");
-            rd.forward(req,resp);
+              resp.sendRedirect("/welcome");
+//            rd = req.getRequestDispatcher("/main/welcome.jsp");
+//            rd.forward(req,resp);
         }
     }
 

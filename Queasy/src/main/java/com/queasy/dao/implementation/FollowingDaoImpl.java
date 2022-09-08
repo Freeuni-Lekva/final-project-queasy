@@ -140,4 +140,16 @@ public class FollowingDaoImpl implements FollowingDao {
 
         return executeUpdating(query);
     }
+
+    @Override
+    public boolean removeRequest(String fromUserName, String toUserName) {
+
+        String condition = MyConstants.FOLLOWERS_FIRST_USER_USERNAME + " = " +
+                           StaticMethods.apostropheString(fromUserName) + " AND " +
+                           MyConstants.FOLLOWERS_SECOND_USER_USERNAME + " = " +
+                            StaticMethods.apostropheString(toUserName);
+        String query = StaticMethods.deleteQuery(MyConstants.FOLLOWERS_DATABASE,condition);
+
+        return executeUpdating(query);
+    }
 }

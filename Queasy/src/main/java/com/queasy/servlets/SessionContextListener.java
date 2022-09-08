@@ -40,6 +40,7 @@ public class SessionContextListener implements ServletContextListener, HttpSessi
         sce.getServletContext().setAttribute(MyConstants.Servlets.FILL_IN_THE_BLANK, QuestionType.FILL_IN_THE_BLANK.name());
         sce.getServletContext().setAttribute(MyConstants.Servlets.PICTURE_RESPONSE, QuestionType.PICTURE_RESPONSE.name());
         sce.getServletContext().setAttribute("FILL_BLANK_STRING",MyConstants.Servlets.FILL_BLANK_STRING);
+        sce.getServletContext().setAttribute("Constants",new MyConstants());
 
 
     }

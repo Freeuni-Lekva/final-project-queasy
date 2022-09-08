@@ -4,6 +4,7 @@
     <title>Title</title>
 </head>
 <body>
+<jsp:include page="/main/header.jsp"/>
   <h1>Add Quiz</h1>
   <form action = "/CreateQuizServlet" method="get">
     <label>Name: </label>

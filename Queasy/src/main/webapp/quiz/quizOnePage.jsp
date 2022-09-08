@@ -9,6 +9,8 @@
 
 </head>
 <body>
+<jsp:include page="/main/header.jsp"/>
+
 <h1 class="question-header"> ${currQuiz.getQuizName()}</h1>
     <form action = "/ScorePageServlet" method = "post">
         <input type="hidden" name = "quizId" value = "${currQuiz.getId()}">

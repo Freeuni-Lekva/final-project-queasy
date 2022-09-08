@@ -20,4 +20,6 @@ public interface FollowingDao {
     List<User> getReceivedRequestsOf(String userName);
 
     boolean sendRequest(String fromUserName, String toUserName);
+    boolean removeRequest(String fromUserName, String toUserName);
+
 }

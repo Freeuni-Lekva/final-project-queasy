@@ -9,10 +9,7 @@
         <taglib-location>tld/c-1_0.tld</taglib-location>
     </taglib>
     </jsp-config>
-    <session-config>
-        <session-timeout>1</session-timeout>
-    </session-config>
-    
+
     <welcome-file-list>
         <welcome-file>/login/login.jsp</welcome-file>
     </welcome-file-list>

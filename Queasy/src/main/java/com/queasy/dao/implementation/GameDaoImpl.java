@@ -64,6 +64,14 @@ public class GameDaoImpl implements GameDao {
         List<Game> answer = getListFunc(query);
         return answer;
     }
+    @Override
+    public List<Game> getAllGames() {
+        String[] columns = {};
+        String condition = "";
+        String query = StaticMethods.selectQuery(MyConstants.GameDatabaseConstants.DATABASE,columns,condition);
+        List<Game> answer = getListFunc(query);
+        return answer;
+    }
 
     @Override
     public List<Game> getAllGames(int quizId) {
