@@ -57,7 +57,7 @@
 
         <c:choose>
             <c:when test="${!currUser.getUserName().equals(loginedUser.getUserName()) }">
-                <form action = "/UserDetailsServlet" method="post">
+                <form action = "/UserDetailsServlet" method="get">
                 <c:choose>
 
                     <c:when test="${myFriends.contains(currUser)}">
@@ -104,7 +104,7 @@
                     <tr>
                         <th>UserName</th>
                     </tr>
-                    <form action = "/UserDetailsServlet" method="post">
+                    <form action = "/UserDetailsServlet" method="get">
                     <c:forEach var = "friend_requests" items = "${received.stream().sorted((e1,e2) -> (e1.getUserName().compareTo(e2.getUserName()))).toList()}">
                         <tr>
                             <c:if test="${currUser.getUserName().equals(loginedUser.getUserName())}">

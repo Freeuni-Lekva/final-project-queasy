@@ -5,8 +5,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
-    <link href="../css/main.css" rel="stylesheet" type="text/css">
-    <c:set var="userDao" value="${applicationScope['CONTEXT_ATTRIBUTE_USER_DAO']}"></c:set>
+    <link href="../css/main.jsp" rel="stylesheet" type="text/css">
+    <c:set var="users" value="${applicationScope['CONTEXT_ATTRIBUTE_USER_DAO']}"></c:set>
     <c:set var="quiz" value="${applicationScope['CONTEXT_ATTRIBUTE_QUIZ_DAO'].getQuiz(id)}"></c:set>
     <c:set var="gamesByScore" value="${applicationScope['CONTEXT_ATTRIBUTE_GAME_DAO'].getAllGamesOrderedForScoring(id)}"></c:set>
     <jsp:useBean id="now" class="java.util.Date" />
@@ -33,8 +33,8 @@
             </tr>
         <c:forEach var = "game" items = "${gamesByScore}">
             <tr>
-            <td> <a href = "">"${game.getUserName()}"</a></td>
-            <td>"${game.getScore()}"</td>
+            <td> <a href = "/profile?id=${users.getUser(game.getUserName()).getId()}">"${game.getUserName()}"</a></td>
+            <td>${game.getScore()}</td>
             </tr>
         </c:forEach>
         </table>
@@ -49,7 +49,8 @@
             <c:forEach var = "game"
                        items = "${gamesByScore.stream().filter(c -> (now.getTime() - c.getStartDate().getTime()) < applicationScope['MILLISECONDS_IN_DAY']).limit(10).toList()}">
                 <tr>
-                    <td> <a href = "/profile?id=${userDao.getUser(game.getUserName()).getId()}">${game.getUserName()}</a></td>
+                    <td> <a href = "/profile?id=${users.getUser(game.getUserName()).getId()}">${game.getUserName()}</a></td>
+
                     <td>${game.getScore()}</td>
                 </tr>
             </c:forEach>
@@ -64,8 +65,8 @@
             </tr>
             <c:forEach var = "game" items = "${gamesByScore.stream().sorted((e1,e2) -> (e2.getEndDate().compareTo(e1.getEndDate()))).limit(10).toList()}">
                 <tr>
-                    <td> <a href = "/profile?id=2">"${game.getUserName()}"</a></td>
-                    <td>"${game.getScore()}"</td>
+                    <td> <a href = "/profile?id=${users.getUser(game.getUserName()).getId()}">${game.getUserName()}</a></td>
+                    <td>${game.getScore()}</td>
                     <td>${game.getEndDate().toString()}</td>
                 </tr>
             </c:forEach>

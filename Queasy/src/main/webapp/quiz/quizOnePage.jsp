@@ -5,7 +5,6 @@
 <head>
     <c:set var="currQuiz" value="${applicationScope['CONTEXT_ATTRIBUTE_QUIZ_DAO'].getQuiz(quizId)}"></c:set>
     <title>Quiz</title>
-    <link href="../css/main.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -26,7 +25,7 @@
                 <c:when test="${curr.getQuestionType().name().equals(PICTURE_RESPONSE)}">
 
                     <p>Text : ${curr.getText()}</p>
-                    <div style="margin: 32px;">
+                    <div class = "flex-container" style="margin: 32px;">
                     <c:forEach var = "currImg" items = "${curr.getPictures()}">
                         <img src="${currImg.getPicture()}" alt="Something went wrong..." width = "200px">
                            <br>

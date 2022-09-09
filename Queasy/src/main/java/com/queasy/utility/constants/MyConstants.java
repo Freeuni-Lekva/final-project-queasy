@@ -151,7 +151,13 @@ public final class MyConstants {
                 "/AddAccountServlet",
                 "/LogoutServlet",
                 "/user/userDetails.jsp",
-                "/UserDetailsServlet"
+                "/UserDetailsServlet",
+                "/UserSearchServlet",
+                "/QuizSearchServlet",
+                "/css/main.jsp",
+                "/Error",
+                "/error/400-499.jsp",
+                "/mail/createMessage.jsp"
         ));
         public static int MAX_INACTIVE_TIME = 600;
 

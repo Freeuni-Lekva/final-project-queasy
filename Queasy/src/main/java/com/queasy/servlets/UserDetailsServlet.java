@@ -21,11 +21,6 @@ public class UserDetailsServlet extends HttpServlet {
     //TODO: ეს გასაწერია რომ რექვესთი ჯსტლ-შიც გაუშვას, და ასევე გასაწერია რომ ჰოთლინკები
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-       doPost(req,resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher rd;
         ServletContext context = req.getServletContext();
         String currentFriendRequest = req.getParameter("request");
@@ -58,6 +53,10 @@ public class UserDetailsServlet extends HttpServlet {
             }
             rd = req.getRequestDispatcher("/profile");
             rd.forward(req,resp);
-        }
+        }    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+       doGet(req,resp);
     }
 }
