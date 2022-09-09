@@ -18,6 +18,8 @@ public interface QuizDao {
 
     Quiz getQuiz(int quizId);
 
+    Quiz getQuiz(String quizName);
+
     boolean addQuiz(Quiz quiz);
 
     boolean removeQuiz(int quizId);

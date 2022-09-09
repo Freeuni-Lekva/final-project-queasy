@@ -112,6 +112,17 @@ public class QuizDaoImpl implements QuizDao {
         return quiz;
     }
 
+    @Override
+    public Quiz getQuiz(String quizName) {
+        Connection con = connectionPool.acquireConnection();
+        String[] columns = {};
+        String condition = MyConstants.QuizDatabaseConstants.QUIZ_NAME + " = " + StaticMethods.apostropheString(quizName);
+
+        Quiz quiz = getQuizHelper(con, StaticMethods.selectQuery(MyConstants.QuizDatabaseConstants.DATABASE,columns,condition));
+        connectionPool.releaseConnection(con);
+        return quiz;
+    }
+
     //TODO:
     @Override
     public boolean addQuiz(Quiz quiz) {
