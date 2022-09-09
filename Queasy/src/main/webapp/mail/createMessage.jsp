@@ -13,12 +13,12 @@
 <body>
     <jsp:include page="/main/header.jsp"/>
 
-    <form>
-        <label>Description: </label>
-        <input type = "text" placeholder="Receiver...">
-        <br>
+    <form action = "/CreateMessageServlet" method = "post">
         <label>To: </label>
-        <input type = "text" placeholder="Description...">
+        <input type = "text" placeholder="Receiver..." name = "receiver">
+        <br>
+        <label>Subject: </label>
+        <input type = "text" placeholder="Subject..." name = "subject">
         <br>
         <label>Message</label>
         <br>
