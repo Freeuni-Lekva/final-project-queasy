@@ -54,6 +54,8 @@ public class SessionContextListener implements ServletContextListener, HttpSessi
     public void sessionCreated(HttpSessionEvent se) {
         user = null;
         se.getSession().setAttribute(MyConstants.Servlets.USERNAME,user);
+        se.getSession().setAttribute(MyConstants.Servlets.LOGINED_USER,user);
+
     }
 
     @Override

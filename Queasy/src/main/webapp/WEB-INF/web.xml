@@ -126,9 +126,31 @@
         <url-pattern>/profile</url-pattern>
     </servlet-mapping>
 
-    <error-page>
-        <location>/Error</location>
-    </error-page>
+    <!--  /////////////////  -->
+    <servlet>
+        <servlet-name>MailPage</servlet-name>
+        <jsp-file>/mail/mailPage.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MailPage</servlet-name>
+        <url-pattern>/mails</url-pattern>
+    </servlet-mapping>
+
+    <!--  /////////////////  -->
+    <servlet>
+        <servlet-name>ReadMailPage</servlet-name>
+        <jsp-file>/mail/read.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ReadMailPage</servlet-name>
+        <url-pattern>/read</url-pattern>
+    </servlet-mapping>
+
+<!--    <error-page>-->
+<!--        <location>/Error</location>-->
+<!--    </error-page>-->
 
 </web-app>
 

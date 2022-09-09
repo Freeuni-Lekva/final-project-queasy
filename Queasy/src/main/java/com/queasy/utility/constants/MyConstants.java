@@ -160,7 +160,12 @@ public final class MyConstants {
                 "/mail/createMessage.jsp",
                 "/mail/failed.jsp",
                 "/mail/success.jsp",
-                "/CreateMessageServlet"
+                "/mailPage.jsp",
+                "/read.jsp",
+                "/CreateMessageServlet",
+                "/mails",
+                "/read"
+
         ));
         public static int MAX_INACTIVE_TIME = 600;
 

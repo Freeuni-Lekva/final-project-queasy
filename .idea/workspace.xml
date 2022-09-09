@@ -10,12 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="505333db-48ce-437d-b26a-b117a4278730" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/mail/failed.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/mail/success.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/mail/mailPage.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/CreateMessageServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/CreateMessageServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/SessionContextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/SessionContextListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/MyConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/MyConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/mail/createMessage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/mail/createMessage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/error/400-499.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/error/400-499.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/main/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/main/header.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -343,7 +344,7 @@
       <workItem from="1662497715940" duration="1427000" />
       <workItem from="1662575798024" duration="12633000" />
       <workItem from="1662619157551" duration="26865000" />
-      <workItem from="1662741187340" duration="3766000" />
+      <workItem from="1662741187340" duration="6744000" />
     </task>
     <servers />
   </component>
