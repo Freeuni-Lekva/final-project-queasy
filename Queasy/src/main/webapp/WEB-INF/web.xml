@@ -149,9 +149,9 @@
     </servlet-mapping>
 
 
-<!--    <error-page>-->
-<!--        <location>/Error</location>-->
-<!--    </error-page>-->
+    <error-page>
+        <location>/Error</location>
+    </error-page>
 
 </web-app>
 

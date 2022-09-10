@@ -1,5 +1,11 @@
 <style>
+    body {
+        background-color: rgba(92, 180, 126, 0.48);
 
+    }
+    * {
+        font-family: "Lucida Console", "Courier New", monospace;
+    }
     a {
         color: black
     }
@@ -9,12 +15,6 @@
     a:checked {
         color: red
     }
-
-    div {
-        font-family: "Lucida Console", "Courier New", monospace;
-    }
-
-
 
     table, th, td {
     border:1px solid black;
@@ -63,7 +63,7 @@
 /*-------------*/
     .topnav {
         overflow: hidden;
-        background-color: #838383;
+        background-color: #56855b;
     }
 
     .topnav a {
@@ -110,6 +110,6 @@
     .topnav .search-container input:hover {
         background: #ccc;
     }
-
+/
 </style>
 

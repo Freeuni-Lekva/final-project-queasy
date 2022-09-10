@@ -23,19 +23,22 @@ public class QuizSearchServlet extends HttpServlet {
 
         try{
             int id = Integer.parseInt(req.getParameter("search"));
-            req.setAttribute("id",id);
-            rd = req.getRequestDispatcher("/quiz/quizDetails.jsp");
-            rd.forward(req,resp);
-        } catch (NumberFormatException e) {
-            Quiz quiz = quizDao.getQuiz(req.getParameter("search"));
-            if(quiz != null) {
-                req.setAttribute("id",quiz.getId());
+            if(quizDao.getQuiz(id) != null) {
+                req.setAttribute("id",id);
                 rd = req.getRequestDispatcher("/quiz/quizDetails.jsp");
                 rd.forward(req,resp);
             }
-            resp.sendRedirect("/welcome");
-        }
 
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        Quiz quiz = quizDao.getQuiz(req.getParameter("search"));
+        if(quiz != null) {
+            req.setAttribute("id",quiz.getId());
+            rd = req.getRequestDispatcher("/quiz/quizDetails.jsp");
+            rd.forward(req,resp);
+        }
+        resp.sendRedirect("/welcome");
     }
 
     @Override

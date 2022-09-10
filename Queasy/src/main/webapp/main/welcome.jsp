@@ -12,6 +12,7 @@
 </head>
 <body>
 <jsp:include page="/main/header.jsp"/>
+<jsp:include page="/css/home.jsp"/>
 
 <h2>Top Scorers</h2>
     <table>
@@ -36,10 +37,14 @@
     <table>
         <tr>
             <th>QuizName</th>
+            <th>Creator UserName</th>
+            <th>Quiz Description</th>
         </tr>
     <c:forEach var = "quiz" items = "${quizDao.getAllQuizzes()}">
         <tr>
             <td><a href = "${pageContext.request.contextPath}/QuizDetailsServlet?quizId=${quiz.getId()}">${quiz.getQuizName()}</a><br></td>
+            <td><a href = "${pageContext.request.contextPath}/profile?id=${quiz.getCreatorId()}">${userDao.getUser(quiz.getCreatorId()).getUserName()}</a></td>
+            <td>${quiz.getDescription()}<br></td>
         </tr>
     </c:forEach>
     </table>
@@ -47,7 +52,7 @@
 <h2>All Users</h2>
 <table>
     <tr>
-        <th>QuizName</th>
+        <th>User names</th>
     </tr>
     <c:forEach var = "user" items = "${userDao.getAllUsers()}">
         <tr>
@@ -55,9 +60,6 @@
         </tr>
     </c:forEach>
 </table>
-
-
-
 
 </body>
 </html>

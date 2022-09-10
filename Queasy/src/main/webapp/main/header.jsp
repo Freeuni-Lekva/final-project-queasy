@@ -3,11 +3,12 @@
 </style>
 
 <jsp:include page="/css/main.jsp"/>
+<%--<jsp:include page="/css/home.jsp"/>--%>
 
 <div class="topnav">
     <a href="/welcome">Home</a>
     <a href="/mails">Mails</a>
-    <a href="/quizzes">Quizzes</a>
+<%--    <a href="/quizzes">Quizzes</a>--%>
     <a href="/create">Create Quiz</a>
 
     <div style="float: left; padding-left: 16px; padding-right: 16px;">

@@ -17,29 +17,31 @@
 </head>
 <body>
   <jsp:include page="/main/header.jsp"/>
-  <div>
-    <label>Received</label>
-  <c:forEach var = "mail" items = "${receivedEmails}">
-  <div onclick="location.href='/read?id=${mail.getId()}';" style="cursor: pointer;  border:1px solid black;">
-    <p>From : ${mail.getFrom()}</p>
-    <p>Subject : ${mail.getSubject()}</p>
-    <p>Date : ${mail.getDate().toString()}</p>
-    <p>Text : ${fn:substring(mail.getText(),0,30)}...</p>
-  </div>
-  </c:forEach>
-  </div>
-
-  <div>
-    <label>Sent</label>
-    <c:forEach var = "mail" items = "${sentEmails}">
-      <div onclick="location.href='/read?id=${mail.getId()}';" style="cursor: pointer;  border:1px solid black;">
-        <p>To : ${mail.getTo()}</p>
-        <p>Subject : ${mail.getSubject()}</p>
-        <p>Date : ${mail.getDate().toString()}</p>
-        <p>Text : ${fn:substring(mail.getText(),0,30)}...</p>
-      </div>
+  <div style = "width: 100%; "><a href = "/mail/createMessage.jsp">Send Message...</a></div>
+  <div style = "display: grid; grid-template-columns: 1fr 1fr; grid-gap: 20px;">
+    <div>
+      <label>Received</label>
+    <c:forEach var = "mail" items = "${receivedEmails}">
+    <div onclick="location.href='/read?id=${mail.getId()}';" style="cursor: pointer; padding: 5px; font-size: 16px; border:1px solid black;">
+      <p>From : ${mail.getFrom()}</p>
+      <p>Subject : ${mail.getSubject()}</p>
+      <p>Date : ${mail.getDate().toString()}</p>
+      <p>Text : ${fn:substring(mail.getText(),0,30)}...</p>
+    </div>
     </c:forEach>
-  </div>
+    </div>
 
+    <div>
+      <label>Sent</label>
+      <c:forEach var = "mail" items = "${sentEmails}">
+        <div onclick="location.href='/read?id=${mail.getId()}';" style="cursor: pointer; padding: 5px; font-size: 16px;  border:1px solid black;">
+          <p>To : ${mail.getTo()}</p>
+          <p>Subject : ${mail.getSubject()}</p>
+          <p>Date : ${mail.getDate().toString()}</p>
+          <p>Text : ${fn:substring(mail.getText(),0,30)}...</p>
+        </div>
+      </c:forEach>
+    </div>
+</div>
 </body>
 </html>

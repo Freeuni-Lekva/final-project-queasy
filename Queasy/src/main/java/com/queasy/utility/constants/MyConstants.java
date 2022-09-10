@@ -165,7 +165,6 @@ public final class MyConstants {
                 "/CreateMessageServlet",
                 "/mails",
                 "/read",
-                "/quiz/createQuiz.js",
                 "/quiz/done.jsp",
                 "/quiz/failed.jsp"
 

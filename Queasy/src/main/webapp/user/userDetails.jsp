@@ -15,6 +15,8 @@
         <c:set var="currUser" value="${loginedUser}"></c:set>
     </c:otherwise>
     </c:choose>
+    <c:set var="quizDao" value="${applicationScope['CONTEXT_ATTRIBUTE_QUIZ_DAO']}"></c:set>
+
     <c:set var="gamesByScore" value="${applicationScope['CONTEXT_ATTRIBUTE_GAME_DAO'].getAllGamesOf(currUser.getUserName())}"></c:set>
 
     <c:set var="gamesByScore" value="${applicationScope['CONTEXT_ATTRIBUTE_GAME_DAO'].getAllGamesOf(currUser.getUserName())}"></c:set>
@@ -40,21 +42,35 @@
         </c:otherwise>
     </c:choose>
 
+    <div style = "float: left;">
     <h2>Top 3 Scores</h2>
     <table>
         <tr>
+            <th>Quiz Name</th>
             <th>SCORE</th>
-            <th>Quiz</th>
         </tr>
 
         <c:forEach var = "game" items = "${gamesByScore.stream().sorted((e1,e2) -> (e2.getScore().compareTo(e1.getScore()))).limit(3).toList()}">
             <tr>
+                <td><a  href = "/QuizDetailsServlet?quizId=${game.getQuizId()}">${quizDao.getQuiz(game.getQuizId()).getQuizName()}</a></td>
                 <td> ${game.getScore()}</td>
-                <td><a  href = "/QuizDetailsServlet?quizId=${game.getQuizId()}">${game.getQuizId()}</a></td>
             </tr>
         </c:forEach>
     </table>
 
+        <h2>My Quizzes</h2>
+        <table>
+            <tr>
+                <th>Quiz Name</th>
+            </tr>
+            <c:forEach var = "quiz" items = "${quizDao.getAllQuizzes().stream().filter(c -> c.getCreatorId() == currUser.getId()).sorted((e1,e2) -> e2.getQuizName().compareTo(e1.getQuizName())).toList()}">
+                <tr>
+                    <td><a  href = "/QuizDetailsServlet?quizId=${quiz.getId()}">${quiz.getQuizName()}</a></td>
+                </tr>
+            </c:forEach>
+        </table>
+    </div>
+    <div style = "float: right;">
         <c:choose>
             <c:when test="${!currUser.getUserName().equals(loginedUser.getUserName()) }">
                 <form action = "/UserDetailsServlet" method="get">
@@ -122,7 +138,7 @@
                 </table>
             </c:when>
         </c:choose>
-
+    </div>
 
 </body>
 </html>
