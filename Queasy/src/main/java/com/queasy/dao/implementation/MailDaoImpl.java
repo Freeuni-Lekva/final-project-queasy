@@ -81,7 +81,6 @@ public class MailDaoImpl implements MailDao {
     }
 
 
-    //TODO: List არ უნდა იყო Mail უნდა ბრუნდებოდეს
     @Override
     public Mail getEmailById(int id) {
         String[] columns = {};
@@ -93,7 +92,6 @@ public class MailDaoImpl implements MailDao {
         return mails.size() != 0 ? mails.get(0) : null;
     }
 
-    //TODO: to add date
     @Override
     public boolean addMail(Mail mail) {
 

@@ -125,7 +125,7 @@ public class QuizDaoImpl implements QuizDao {
         return quiz;
     }
 
-    //TODO:
+
     @Override
     public int addQuiz(Quiz quiz) {
 

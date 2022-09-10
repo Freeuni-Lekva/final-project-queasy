@@ -49,7 +49,6 @@ public class GameDaoImpl implements GameDao {
                 "TIME_TO_SEC(TIMEDIFF(" + MyConstants.GameDatabaseConstants.END_DATE + " , " +
                 MyConstants.GameDatabaseConstants.START_DATE + " ))";
         String query = StaticMethods.selectQuery(MyConstants.GameDatabaseConstants.DATABASE,columns,condition);
-//        System.out.println(query);
         List<Game> answer = getListFunc(query);
 
         return answer;

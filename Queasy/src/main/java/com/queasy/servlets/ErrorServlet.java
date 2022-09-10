@@ -37,15 +37,9 @@ public class ErrorServlet extends HttpServlet {
             requestUri = "Unknown";
         }
         RequestDispatcher rd;
-        rd = req.getRequestDispatcher("/error/400-499.jsp");
-        rd.forward(req,resp);
-        if(statusCode >= 400 && statusCode < 500) {
-
-        } else if (statusCode >= 500 && statusCode < 600){
-//            rd = req.getRequestDispatcher();
-        } else {
-//            rd = req.getRequestDispatcher();
-        }
+//        rd = req.getRequestDispatcher("/error/400-499.jsp");
+//        rd.forward(req,resp);
+        resp.sendRedirect("/error/400-499.jsp");
 
     }
 }

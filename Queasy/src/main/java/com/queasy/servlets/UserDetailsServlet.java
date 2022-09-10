@@ -18,7 +18,6 @@ import java.io.IOException;
 
 @WebServlet("/UserDetailsServlet")
 public class UserDetailsServlet extends HttpServlet {
-    //TODO: ეს გასაწერია რომ რექვესთი ჯსტლ-შიც გაუშვას, და ასევე გასაწერია რომ ჰოთლინკები
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         RequestDispatcher rd;
@@ -31,7 +30,6 @@ public class UserDetailsServlet extends HttpServlet {
         User user = userDao.getUser(id);
         User myUser = SessionManager.getUser(req);
         boolean friendRequest = currentFriendRequest != null;
-        //reqvestis gagzavna washla da egeni
         if(friendRequest) {
             if(RequestType.ACCEPT_REQUEST.toString().equals(currentFriendRequest)) {
                 followingDao.sendRequest(myUser.getUserName(),user.getUserName());

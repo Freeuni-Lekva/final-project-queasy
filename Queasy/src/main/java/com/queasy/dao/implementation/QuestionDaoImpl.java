@@ -24,20 +24,6 @@ public class QuestionDaoImpl implements QuestionDao {
         this.connectionPool = connectionPool;
     }
 
-//    @Override
-//    public List<Question> getAllQuestions() {
-//        return null;
-//    }
-//
-//    @Override
-//    public List<Question> getAllQuestionsOf(QuestionType qt) {
-//        return null;
-//    }
-//
-//    @Override
-//    public List<Question> getAllQuestionsOf(int quizId) {
-//        return null;
-//    }
     private boolean executeUpdating(String query) {
         Connection con = connectionPool.acquireConnection();
         try {

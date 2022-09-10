@@ -17,7 +17,6 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-//i have no idea how to test servlets...
 
 @WebServlet("/AddAccountServlet")
 public class AddAccountServlet extends HttpServlet {
