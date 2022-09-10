@@ -10,8 +10,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <c:set var="receivedEmails" value="${applicationScope['CONTEXT_ATTRIBUTE_MAIL_DAO'].getReceivedMails(loginedUser.getUserName())}"></c:set>
-  <c:set var="sentEmails" value="${applicationScope['CONTEXT_ATTRIBUTE_MAIL_DAO'].getSentMails(loginedUser.getUserName())}"></c:set>
+  <c:set var="receivedEmails" value="${applicationScope['CONTEXT_ATTRIBUTE_MAIL_DAO'].getReceivedMails(loginedUser.getUserName()).stream().sorted((e1,e2) -> (e2.getDate().compareTo(e1.getDate()))).toList()}"></c:set>
+  <c:set var="sentEmails" value="${applicationScope['CONTEXT_ATTRIBUTE_MAIL_DAO'].getSentMails(loginedUser.getUserName()).stream().sorted((e1,e2) -> (e2.getDate().compareTo(e1.getDate()))).toList()}"></c:set>
 
   <title>Mail</title>
 </head>

@@ -30,6 +30,6 @@ public class TestQuestionDao {
         pictures.add(new Picture(0,"123"));
         pictures.add(new Picture(0,"323"));
 
-        Assert.assertTrue(questionDao.addQuestion(new Question(0,"eee", QuestionType.QUESTION_RESPONSE,1,pictures)));
+        Assert.assertTrue(questionDao.addQuestion(new Question(0,"eee", QuestionType.QUESTION_RESPONSE,1,pictures)) != -1);
     }
 }

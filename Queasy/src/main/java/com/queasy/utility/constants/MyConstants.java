@@ -164,7 +164,8 @@ public final class MyConstants {
                 "/read.jsp",
                 "/CreateMessageServlet",
                 "/mails",
-                "/read"
+                "/read",
+                "/quiz/createQuiz.js"
 
         ));
         public static int MAX_INACTIVE_TIME = 600;

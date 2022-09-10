@@ -73,7 +73,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
 
     @Override
-    public boolean addQuestion(Question question) {
+    public int addQuestion(Question question) {
         Connection con = connectionPool.acquireConnection();
         boolean answer = true;
         int questionId = 0;
@@ -91,7 +91,7 @@ public class QuestionDaoImpl implements QuestionDao {
 
             answer = answer && (statement.executeUpdate(query) > 0) ;
             if (!answer)
-                return answer;
+                return -1;
 
             ResultSet rs = statement.executeQuery("SELECT LAST_INSERT_ID() AS id;");
 
@@ -100,7 +100,7 @@ public class QuestionDaoImpl implements QuestionDao {
                  questionId = rs.getInt(1);
             }
             else {
-                return false;
+                return -1;
             }
             List<Picture> pictures = question.getPictures();
 
@@ -115,13 +115,13 @@ public class QuestionDaoImpl implements QuestionDao {
                 System.out.println(insertPicturesQuery);
                 answer = answer  && (statement.executeUpdate(insertPicturesQuery) > 0);
                 if (!answer)
-                    return answer;
+                    return -1;
                 rs = statement.executeQuery("SELECT LAST_INSERT_ID() AS id;");
                 if(rs.next()) {
                     pictureId = rs.getInt(1);
                 }
                 else {
-                    return false;
+                    return -1;
                 }
                 System.out.println(" Integer.toString(pictureId) = " + Integer.toString(pictureId));
                 System.out.println(" Integer.toString(questionId) = " + Integer.toString(questionId));
@@ -135,13 +135,13 @@ public class QuestionDaoImpl implements QuestionDao {
 
                 answer = answer  && (statement.executeUpdate(insertQuestionPicturesQuery) > 0);
                 if (!answer)
-                    return answer;
+                    return -1;
             }
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         connectionPool.releaseConnection(con);
-        return answer;
+        return questionId;
     }
 
     public static int selectLastIndexId(ConnectionPool connectionPool) {

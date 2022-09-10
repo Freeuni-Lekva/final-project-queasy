@@ -20,7 +20,7 @@ public interface QuizDao {
 
     Quiz getQuiz(String quizName);
 
-    boolean addQuiz(Quiz quiz);
+    int addQuiz(Quiz quiz);
 
     boolean removeQuiz(int quizId);
 

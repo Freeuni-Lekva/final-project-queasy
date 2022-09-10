@@ -11,6 +11,6 @@ public interface QuestionDao {
 //    List<Question> getAllQuestionsOf(QuestionType qt);
 //    List<Question> getAllQuestionsOf(int quizId);
 
-    boolean addQuestion(Question question);
+    int addQuestion(Question question);
     boolean removeQuestion(int questionId);
 }

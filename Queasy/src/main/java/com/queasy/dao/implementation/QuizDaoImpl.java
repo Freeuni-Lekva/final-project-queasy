@@ -125,7 +125,8 @@ public class QuizDaoImpl implements QuizDao {
 
     //TODO:
     @Override
-    public boolean addQuiz(Quiz quiz) {
+    public int addQuiz(Quiz quiz) {
+
         String query = "INSERT INTO " + MyConstants.QuizDatabaseConstants.DATABASE + " ( " +
                         MyConstants.QuizDatabaseConstants.QUIZ_NAME + " , " +
                         MyConstants.QuizDatabaseConstants.CREATOR_ID +  " , " +
@@ -133,13 +134,38 @@ public class QuizDaoImpl implements QuizDao {
                         " VALUES ( " + StaticMethods.apostropheString(quiz.getQuizName()) + " , " +
                         Integer.toString(quiz.getCreatorId()) + " , " +
                         StaticMethods.apostropheString(quiz.getDescription())  + " ) ;";
+
+        int quizId = -1;
         boolean answer = true;
-        List<Question> questions = quiz.getQuestions();
-        QuestionDao questionDao = new QuestionDaoImpl(connectionPool);
-        for (int i = 0; i < questions.size(); i++ )  {
-            answer = answer && questions.add(questions.get(i));
+
+        Connection con = connectionPool.acquireConnection();
+        try {
+            Statement statement = con.createStatement();
+            System.out.println(query);
+            if(statement.executeUpdate(query) > 0) {
+                answer = true;
+            }
+
+            List<Question> questions = quiz.getQuestions();
+            QuestionDao questionDao = new QuestionDaoImpl(connectionPool);
+            for (int i = 0; i < questions.size(); i++ )  {
+                answer = answer && questions.add(questions.get(i));
+            }
+
+
+
+            if (answer ) {
+                ResultSet rs = statement.executeQuery("SELECT LAST_INSERT_ID() AS id;");
+                if (rs.next()) {
+                    quizId = rs.getInt(1);
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return answer && StaticMethods.executeUpdateQuery(connectionPool,query);
+        connectionPool.releaseConnection(con);
+        return quizId;
     }
 
     @Override

@@ -26,7 +26,7 @@ public class TestQuizDao {
 
     @Test
     public void testAddQuiz() {
-       Assert.assertTrue(quizDao.addQuiz(new Quiz(0,"QUIwew9Z123",1,"ddd", new ArrayList< Question >())));
+       Assert.assertTrue(quizDao.addQuiz(new Quiz(0,"2214ss144wsa",1,"ddd", new ArrayList< Question >())) == 10);
 //       Assert.assertTrue(quizDao.removeQuiz(2));
     }
     @Test
