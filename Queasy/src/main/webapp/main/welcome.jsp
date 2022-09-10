@@ -22,11 +22,12 @@
             <th>Score</th>
 
         </tr>
-        <c:forEach var = "game" items = "${games.stream().sorted((e1,e2) -> (e2.getScore().compareTo(e1.getScore()))).toList()}">
+        <c:forEach var = "game" items = "${games.stream().sorted((e1,e2) ->
+                    ((e2.getScore()/quizDao.getAllQuestions(e2.getQuizId()).size()* 100).compareTo((e1.getScore()/quizDao.getAllQuestions(e1.getQuizId()).size() * 100)))).toList()}">
             <tr>
                 <td><a href = "${pageContext.request.contextPath}/profile?id=${userDao.getUser(game.getUserName()).getId()}">${game.getUserName()}</a></td>
                 <td><a href = "${pageContext.request.contextPath}/QuizDetailsServlet?quizId=${game.getQuizId()}">${quizDao.getQuiz(game.getQuizId()).getQuizName()}</a></td>
-                <td>${game.getScore()}</td>
+                <td>${game.getScore()} (${game.getScore()/quizDao.getAllQuestions(game.getQuizId()).size() * 100} %)</td>
 
             </tr>
 

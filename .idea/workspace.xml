@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
+      <artifact name="Queasy:war" />
       <artifact name="Queasy:war exploded" />
     </artifacts-to-build>
   </component>
@@ -10,17 +11,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="505333db-48ce-437d-b26a-b117a4278730" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/databases.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/QuizSearchServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/QuizSearchServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/MyConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/MyConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/css/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/css/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/css/start.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/css/start.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/error/400-499.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/error/400-499.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/mail/mailPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/mail/mailPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/main/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/main/header.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/DBConnectionPool.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/DBConnectionPool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/filter/SecurityFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/filter/SecurityFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/main/welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/main/welcome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/quiz/createQuiz.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/quiz/quizDetails.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/quiz/quizDetails.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/user/userDetails.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/user/userDetails.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -432,6 +429,61 @@
           <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/AddQuizServlet.java</url>
           <line>50</line>
           <option name="timeStamp" value="101" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java</url>
+          <line>189</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java</url>
+          <line>182</line>
+          <option name="timeStamp" value="103" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java</url>
+          <line>168</line>
+          <option name="timeStamp" value="104" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="105" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="106" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="107" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java</url>
+          <line>112</line>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java</url>
+          <line>101</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java</url>
+          <line>98</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="112" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestFollowingDao.java</url>

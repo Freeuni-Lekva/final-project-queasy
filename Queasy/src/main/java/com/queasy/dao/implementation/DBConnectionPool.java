@@ -74,8 +74,10 @@ public class DBConnectionPool implements ConnectionPool{
 
             return this.connections.take();
         } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+        return null;
+
     }
 
     @Override

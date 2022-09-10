@@ -32,12 +32,12 @@ public class SecurityFilter implements Filter {
 
         String url = ((HttpServletRequest)req).getRequestURL().toString();
         if (SessionManager.isLogined(req) ) {
-            if(!MyConstants.Servlets.NOT_LOGGED_URLS.stream().
-                    filter(c -> url.endsWith(c)).collect(Collectors.toList()).isEmpty() ||
-                    MyConstants.Servlets.ALL_URLS.stream().filter(c -> url.endsWith(c)).collect(Collectors.toList()).isEmpty()) {
-                req.getRequestDispatcher("/welcome").forward(req, resp);
-                return;
-            }
+//            if(!MyConstants.Servlets.NOT_LOGGED_URLS.stream().
+//                    filter(c -> url.endsWith(c)).collect(Collectors.toList()).isEmpty() ||
+//                    MyConstants.Servlets.ALL_URLS.stream().filter(c -> url.endsWith(c)).collect(Collectors.toList()).isEmpty()) {
+//                req.getRequestDispatcher("/welcome").forward(req, resp);
+//                return;
+//            }
         }
         else if (MyConstants.Servlets.NOT_LOGGED_URLS.stream().
                 filter(c -> url.endsWith(c)).collect(Collectors.toList()).isEmpty() && !SessionManager.isLogined(req)) {

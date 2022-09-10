@@ -7,6 +7,7 @@
 <head>
     <link href="../css/main.jsp" rel="stylesheet" type="text/css">
     <c:set var="users" value="${applicationScope['CONTEXT_ATTRIBUTE_USER_DAO']}"></c:set>
+    <c:set var="quizDao" value="${applicationScope['CONTEXT_ATTRIBUTE_QUIZ_DAO']}"></c:set>
     <c:set var="quiz" value="${applicationScope['CONTEXT_ATTRIBUTE_QUIZ_DAO'].getQuiz(id)}"></c:set>
     <c:set var="gamesByScore" value="${applicationScope['CONTEXT_ATTRIBUTE_GAME_DAO'].getAllGamesOrderedForScoring(id)}"></c:set>
     <jsp:useBean id="now" class="java.util.Date" />
@@ -47,11 +48,12 @@
             </tr>
 
             <c:forEach var = "game"
-                       items = "${gamesByScore.stream().filter(c -> (now.getTime() - c.getStartDate().getTime()) < applicationScope['MILLISECONDS_IN_DAY']).limit(10).toList()}">
+                       items = "${gamesByScore.stream().sorted((e1,e2) ->
+                    ((e2.getScore()/quizDao.getAllQuestions(e2.getQuizId()).size()* 100).compareTo((e1.getScore()/quizDao.getAllQuestions(e1.getQuizId()).size() * 100)))).toList()}">
                 <tr>
                     <td> <a href = "/profile?id=${users.getUser(game.getUserName()).getId()}">${game.getUserName()}</a></td>
-
-                    <td>${game.getScore()}</td>
+                    <c:set var="scorePercentage" ><fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${game.getScore()/quizDao.getAllQuestions(game.getQuizId()).size() * 100}"></fmt:formatNumber></c:set>
+                    <td>${game.getScore()} (${scorePercentage} %)</td>
                 </tr>
             </c:forEach>
         </table>

@@ -19,7 +19,6 @@
 
     <c:set var="gamesByScore" value="${applicationScope['CONTEXT_ATTRIBUTE_GAME_DAO'].getAllGamesOf(currUser.getUserName())}"></c:set>
 
-    <c:set var="gamesByScore" value="${applicationScope['CONTEXT_ATTRIBUTE_GAME_DAO'].getAllGamesOf(currUser.getUserName())}"></c:set>
     <c:set var="following" value="${applicationScope['CONTEXT_ATTRIBUTE_FOLLOWING_DAO']}"></c:set>
 
     <c:set var="friends" value="${following.getFriendsOf(currUser.getUserName())}"></c:set>
@@ -50,10 +49,12 @@
             <th>SCORE</th>
         </tr>
 
-        <c:forEach var = "game" items = "${gamesByScore.stream().sorted((e1,e2) -> (e2.getScore().compareTo(e1.getScore()))).limit(3).toList()}">
+        <c:forEach var = "game" items = "${gamesByScore.stream().sorted((e1,e2) ->
+                    ((e2.getScore()/quizDao.getAllQuestions(e2.getQuizId()).size()* 100).compareTo((e1.getScore()/quizDao.getAllQuestions(e1.getQuizId()).size() * 100)))).limit(3).toList()}">
             <tr>
                 <td><a  href = "/QuizDetailsServlet?quizId=${game.getQuizId()}">${quizDao.getQuiz(game.getQuizId()).getQuizName()}</a></td>
-                <td> ${game.getScore()}</td>
+                <c:set var="scorePercentage" ><fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${game.getScore()/quizDao.getAllQuestions(game.getQuizId()).size() * 100}"></fmt:formatNumber></c:set>
+                <td>${game.getScore()} (${scorePercentage} %)</td>
             </tr>
         </c:forEach>
     </table>
