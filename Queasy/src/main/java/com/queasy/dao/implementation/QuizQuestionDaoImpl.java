@@ -5,7 +5,9 @@ import com.queasy.dao.interfaces.QuestionPicturesDao;
 import com.queasy.dao.interfaces.QuizQuestionDao;
 import com.queasy.model.quiz.Question;
 import com.queasy.model.quiz.Quiz;
+import com.queasy.model.user.Mail;
 import com.queasy.utility.constants.MyConstants;
+import com.queasy.utility.constants.StaticMethods;
 import com.queasy.utility.enums.QuestionType;
 
 import java.sql.Connection;
@@ -53,5 +55,27 @@ public class QuizQuestionDaoImpl implements QuizQuestionDao {
         connectionPool.releaseConnection(con);
 
         return questions;
+    }
+
+    @Override
+    public boolean addQuizQuestionBonding(int quizId, int questionId) {
+
+        String query = "INSERT INTO " + MyConstants.QuizQuestionsDatabaseConstants.DATABASE +
+                " (" + MyConstants.QuizQuestionsDatabaseConstants.QUIZ_ID + "," +
+                MyConstants.QuizQuestionsDatabaseConstants.QUESTION_ID + ")" +
+                " VALUES ( " + Integer.toString(quizId) + " , " + Integer.toString(questionId) + "); ";
+        System.out.println(query);
+        Connection con = connectionPool.acquireConnection();
+        try {
+            Statement statement = con.createStatement();
+            if(statement.executeUpdate(query) > 0) {
+                connectionPool.releaseConnection(con);
+                return true;
+            }
+        } catch (SQLException e) {
+           e.printStackTrace();
+        }
+        connectionPool.releaseConnection(con);
+        return false;
     }
 }

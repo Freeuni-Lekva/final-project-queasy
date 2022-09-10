@@ -1,8 +1,7 @@
 package com.queasy.servlets;
 
-import com.queasy.dao.interfaces.QuestionDao;
-import com.queasy.dao.interfaces.QuizDao;
-import com.queasy.dao.interfaces.UserDao;
+import com.queasy.dao.interfaces.*;
+import com.queasy.model.quiz.Answer;
 import com.queasy.model.quiz.Picture;
 import com.queasy.model.quiz.Question;
 import com.queasy.model.quiz.Quiz;
@@ -28,23 +27,37 @@ public class AddQuizServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext context = req.getServletContext();
         QuizDao quizDao = (QuizDao) context.getAttribute(MyConstants.ContextAttributes.QUIZ_DAO);
+        AnswerDao answerDao = (AnswerDao) context.getAttribute(MyConstants.ContextAttributes.ANSWER_DAO);
+        QuizQuestionDao quizQuestionDao = (QuizQuestionDao) context.getAttribute(MyConstants.ContextAttributes.QUIZ_QUESTION_DAO);
         QuestionDao questionDao = (QuestionDao) context.getAttribute(MyConstants.ContextAttributes.QUESTION_DAO);
+
         User currUser = SessionManager.getUser(req);
         String name = req.getParameter("name");
         String description = req.getParameter("description");
+        if(name == null || quizDao.getQuiz(name) != null) {
+            resp.sendRedirect("/quiz/failed.jsp");
+        }
 
         System.out.println("name");
         System.out.println(name);
         System.out.println("description");
         System.out.println(description);
-
+        if(name == null || quizDao.getQuiz(name) != null )
+        {
+            resp.sendRedirect("/quiz/failed.jsp");
+            return;
+        }
+        int quizId = quizDao.addQuiz(new Quiz(0,name,currUser.getId(),description,new ArrayList<>()));
         List<Question> questions = new ArrayList<>();
+        if( quizId < 0) {
+            resp.sendRedirect("/quiz/failed.jsp");
+            return;
+        }
         int i =0;
         while(true) {
             String questionText = req.getParameter("questionText-" + Integer.toString(i));
             Picture picture = new Picture(0, req.getParameter("picture-" + Integer.toString(i)));
             String questionTypeString = req.getParameter("question-radio-" + Integer.toString(i));
-            System.out.println(questionTypeString);
             QuestionType questionType;
             if(questionTypeString == null) {
                 questionType = QuestionType.QUESTION_RESPONSE;
@@ -68,18 +81,25 @@ public class AddQuizServlet extends HttpServlet {
             if(questionText == null)
                 break;
             questions.add(new Question(0,questionText,questionType,currUser.getId(),pictures));
-//            questionDao.addQuestion(new Question())
-//            quizDao.addQuiz(new)
+            int questionId = questionDao.addQuestion(new Question(0,questionText,questionType,currUser.getId(),pictures));
+            quizQuestionDao.addQuizQuestionBonding(quizId,questionId);
+
+            List<Answer> answers = new ArrayList<>();
+            int j = 0;
+            while(true) {
+                String answerText = req.getParameter("answerInput-" + Integer.toString(i) + "-" + Integer.toString(j));
+                String answerRadio =  req.getParameter("answerRadio-" + Integer.toString(i) + "-" + Integer.toString(j));
+                if(answerText == null)
+                    break;
+                answers.add(new Answer(0,answerText,answerRadio,questionId,new ArrayList<>()));
+                j++;
+            }
+            for(int k = 0; k < answers.size(); k++) {
+                answerDao.addAnswer(answers.get(i));
+            }
             i++;
         }
-        for(int j = 0; j < questions.size(); j++) {
-            System.out.println("text" + Integer.toString(j));
-            System.out.println(questions.get(j).getText());
-            System.out.println("questionType" + Integer.toString(j));
-            System.out.println(questions.get(j).getQuestionType().toString());
-            System.out.println("size = " + Integer.toString(j));
-            System.out.println(questions.get(j).getPictures().size());
-        }
+        resp.sendRedirect("/quiz/done.jsp");
     }
 
     @Override

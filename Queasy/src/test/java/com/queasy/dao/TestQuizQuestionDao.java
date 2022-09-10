@@ -23,4 +23,8 @@ public class TestQuizQuestionDao {
     public void testGetQuestionsOf() {
         Assert.assertTrue(quizQuestionDao.getQuestionsOf(1).get(0).getPictures().size() == 2);
     }
+    @Test
+    public void testQuizQuestionBonding() {
+        Assert.assertTrue(quizQuestionDao.addQuizQuestionBonding(2,1));
+    }
 }

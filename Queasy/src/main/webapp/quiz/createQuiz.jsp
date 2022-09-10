@@ -42,15 +42,16 @@
         container.removeChild(container.lastChild);
       }
       for (i=0;i<number;i++) {
+          let letI = i;
         let div = document.createElement("div");
-        div.name = "answerDiv-" + num + "-" + i;
+        div.name = "answerDiv-" + num + "-" + letI;
         div.className = "answerDiv";
         let p = document.createElement("p");
         p.innerHTML = "Enter Answer Text:";
 
         let input = document.createElement("input");
         input.type = "text"
-        input.name = "answerInput-" + num + "-" + i;
+        input.name = "answerInput-" + num + "-" + letI;
         input.placeholder = "Enter Answer Text";
         input.setAttribute("required","true");
 
@@ -66,11 +67,11 @@
         radio1.type = "radio";
         radio2.type = "radio";
 
-        radio1.name = "answerRadio-" + num + "-" + i;
-        radio2.name = "answerRadio-" + num + "-" + i;
+        radio1.name = "answerRadio-" + num + "-" + letI;
+        radio2.name = "answerRadio-" + num + "-" + letI;
 
-        radio1.value = "true";
-        radio2.value = "false";
+        radio1.value = "Y";
+        radio2.value = "N";
 
         radio2.checked = true;
 
@@ -209,11 +210,11 @@
   <h1>Add Quiz</h1>
   <form action = "/CreateQuizServlet" method="post">
     <label>Name: </label>
-    <input type="text" name = "name" placeholder="Enter Name">
+    <input type="text" name = "name" placeholder="Enter Name" required>
     <br>
 
     <label>Description: </label>
-    <input type="text" name = "description" placeholder="Enter Name">
+    <input type="text" name = "description" placeholder="Enter Name" required>
     <br>
 
     <input onkeyup="addQuestionFields()" type="number" id="questionNumber" name="questionNumber"  placeholder="Enter Question number..." value="" required>Number of questions: <br />

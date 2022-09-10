@@ -9,5 +9,6 @@ public interface QuizQuestionDao {
 
     List<Question> getQuestionsOf(int quizId);
 
+    boolean addQuizQuestionBonding(int quizId, int questionId);
 //    Quiz getQuizOfQuestion(int questionId);
 }

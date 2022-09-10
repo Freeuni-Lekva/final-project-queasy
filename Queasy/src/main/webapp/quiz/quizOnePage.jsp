@@ -36,9 +36,9 @@
                 </c:when>
                 <c:when test="${curr.getQuestionType().name().equals(FILL_IN_THE_BLANK) }">
                         <c:if test="${curr.getText().contains(FILL_BLANK_STRING)}">
-                        <p>Text : ${curr.getText().substring(curr.getText().indexOf(FILL_BLANK_STRING))}
+                        <p>Text : ${curr.getText().substring(0,curr.getText().indexOf(FILL_BLANK_STRING))}
                             <input type="text" placeholder="Enter answer" name = "answer-${curr.getId()}">
-                                ${curr.getText().substring(curr.getText().indexOf(FILL_BLANK_STRING) + FILL_BLANK_STRING.length(),curr.getText().length()-1)}
+                                ${curr.getText().substring(curr.getText().indexOf(FILL_BLANK_STRING) + FILL_BLANK_STRING.length() ,curr.getText().length())}
                         </p>
                         </c:if>
                         <c:if test="${!curr.getText().contains(FILL_BLANK_STRING)}">
