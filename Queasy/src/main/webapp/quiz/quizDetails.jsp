@@ -49,9 +49,11 @@
 
             <c:forEach var = "game"
                        items = "${gamesByScore.stream().sorted((e1,e2) ->
-                    ((e2.getScore()/quizDao.getAllQuestions(e2.getQuizId()).size()* 100).compareTo((e1.getScore()/quizDao.getAllQuestions(e1.getQuizId()).size() * 100)))).toList()}">
+                    ((e2.getScore()/quizDao.getAllQuestions(e2.getQuizId()).size()* 100).compareTo((e1.getScore()/quizDao.getAllQuestions(e1.getQuizId()).size() * 100))))
+                    .filter(c -> (now.getTime() - c.getEndDate().getTime()) < (60000 * 60 * 24))
+                    .toList()}">
                 <tr>
-                    <td> <a href = "/profile?id=${users.getUser(game.getUserName()).getId()}">${game.getUserName()}</a></td>
+                    <td> <a href = "/profile?id=${users.getUser(game.getUserName()).getId()}">${game.getUserName()}  </a></td>
                     <c:set var="scorePercentage" ><fmt:formatNumber type="number" minFractionDigits="2" maxFractionDigits="2" value="${game.getScore()/quizDao.getAllQuestions(game.getQuizId()).size() * 100}"></fmt:formatNumber></c:set>
                     <td>${game.getScore()} (${scorePercentage} %)</td>
                 </tr>

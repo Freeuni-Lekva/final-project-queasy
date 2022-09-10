@@ -184,9 +184,9 @@
 
         answerInput.placeholder = "Enter Answers number";
 
-        let answerButton = document.createElement("a");
-        answerButton.href = "#/";
-        answerButton.innerHTML = "Fill Answer Details";
+        // let answerButton = document.createElement("a");
+        // answerButton.href = "#/";
+        // answerButton.innerHTML = "Fill Answer Details";
         let answerContainer = document.createElement("div");
         answerContainer.setAttribute("id","answerContainer-" + num);
         div.appendChild(document.createElement("br"))
@@ -195,8 +195,8 @@
         div.appendChild(answerInput);
         div.appendChild(document.createElement("br"));
 
-        answerButton.onclick =  function() {addAnswerField(num)}
-        div.appendChild(answerButton);
+        // answerButton.onclick =  function() {addAnswerField(num)}
+        // div.appendChild(answerButton);
         div.appendChild(answerContainer)
         container.appendChild(div);
         container.appendChild(document.createElement("br"));

@@ -12,6 +12,7 @@ import com.queasy.model.quiz.Answer;
 import com.queasy.model.quiz.Question;
 import com.queasy.model.quiz.Quiz;
 import com.queasy.utility.constants.MyConstants;
+import com.queasy.utility.security.SessionManager;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletContext;
 import jakarta.servlet.ServletException;
@@ -73,8 +74,8 @@ public class ScorePageServlet extends HttpServlet {
         session.setAttribute(MyConstants.Servlets.QUIZ_END_TIME,endDate);
 
         GameDao gameDao = (GameDao) context.getAttribute(MyConstants.ContextAttributes.GAME_DAO);
-        String username = (String)session.getAttribute(MyConstants.Servlets.USERNAME);
-        gameDao.addGame(new Game(0,score,startDate,endDate,username,quiz.getId()));
+        String username = SessionManager.getUser(req).getUserName();
+        boolean did = gameDao.addGame(new Game(0,score,startDate,endDate,username,quiz.getId()));
 
         rd = req.getRequestDispatcher("/quiz/score.jsp");
         rd.forward(req,resp);
