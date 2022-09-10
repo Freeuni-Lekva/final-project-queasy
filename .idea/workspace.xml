@@ -11,18 +11,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="505333db-48ce-437d-b26a-b117a4278730" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/quiz/createQuiz.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuestionDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuestionDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/QuestionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/QuestionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/QuizDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/QuizDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/AddQuizServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/AddQuizServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/MyConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/MyConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/mail/mailPage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/mail/mailPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/quiz/createQuiz.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/quiz/createQuiz.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/AnswerDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/AnswerDaoImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestAnswerDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestAnswerDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestQuestionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestQuestionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestQuizDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestQuizDao.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,8 +95,8 @@
       <recent name="com.queasy.servlets" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.TestQuizDao.testAddQuiz">
-    <configuration name="TestFollowingDao.getFriendsOf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.TestAnswerDao.testAddAnswer">
+    <configuration name="TestAnswerDao.testAddAnswer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Queasy" />
       <extension name="coverage">
         <pattern>
@@ -113,8 +105,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.queasy.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.queasy.dao.TestFollowingDao" />
-      <option name="METHOD_NAME" value="getFriendsOf" />
+      <option name="MAIN_CLASS_NAME" value="com.queasy.dao.TestAnswerDao" />
+      <option name="METHOD_NAME" value="testAddAnswer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -136,7 +128,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestFollowingDao.getRequestsOf" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestQuestionDao.testAddQuestion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Queasy" />
       <extension name="coverage">
         <pattern>
@@ -145,8 +137,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.queasy.dao" />
-      <option name="MAIN_CLASS_NAME" value="com.queasy.dao.TestFollowingDao" />
-      <option name="METHOD_NAME" value="getRequestsOf" />
+      <option name="MAIN_CLASS_NAME" value="com.queasy.dao.TestQuestionDao" />
+      <option name="METHOD_NAME" value="testAddQuestion" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -285,20 +277,20 @@
     </configuration>
     <list>
       <item itemvalue="JavaScript Debug.index.jsp" />
+      <item itemvalue="JUnit.TestAnswerDao.testAddAnswer" />
+      <item itemvalue="JUnit.TestQuestionDao.testAddQuestion" />
       <item itemvalue="JUnit.TestQuizDao.testAddQuiz" />
-      <item itemvalue="JUnit.TestFollowingDao.getFriendsOf" />
       <item itemvalue="JUnit.TestFollowingDao.getReceivedOf" />
-      <item itemvalue="JUnit.TestFollowingDao.getRequestsOf" />
       <item itemvalue="Maven.Queasy [tomcat7:run]" />
       <item itemvalue="Tomcat Server.Tomcat 10.0.211" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestAnswerDao.testAddAnswer" />
+        <item itemvalue="JUnit.TestQuestionDao.testAddQuestion" />
         <item itemvalue="JUnit.TestQuizDao.testAddQuiz" />
         <item itemvalue="JavaScript Debug.index.jsp" />
         <item itemvalue="JUnit.TestFollowingDao.getReceivedOf" />
-        <item itemvalue="JUnit.TestFollowingDao.getRequestsOf" />
-        <item itemvalue="JUnit.TestFollowingDao.getFriendsOf" />
       </list>
     </recent_temporary>
   </component>
@@ -352,7 +344,7 @@
       <workItem from="1662575798024" duration="12633000" />
       <workItem from="1662619157551" duration="26865000" />
       <workItem from="1662741187340" duration="13661000" />
-      <workItem from="1662797426291" duration="13778000" />
+      <workItem from="1662797426291" duration="14966000" />
     </task>
     <servers />
   </component>
@@ -407,6 +399,11 @@
           <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/UserDetailsServlet.java</url>
           <line>24</line>
           <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/AnswerDaoImpl.java</url>
+          <line>103</line>
+          <option name="timeStamp" value="94" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestFollowingDao.java</url>

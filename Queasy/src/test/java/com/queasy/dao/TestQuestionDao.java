@@ -27,8 +27,8 @@ public class TestQuestionDao {
     @Test
     public void testAddQuestion() {
         List<Picture> pictures = new ArrayList<>();
-        pictures.add(new Picture(0,"123"));
-        pictures.add(new Picture(0,"323"));
+        pictures.add(new Picture(0,"po"));
+        pictures.add(new Picture(0,"lo"));
 
         Assert.assertTrue(questionDao.addQuestion(new Question(0,"eee", QuestionType.QUESTION_RESPONSE,1,pictures)) != -1);
     }
