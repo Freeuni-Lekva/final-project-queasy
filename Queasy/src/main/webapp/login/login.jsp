@@ -5,16 +5,19 @@
     <title>Welcome</title>
 </head>
 <body>
-        <h1>Welcome</h1>
+<jsp:include page="/css/start.jsp"/>
+
+      <div class = "center">
         <p>Please log in.</p>
 
         <form action = "/LoginServlet" method = "post">
             <label> Username : </label>
-            <input type = "text" name = "username" placeholder="Username"> <br>
+            <input type = "text" name = "username" placeholder="Username" required> <br>
             <label> Password : </label>
-            <input type = "password" name = "password" placeholder="Password"><br>
+            <input type = "password" name = "password" placeholder="Password" required><br>
             <input type = "submit" value="Login">
         </form>
-        <a href = /login/createAccount.jsp> Create New Account</a>
+        <a href = /register> Create New Account</a>
+      </div>
 </body>
 </html>

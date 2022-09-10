@@ -4,18 +4,24 @@
   <title>Create New Account</title>
 </head>
 <body>
+<jsp:include page="/css/start.jsp"/>
 
-<p>Please enter another name and password. <p style = "color : indianred "> Remember No '@' Allowed in username!</p></p>
+<div class = "center">
+  <p>Please enter another name and password. </p>
+  <p style = "color : indianred "> Remember No '@' Allowed in username</p>
+  <p style = "color : indianred ">Email must contain '@'</p>
+  <p style = "color : indianred ">Username length must be more than 3</p>
 
-  <form action = "addAccount" method = "post">
-    <label> Username : </label>
-    <input type = "text" name = "username" placeholder="Username"> <br>
-    <label> Email : </label>
-    <input type = "text" name = "email" placeholder="Mail"> <br>
-    <label> Password : </label>
-    <input type = "password" name = "password" placeholder="Password"><br>
-    <input type = "submit" value="Create">1
-</form>
-<a href = "/login/login.jsp"> Login Page</a>
+  <form action = "/AddAccountServlet" method = "post">
+      <label> Username : </label>
+      <input type = "text" name = "username" placeholder="Username" required> <br>
+      <label> Email : </label>
+      <input type = "text" name = "email" placeholder="Mail" required> <br>
+      <label> Password : </label>
+      <input type = "password" name = "password" placeholder="Password" required><br>
+      <input type = "submit" value="Create">
+    </form>
+  <a href = "/"> Login Page</a>
+</div>
 </body>
 </html>

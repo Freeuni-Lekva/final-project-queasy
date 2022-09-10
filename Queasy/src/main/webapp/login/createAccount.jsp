@@ -4,20 +4,22 @@
     <title>Create New Account</title>
 </head>
 <body>
+<jsp:include page="/css/start.jsp"/>
 
-    <h1>Create New Account</h1>
-    <p>Please enter proposed name and password.</p>
+<div class = "center">
+    <p>Please enter name and password for creation</p>
 
     <form action = "/AddAccountServlet" method = "post">
 
         <label> Username : </label>
-        <input type = "text" name = "username" placeholder="Username"> <br>
+        <input type = "text" name = "username" placeholder="Username" required> <br>
         <label> Email : </label>
-        <input type = "text" name = "email" placeholder="Mail"> <br>
+        <input type = "text" name = "email" placeholder="Mail" required> <br>
         <label> Password : </label>
-        <input type = "password" name = "password" placeholder="Password"><br>
+        <input type = "password" name = "password" placeholder="Password" required><br>
         <input type = "submit" value="Create">
     </form>
-    <a href = "/login/login.jsp"> Login Page</a>
+    <a href = "/"> Login Page</a>
+</div>
 </body>
 </html>

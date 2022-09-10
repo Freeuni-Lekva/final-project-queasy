@@ -28,26 +28,18 @@ public class AddAccountServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ServletContext context = req.getServletContext();
-        PrintWriter out = resp.getWriter();
         String username = req.getParameter("username");
         String mail = req.getParameter("email");
         String password = req.getParameter("password");
 
-        RequestDispatcher rd;
-
-        ConnectionPool connectionPool = DBConnectionPool.getInstance(3);
         UserDao userDao =  (UserDao) context.getAttribute(MyConstants.ContextAttributes.USER_DAO);
         boolean isCorrect = userDao.addUser(username, StaticMethods.returnEncryptedPassword(password),mail);
 
         if (!isCorrect){
-            System.out.println("failed");
+            resp.sendRedirect("/creationFailed");
 
-            req.setAttribute("failedName",username);
-            rd = req.getRequestDispatcher("creationFailed.jsp");
-            rd.forward(req,resp);
         }else{
-            rd = req.getRequestDispatcher("/login/login.jsp");
-            rd.forward(req,resp);
+            resp.sendRedirect("/");
         }
     }
 }

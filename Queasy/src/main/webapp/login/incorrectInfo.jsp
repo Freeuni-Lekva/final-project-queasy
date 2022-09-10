@@ -4,16 +4,21 @@
     <title>Welcome</title>
 </head>
 <body>
-<h1>Please Try Again</h1>
-<p>Either your username or password is incorrect. Please try Again.</p>
+<jsp:include page="/css/start.jsp"/>
 
-<form action = "/LoginServlet" method = "post">
-    <label> Username : </label>
-    <input type = "text" name = "username" placeholder="Username"> <br>
-    <label> Password : </label>
-    <input type = "password" name = "password" placeholder="Password"><br>
-    <input type = "submit" value="Login">
-</form>
-<a href = /login/createAccount.jsp> Create New Account</a>
+<div class = "center">
+    <p>IncorrectInfo</p>
+    <p>Please Try Again...</p>
+
+    <form action = "/LoginServlet" method = "post">
+        <label> Username : </label>
+        <input type = "text" name = "username" placeholder="Username" required> <br>
+        <label> Password : </label>
+        <input type = "password" name = "password" placeholder="Password" required><br>
+        <input type = "submit" value="Login">
+    </form>
+
+    <a href = /register> Create New Account</a>
+</div>
 </body>
 </html>

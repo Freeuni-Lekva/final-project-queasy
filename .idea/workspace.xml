@@ -10,17 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="505333db-48ce-437d-b26a-b117a4278730" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/quiz/done.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/quiz/failed.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizQuestionDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/implementation/QuizQuestionDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/QuizQuestionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/dao/interfaces/QuizQuestionDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/AddQuizServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/AddQuizServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/MyConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/utility/constants/MyConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/AddAccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/AddAccountServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/LoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/java/com/queasy/servlets/LogoutServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/css/main.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/css/main.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/quiz/createQuiz.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/quiz/createQuiz.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/quiz/quizOnePage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/quiz/quizOnePage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestQuizQuestionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/test/java/com/queasy/dao/TestQuizQuestionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/login/createAccount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/login/createAccount.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/login/creationFailed.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/login/creationFailed.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/login/incorrectInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/login/incorrectInfo.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Queasy/src/main/webapp/login/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/Queasy/src/main/webapp/login/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -350,7 +348,7 @@
       <workItem from="1662575798024" duration="12633000" />
       <workItem from="1662619157551" duration="26865000" />
       <workItem from="1662741187340" duration="13661000" />
-      <workItem from="1662797426291" duration="20770000" />
+      <workItem from="1662797426291" duration="24489000" />
     </task>
     <servers />
   </component>
@@ -388,7 +386,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Queasy/src/main/webapp/login/incorrectInfo.jsp</url>
-          <line>10</line>
+          <line>13</line>
           <option name="timeStamp" value="68" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
