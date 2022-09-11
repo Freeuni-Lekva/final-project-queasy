@@ -95,7 +95,7 @@ public class AddQuizServlet extends HttpServlet {
                 j++;
             }
             for(int k = 0; k < answers.size(); k++) {
-                answerDao.addAnswer(answers.get(i));
+                answerDao.addAnswer(answers.get(k));
             }
             i++;
         }

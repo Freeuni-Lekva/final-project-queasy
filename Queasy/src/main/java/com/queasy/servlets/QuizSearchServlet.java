@@ -27,6 +27,7 @@ public class QuizSearchServlet extends HttpServlet {
                 req.setAttribute("id",id);
                 rd = req.getRequestDispatcher("/quiz/quizDetails.jsp");
                 rd.forward(req,resp);
+                return;
             }
 
         } catch (NumberFormatException e) {
